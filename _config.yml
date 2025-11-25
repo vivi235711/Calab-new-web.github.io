@@ -1,8 +1,8 @@
 # Jekyll configuration for GitHub Pages
 title: Computational Astrophysics Lab
 description: NTU Computational Astrophysics Lab
-url: ""
-baseurl: ""
+url: "https://vivi235711.github.io"
+baseurl: "/Calab-new-web.github.io"
 
 # Build settings
 markdown: kramdown
