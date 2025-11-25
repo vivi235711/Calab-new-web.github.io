@@ -1,92 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Computational Astrophysics Lab
+---
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Computational Astrophysics Lab</title>
-    <link rel="icon" type="image/x-icon" href="img/lab logo favicon.webp">
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- Custom CSS -->
-    <link href="css/agency.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <!--<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">--> <!--v4-->
-    <link href="fontawesome-free-6.5.1-web/css/all.min.css" rel="stylesheet" type="text/css"> <!--v6-->
-    <!-- If you want to add the Font Awesome v4 or v5, please add the css about v4 or v5 under fontawesome-free-6.5.1-web/css-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body id="page-top" class="index">
-    <button onclick="scrollToTop()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up" style="font-size:20px;"></i></button>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="nav-bar">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!--<a class="navbar-brand page-scroll" href="#page-top">CA lab</a>-->
-                <a class="navbar-brand page-scroll" href="#page-top" style="padding:0;"><img src="img/lab logo.webp" height="100%" ></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="news/latest.html">News</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#projects">Research</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="members.html">Members</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="publications.html">Publications</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="teaching.html">Teaching</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="useful.html">Useful</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
+<!-- Header -->
     <header>
         <div class="container">
             <div class="intro-text">
@@ -110,13 +27,13 @@
                     <h2 class="section-heading">About Us</h2>
                 </div>
             </div>
-            <div class="row" style="padding-bottom=10px;">
+            <div class="row" style="padding-bottom:10px;">
                 <div class="col-sm-6">
                     <p>some text</p>
                 </div>
                 <div class="col-sm-6" style="height:50vh;">
                     <video class="video" autoplay muted loop preload="auto" style="height:50vh; object-fit:scale-down;">
-                        <source src="video/halo.webm" type="video/webm">
+                        <source src="/video/halo.webm" type="video/webm">
                     </video>
                 </div>
             </div>
@@ -124,7 +41,7 @@
     </section>
 
     <!-- News Section -->
-    <section id="news" class="bg-halo-bug-fixed">
+    <!-- <section id="news" class="bg-halo-bug-fixed">
         <div class="container bg-trans-light-gray border-black">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -137,14 +54,14 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="news/latest.html" class="text-muted"><p class="large">More archived news ...</p></a>
+                    <a href="/news/latest.html" class="text-muted"><p class="large">More archived news ...</p></a>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Projects Section -->
-    <section id="projects" class="bg-halo-bug-fixed">
+    <!-- <section id="projects" class="bg-halo-bug-fixed">
         <div class="container bg-trans-light-gray border-black">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -160,7 +77,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/colliding_waveDM_halo.webp" class="img-responsive img-project" alt="">
+                        <img src="/img/colliding_waveDM_halo.webp" class="img-responsive img-project" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Project name 1</h4>
@@ -174,7 +91,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/wave_function.webp" class="img-responsive img-project" alt="">
+                        <img src="/img/wave_function.webp" class="img-responsive img-project" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Project name 2</h4>
@@ -188,7 +105,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/wave_function.webp" class="img-responsive img-project" alt="">
+                        <img src="/img/wave_function.webp" class="img-responsive img-project" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Treehouse</h4>
@@ -202,7 +119,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/wave_function.webp" class="img-responsive img-project" alt="">
+                        <img src="/img/wave_function.webp" class="img-responsive img-project" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Golden</h4>
@@ -216,7 +133,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/wave_function.webp" class="img-responsive img-project" alt="">
+                        <img src="/img/wave_function.webp" class="img-responsive img-project" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Escape</h4>
@@ -230,7 +147,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/wave_function.webp" class="img-responsive img-project" alt="">
+                        <img src="/img/wave_function.webp" class="img-responsive img-project" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Dreams</h4>
@@ -239,10 +156,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Member Section -->
-    <section id="members" class="bg-halo-bug-fixed">
+    <!--<section id="members" class="bg-halo-bug-fixed">
         <div class="container bg-trans-light-gray border-black">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -252,7 +169,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <a href="members.html#Hsi-Yu"><img src="img/member/schive.webp" class="img-responsive img-circle img-team" alt=""></a>
+                        <a href="/members.html#Hsi-Yu"><img src="/img/member/schive.webp" class="img-responsive img-circle img-team" alt=""></a>
                         <h4>Hsi-Yu Schive</h4>
                         <p class="text-muted">Team Leader</p>
                         <ul class="list-inline social-buttons">
@@ -267,7 +184,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <a href="#"><img src="img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
+                        <a href="#"><img src="/img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
                         <h4>Larry Parker</h4>
                         <p class="text-muted">Lead Marketer</p>
                         <ul class="list-inline social-buttons">
@@ -282,7 +199,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <a href="#"><img src="img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
+                        <a href="#"><img src="/img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
                         <h4>Diana Pertersen</h4>
                         <p class="text-muted">Lead Developer</p>
                         <ul class="list-inline social-buttons">
@@ -297,7 +214,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <a href="members.html#hsinhao"><img src="img/member/hsinhao.webp" class="img-responsive img-circle img-team" alt=""></a>
+                        <a href="/members.html#hsinhao"><img src="/img/member/hsinhao.webp" class="img-responsive img-circle img-team" alt=""></a>
                         <h4>Hsinhao Huang</h4>
                         <p class="text-muted">Research Assitance</p>
                         <ul class="list-inline social-buttons">
@@ -310,7 +227,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <a href="#"><img src="img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
+                        <a href="#"><img src="/img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
                         <h4>This might be you</h4>
                         <p class="text-muted">Lead Developer</p>
                         <ul class="list-inline social-buttons">
@@ -323,11 +240,11 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Member template
+                Member template
                 * Notice: Make sure that the linked id of the image has the class `anchor-offset` in members.html
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <a href="#"><img src="img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
+                        <a href="#"><img src="/img/member/undecided.webp" class="img-responsive img-circle img-team" alt=""></a>
                         <h4>This might be you</h4>
                         <p class="text-muted">Lead Developer</p>
                         <ul class="list-inline social-buttons">
@@ -340,18 +257,19 @@
                         </ul>
                     </div>
                 </div>
-                -->
+                
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="members.html" class="text-muted"><p class="large">More details about our group members ...</p></a>
+                    <a href="/members.html" class="text-muted"><p class="large">More details about our group members ...</p></a>
                 </div>
             </div>
         </div>
     </section>
+     -->
 
     <!-- Publications Section -->
-    <section id="publications" class="bg-halo-bug-fixed">
+    <!-- <section id="publications" class="bg-halo-bug-fixed">
         <div class="container bg-trans-light-gray border-black">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -360,393 +278,4 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <ol class="publication-ol">
-                        <!-- Replace start from @@@ end to $$$. Only be replaced by the workflow. -->
-                        <!--@@@PUBLICATION@@@-->
-                        <li class="text-muted publication" data-tags="2024">
-                            <div class="publication-title">
-                                "Galactic disc heating by density granulation in fuzzy dark matter simulations"
-                            </div>
-                            <div class="publication-author">
-                                Hsun-Yeong Yang, Barry T. Chiang, Guan-Ming Su, <strong>Hsi-Yu Schive</strong>, Tzihong Chiueh, and Jeremiah P. Ostriker
-                            </div>
-                            <div class="publication-link">
-                                <a href="https://doi.org/10.48550/arXiv.2403.09845">doi: 10.48550/arXiv.2403.09845</a>
-                            </div>
-                        </li>
-                        <li class="text-muted publication" data-tags="2024">
-                            <div class="publication-title">
-                                "A Systematic Search of Distant Superclusters with the Subaru Hyper Suprime-Cam Survey"
-                            </div>
-                            <div class="publication-author">
-                                Tsung-Chi Chen, Yen-Ting Lin, <strong>Hsi-Yu Schive</strong>, Masamune Oguri, Kai-Feng Chen, Nobuhiro Okabe, Sadman Ali, Connor Bottrell, Roohi Dalal, Yusei Koyama, Rog&eacute;rio Monteiro-Oliveira, Rhythm Shimakawa, Tomotsugu Goto, Bau-Ching Hsieh, Tadayuki Kodama, and Atsushi J. Nishizawa
-                            </div>
-                            <div class="publication-link">
-                                <a href="https://doi.org/10.48550/arXiv.2401.10322">doi: 10.48550/arXiv.2401.10322</a>
-                            </div>
-                        </li>
-                        <li class="text-muted publication" data-tags="2023">
-                            <div class="publication-title">
-                                "Einstein rings modulated by wavelike dark matter from anomalies in gravitationally lensed images"
-                            </div>
-                            <div class="publication-author">
-                                Alfred Amruth, Tom Broadhurst, Jeremy Lim, Masamune Oguri, George F. Smoot, Jose M. Diego, Enoch Leung, Razieh Emami, Juno Li, Tzihong Chiueh, <strong>Hsi-Yu Schive</strong>, Michael C.~H. Yeung, and Sung Kei Li
-                            </div>
-                            <div class="publication-link">
-                                <a href="https://doi.org/10.1038/s41550-023-01943-9">doi: 10.1038/s41550-023-01943-9</a>
-                            </div>
-                        </li>
-                        <!--$$$PUBLICATION$$$-->
-                    </ol>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="publications.html" class="text-muted"><p class="large">More publications of our group ...</p></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching Section -->
-    <section id="teaching" class="bg-halo-bug-fixed">
-        <div class="container bg-trans-light-gray border-black">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Teaching</h2>
-                </div>
-            </div>
-            <div class="row text-center" style="padding-bottom:15px;">
-                <div class="col-md-4">
-                    <a href="teaching.html#course1" class="href-black">
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Course 1</h4>
-                    </a>
-                    <p class="text-muted">Icon and text can be changed.</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="teaching.html#course2" class="href-black">
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Course 2</h4>
-                    </a>
-                    <p class="text-muted">Icon and text can be changed.</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="teaching.html#course3" class="href-black">
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Course 3</h4>
-                    </a>
-                    <p class="text-muted">Icon and text can be changed.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="teaching.html" class="text-muted"><p class="large">More details about all courses ...</p></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sponsers Aside -->
-    <aside class="clients bg-light-gray border-separate">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Sponsers</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/undecided.webp" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/undecided.webp" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/undecided.webp" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/undecided.webp" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h2 class="section-heading">Contact Us</h2>
-                                <p class="text-white thickfont" align="left">Contact person: Hsi-Yu Schive (薛熙于)</p>
-                                <p class="text-white thickfont" align="left">Phone: (02) 3366-8644</p>
-                                <p class="text-white thickfont" align="left">Email: hyschive@phys.ntu.edu.tw</p>
-                                <p class="text-white thickfont" align="left">Address: Department of Physics, Astronomy-Mathematics Building, National Taiwan University, 1, Sec. 4, Roosevelt Rd. Taipei, 10617, Taiwan</p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7230.754272214952!2d121.53516897816723!3d25.02127230289953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa27ef5061d5%3A0x3f33877f8046c5a7!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5aSp5paH5pW45a246aSo!5e0!3m2!1szh-TW!2stw!4v1605603413342!5m2!1szh-TW!2stw"
-                                    width=100% height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Replace start from @@@ end to $$$. Only be replaced by the workflow. -->
-    <!--@@@FOOTER@@@-->
-<footer id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4" style="text-align:left;">
-                <span class="copyright">Copyright &copy; CA Lab 2023</span>
-                <div>
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    <li><a href="https://github.com/gamer-project"><i class="fa-brands fa-github"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa-brands fa-slack"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa-brands fa-google"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4" style="text-align:left;">
-                <div>Useful things</div>
-                <div><a href="https://drive.google.com/file/d/1sb3OOs3VkU726Xsb9kSfqMJzve1fueA8/view?pli=1">購買物品與報帳SOP</a></div>
-            </div>
-        </div>
-    </div>
-</footer>
-    <!--$$$FOOTER$$$-->
-
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name 1</h2>
-                            <p class="item-intro text-muted">Project subtitle 1</p>
-                            <img class="img-responsive" src="img/colliding_waveDM_halo.webp" alt="">
-                            <p>Use this area to describe your project.</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project name 2</h2>
-                            <p class="item-intro text-muted">Project subtitle 2</p>
-                            <video autoplay muted height="500px" width="500px" controls>
-                                <source src="video/ccsn_libyt.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <img class="img-responsive img-centered" src="img/wave_function.webp" alt="">
-                            <p><a href="https://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="https://designmodo.com/startup/?u=787">here</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/undecided.webp" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="https://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/undecided.webp" alt="">
-                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="https://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/undecided.webp" alt="">
-                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="https://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/undecided.webp" alt="">
-                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="https://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
-    <!--<script src="js/openingAnimation.js"></script>-->
-    <script src="js/topButton.js"></script>
-
-</body>
-
-</html>
+                    <ol class="publication-ol"> -->

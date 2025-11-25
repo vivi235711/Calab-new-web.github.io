@@ -1,0 +1,21 @@
+# Jekyll configuration for GitHub Pages
+title: Computational Astrophysics Lab
+description: NTU Computational Astrophysics Lab
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - script/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - css/img
+  - css/video
+
+# Ensure assets are served from root
+relative_permalinks: false
