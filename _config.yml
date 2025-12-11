@@ -19,3 +19,8 @@ exclude:
 
 # Ensure assets are served from root
 relative_permalinks: false
+
+collections:
+  members:
+    output: false # 設定為 false，表示不生成獨立的成員頁面 (我們只需要列表)
+    permalink: /:collection/:path/

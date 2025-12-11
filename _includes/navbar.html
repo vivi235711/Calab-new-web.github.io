@@ -1,49 +1,37 @@
-<!-- Navigation -->
-{%- assign _transparent = page.navbar_transparent -%}
-<nav class="navbar navbar-default navbar-fixed-top {% if _transparent %}navbar-transparent{% else %}navbar-solid{% endif %}" id="nav-bar">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!--<a class="navbar-brand page-scroll" href="#page-top">CA lab</a>-->
-            <a class="navbar-brand page-scroll" href="{{ '/index.html' | relative_url }}#page-top" style="padding:0;"><img src="{{ '/img/lab logo.webp' | relative_url }}" alt="CA Lab logo" class="navbar-brand-logo" /></a>
-        </div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark py-2 navbar-transparent">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ '/index.html' | relative_url }}#page-top">
+            <img src="{{ '/img/lab logo.webp' | relative_url }}" alt="CA Lab logo" class="img-fluid lab-navbar-logo" />
+        </a>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ '/news/latest.html' | relative_url }}">News</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ '/projects.html' | relative_url }}">Research</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ '/members.html' | relative_url }}">Members</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ '/publications.html' | relative_url }}">Publications</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ '/teaching.html' | relative_url }}">Teaching</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ '/useful.html' | relative_url }}">Useful</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="{{ '/contact.html' | relative_url }}">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ '/news/latest.html' | relative_url }}">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ '/projects.html' | relative_url }}">Research</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ '/members.html' | relative_url }}">Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ '/publications.html' | relative_url }}">Publications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  href="{{ '/teaching.html' | relative_url }}">Teaching</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ '/useful.html' | relative_url }}">Useful</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ '/contact.html' | relative_url }}">Contact</a>
+            </li>
+        </ul>
     </div>
-    <!-- /.container-fluid -->
 </nav>

@@ -1,0 +1,28 @@
+{% assign member = include.member %}
+
+<div id="{{ member.name | slugify }}" class="col-md-4 mb-5">
+    
+    <div class="text-center mb-4"> 
+        <img src="{{ member.image | relative_url }}" 
+             class="img-fluid rounded-circle img-team" alt="{{ member.name }}">
+        <h4 class="mt-3">{{ member.name }}</h4>
+        <p class="text-secondary">{{ member.position }}</p>
+    </div>
+    
+    <div class="member-intro text-center">
+        <p>
+            {{ member.content }}
+        </p>
+        
+        <ul class="list-inline social-buttons member-list text-center">
+            {% if member.website %}
+            <li class="list-inline-item"><a href="{{ member.website }}" target="_blank" class="text-primary"><i class="fa-solid fa-landmark"></i></a></li>
+            {% endif %}
+            
+            {% if member.github %}
+            <li class="list-inline-item"><a href="https://github.com/{{ member.github }}" target="_blank" class="text-primary"><i class="fa-brands fa-github"></i></a></li>
+            {% endif %}
+            
+            </ul>
+    </div>
+</div>

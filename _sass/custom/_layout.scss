@@ -1,0 +1,92 @@
+
+
+.lab-navbar-logo {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+}
+
+$navbar-total-height: 66px;
+
+main {
+  // 使用 SCSS 變數來設定精確的偏移量
+  margin-top: $navbar-total-height;
+  
+  // 由於我們使用 margin-top，您可以移除 HTML 上的 pt-5 Class
+}
+
+.homepage-masthead {
+  // 減去 Navbar 的高度，讓標題區塊佔據剩下的視窗空間
+  // $navbar-total-height 必須是您之前計算出的 Navbar 總高度
+  height: 100vh; 
+  
+  // 設置文字遮罩，確保在背景圖上清晰
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+
+  // 確保文字和圖標在暗色背景圖上是白色的
+  .intro-lead-in, .intro-heading, a {
+    color: #fff;
+  }
+}
+
+// -------------------------------------------------------------
+// 1. 通用暗色系背景 (大多數頁面)
+// -------------------------------------------------------------
+// .body-dark-theme {
+//   // 設置純色暗色背景（例如，與 navbar 的 bg-dark 搭配）
+//   background-color: #212529; 
+  
+//   // 確保文字顏色與背景匹配（如果沒有設定 text-white 的話）
+//   color: $gray-500; // 使用您在 $body-color 設定的顏色
+// }
+
+// -------------------------------------------------------------
+// 2. 首頁背景圖樣式 (覆蓋純色背景)
+// -------------------------------------------------------------
+html, body {
+  // 將 html 和 body 的高度都設定為 100% 視口高度
+  // 這是固定背景圖的常見要求
+  height: 100%; 
+}
+
+.body-home-bg {
+  // 注意：背景圖的 URL 將由 Liquid 在 HTML 中動態設定
+  
+  // 確保背景圖覆蓋整個視口
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  // 設置背景圖固定不動，只讓內容滾動 (視差效果)
+  background-attachment: fixed;
+  
+  // 為了讓文字在背景圖上清晰，可以添加一個微妙的遮罩
+  // 透過線性漸變 (linear-gradient) 實現半透明遮罩
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+  // 確保首頁文字顏色在深色背景圖上是淺色
+  color: #fff; 
+}
+
+// -------------------------------------------------------------
+// 統一團隊成員頭像尺寸 (使用 object-fit 確保圖片不被拉伸)
+// -------------------------------------------------------------
+.img-team {
+  // 設定統一的寬度和高度 (請根據您的設計調整數值)
+  width: 150px; 
+  height: 150px; 
+  
+  // 確保圖片在容器內不會被拉伸或壓縮失真
+  object-fit: cover; 
+  
+  // 確保圖片垂直和水平居中 (如果容器是 flex 或 block 元素)
+  margin: 0 auto; 
+  display: block; // 確保 margin: 0 auto; 在 block 元素上生效
+}
+
+.navbar-transparent {
+    transition: background-color 0.3s ease-in-out;
+    background-color: transparent !important; // 初始透明
+    box-shadow: none !important; // 移除陰影
+}

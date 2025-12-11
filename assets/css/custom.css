@@ -1,0 +1,8 @@
+#navbarLogo {
+/* Set a maximum height to control the overall navbar thickness */
+height: 50px; 
+/* The width will automatically adjust to preserve the aspect ratio */
+width: auto; 
+/* This prevents the image from getting blurry if its native size is smaller */
+max-width: 100%; 
+}
