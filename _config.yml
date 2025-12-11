@@ -13,7 +13,6 @@ exclude:
   - script/
   - Gemfile
   - Gemfile.lock
-  - vendor/
   - css/img
   - css/video
 
