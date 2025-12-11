@@ -6,7 +6,6 @@ _site/
 
 # Ruby bundler
 .bundle/
-vendor/
 Gemfile.lock
 
 # Node modules (if any tooling exists)
