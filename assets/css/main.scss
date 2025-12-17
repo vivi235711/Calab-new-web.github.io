@@ -4,12 +4,12 @@
 
 // @import "bootstrap/bootstrap";
 @import "bootstrap/functions";
+
+@import "custom/variables-override";
+
 @import "bootstrap/variables";
 @import "bootstrap/variables-dark";
 @import "bootstrap/mixins";
-
-
-@import "custom/variables-override";
 
 @import "bootstrap/maps";
 @import "bootstrap/utilities";
@@ -28,6 +28,9 @@
 @import "bootstrap/navbar";
 @import "bootstrap/nav";
 @import "bootstrap/card";
+@import "bootstrap/dropdown";
+@import "bootstrap/modal";
+@import "bootstrap/pagination";
 
 @import "bootstrap/utilities/api";
 @import "bootstrap/helpers";

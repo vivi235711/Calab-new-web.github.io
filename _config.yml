@@ -10,16 +10,33 @@ exclude:
   - README.md
   - LICENSE
   - .gitignore
-  - script/
   - Gemfile
   - Gemfile.lock
-  - css/img
-  - css/video
 
 # Ensure assets are served from root
 relative_permalinks: false
 
+plugins:
+  - jekyll-paginate
+
+permalink: /:year/:month/:day/:title.html
+paginate: 5
+paginate_path: "/news/page:num/"
+
 collections:
   members:
     output: false # 設定為 false，表示不生成獨立的成員頁面 (我們只需要列表)
-    permalink: /:collection/:path/
+    permalink: /members/:path/
+  useful:
+    output: false
+    permalink: /useful/:path/
+  courses:
+    output: false # 課程通常不需要獨立頁面
+    permalink: /courses/:path/
+  projects:
+    output: false # 專案細節將透過 Modal 呈現，不需要獨立頁面
+    permalink: /projects/:path/
+
+sass:
+  # The style option controls the output format of the compiled CSS.
+  style: compressed

@@ -1,10 +1,9 @@
 $custom-primary-color:             #fed136;
 $primary:              $custom-primary-color;
 $navbar-dark-hover-color:           $primary;
-$link-color:                        $primary;
-
+$navbar-dark-color:                #ffffff;
+$navbar-dark-icon-color:           rgba($navbar-dark-color, .55);
 $enable-dark-mode: true;
-$color-mode-type: data;
 
 $custom-font-family: 'Roboto', 'Montserrat', sans-serif;
 

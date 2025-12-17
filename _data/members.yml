@@ -1,0 +1,14 @@
+- name: "Hsi-Yu Schive"
+  role: "faculty"
+  position: "Team Leader"
+  sort_order: 1
+  image: "/assets/img/member/schive.webp"
+  website: "https://www.phys.ntu.edu.tw/enphysics/hyschive.html"
+  github: "hyschive"
+  bio: "test and super long meaning less text. He hid under the covers..."
+- name: Hsinhao Huang
+  role: "research-associate"
+  position: "Research Associate"
+  sort_order: 2
+  image: "/assets/img/member/hsinhao.webp"
+  bio: "test and super long meaning less text. He hid under the covers..."

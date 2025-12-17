@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <title>{{ page.title | default: site.title }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ '/img/lab logo favicon.webp' | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/img/lab logo favicon.webp' | relative_url }}">
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="{{ '/css/bootstrap.css' | relative_url }}" rel="stylesheet"> -->
@@ -26,7 +26,7 @@
 
     <!-- Custom Fonts -->
     <!--<link href="{{ '/font-awesome/css/font-awesome.min.css' | relative_url }}" rel="stylesheet" type="text/css">--> <!--v4-->
-    <link href="{{ '/fontawesome-free-6.5.1-web/css/all.min.css' | relative_url }}" rel="stylesheet" type="text/css"> <!--v6-->
+    <link href="{{ '/assets/fontawesome-free-6.5.1-web/css/all.min.css' | relative_url }}" rel="stylesheet" type="text/css"> <!--v6-->
     <!-- If you want to add the Font Awesome v4 or v5, please add the css about v4 or v5 under fontawesome-free-6.5.1-web/css-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -42,16 +42,11 @@
 
 </head>
 
-{% comment %} 判斷是否為首頁 (通常首頁的 URL 是 / 或 /index.html) {% endcomment %}
-{% assign is_homepage = false %}
-{% if page.url == '/' or page.url == '/index.html' %}
-    {% assign is_homepage = true %}
-{% endif %}
 
 {% comment %} 根據判斷結果，設置 body 的 Class {% endcomment %}
-{% if is_homepage %}
+{% if page.bg_image %}
     {% assign body_class = 'body-home-bg' %}
-    {% assign bg_image_url = page.home_bg_image | relative_url %}
+    {% assign bg_image_url = page.bg_image | relative_url %}
 
 
 {% endif %}
@@ -64,14 +59,9 @@
 >
     <!-- <button onclick="scrollToTop()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up" style="font-size:20px;"></i></button> -->
 
-    {% comment %} 判斷是否為首頁或 Contact 頁面 {% endcomment %}
-    {% assign is_excluded = false %}
-    {% if page.url == '/' or page.url == '/index.html' or page.url contains '/contact/' or page.url contains '/contact.html' %}
-        {% assign is_excluded = true %}
-    {% endif %}
 
     {% comment %} 判斷是否應該顯示 Page Header {% endcomment %}
-    {% if page.hero_title and is_excluded == false %}
+    {% if page.hero_title %}
         {% include hero.html %} 
     {% endif %}
 
@@ -108,6 +98,8 @@
     {% if page.header_animated %}
     <!-- <script src="{{ '/js/cbpAnimatedHeader.js' | relative_url }}"></script> -->
     {% endif %}
+    <script src="{{ '/assets/js/nav-bar-animation.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/publication_filter.js' | relative_url }}"></script>
 
     <!-- Contact Form JavaScript -->
     <!-- <script src="{{ '/js/jqBootstrapValidation.js' | relative_url }}"></script>

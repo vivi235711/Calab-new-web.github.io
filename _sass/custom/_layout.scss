@@ -29,24 +29,8 @@ main {
   }
 }
 
-// -------------------------------------------------------------
-// 1. 通用暗色系背景 (大多數頁面)
-// -------------------------------------------------------------
-// .body-dark-theme {
-//   // 設置純色暗色背景（例如，與 navbar 的 bg-dark 搭配）
-//   background-color: #212529; 
-  
-//   // 確保文字顏色與背景匹配（如果沒有設定 text-white 的話）
-//   color: $gray-500; // 使用您在 $body-color 設定的顏色
-// }
-
-// -------------------------------------------------------------
-// 2. 首頁背景圖樣式 (覆蓋純色背景)
-// -------------------------------------------------------------
-html, body {
-  // 將 html 和 body 的高度都設定為 100% 視口高度
-  // 這是固定背景圖的常見要求
-  height: 100%; 
+.text-shadow-dark {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .body-home-bg {
@@ -59,16 +43,7 @@ html, body {
   
   // 設置背景圖固定不動，只讓內容滾動 (視差效果)
   background-attachment: fixed;
-  
-  // 為了讓文字在背景圖上清晰，可以添加一個微妙的遮罩
-  // 透過線性漸變 (linear-gradient) 實現半透明遮罩
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-
-  // 確保首頁文字顏色在深色背景圖上是淺色
-  color: #fff; 
 }
-
 // -------------------------------------------------------------
 // 統一團隊成員頭像尺寸 (使用 object-fit 確保圖片不被拉伸)
 // -------------------------------------------------------------
@@ -85,8 +60,84 @@ html, body {
   display: block; // 確保 margin: 0 auto; 在 block 元素上生效
 }
 
+.img-hero {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.img-project {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  width: 400px;
+  height: 289px;
+}
+
 .navbar-transparent {
     transition: background-color 0.3s ease-in-out;
-    background-color: transparent !important; // 初始透明
-    box-shadow: none !important; // 移除陰影
+    background-color: transparent !important;
+    // box-shadow: none !important; /* Remove shadow for a truly clean look */
+}
+
+.navbar-scrolled {
+    transition: background-color 0.3s ease-in-out;
+    /* Use your desired solid color here, matching your fixed-top bg-dark */
+    background-color: #212529 !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Adds shadow when solid */
+}
+
+.hero-section {
+    // This is crucial for making the image cover the full container size
+    background-size: cover; 
+    background-position: center;
+    
+    // Optional: Add the text readability overlay here (as shown in a previous answer)
+    position: relative;
+    /* ... rest of overlay CSS ... */
+}
+
+
+// 專案卡片容器 (Portfolio Link)
+.portfolio-link {
+    // 確保圖片和懸停層在同一個堆疊上下文中
+    overflow: hidden; 
+    
+    // 讓不透明度、顏色等變化平滑過渡
+    .portfolio-hover {
+        transition: opacity 0.3s ease; // 懸停層過渡效果
+    }
+}
+
+// 當滑鼠懸停在 .portfolio-link 上時
+.portfolio-link:hover {
+    
+    // 讓懸停層顯示 (從 opacity-0 變為 opacity-100)
+    .portfolio-hover {
+        opacity: 1 !important; 
+    }
+}
+
+// --------------------------------------------------
+// 讓圖片在懸停時有微小的縮放效果 (可選，增強互動性)
+.img-project-thumb {
+    transition: transform 0.5s ease; // 圖片縮放過渡
+}
+
+.portfolio-link:hover .img-project-modal {
+    transform: scale(1.05); // 懸停時放大 5%
+}
+
+.img-project-modal {
+    width: auto;
+    // 🌟 固定圖片高度 (您可以根據需要調整)
+    height: auto; 
+    
+    // 確保圖片填滿容器，如果比例不匹配則裁剪邊緣
+    object-fit: cover; 
+    
+    // 讓圖片在卡片網格中看起來更專業
+    border-radius: 5px; 
 }

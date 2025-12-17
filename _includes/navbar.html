@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark py-2 navbar-transparent">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark py-2 navbar-transparent" id="nav-bar">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ '/index.html' | relative_url }}#page-top">
-            <img src="{{ '/img/lab logo.webp' | relative_url }}" alt="CA Lab logo" class="img-fluid lab-navbar-logo" />
+            <img src="{{ '/assets/img/lab logo.webp' | relative_url }}" alt="CA Lab logo" class="img-fluid lab-navbar-logo" />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +9,10 @@
         </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto text-shadow-dark">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ '/news/latest.html' | relative_url }}">News</a>
+                <a class="nav-link" href="{{ '/news' | relative_url }}">News</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ '/projects.html' | relative_url }}">Research</a>

@@ -1,0 +1,69 @@
+{% comment %}
+    Bootstrap 5 Pagination Template
+    用於渲染新聞列表底部的分頁控制項。
+    需要啟用 jekyll-paginate 插件。
+{% endcomment %}
+
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Page navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+        
+        {% if paginator.previous_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="d-none d-sm-inline ms-1">Previous</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="d-none d-sm-inline ms-1">Previous</span>
+                </span>
+            </li>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+            <li class="page-item {% if page == paginator.page %}active{% endif %}">
+                {% if page == paginator.page %}
+                    <span class="page-link">{{ page }}</span>
+                {% else %}
+                    {% comment %} 🌟 關鍵修正：判斷是否為 Page 1 {% endcomment %}
+                    {% assign link_path = site.paginate_path | replace: ':num', page %}
+                    
+                    {% if page == 1 %}
+                        {% comment %} 如果是 Page 1，連結到新聞主頁 /news/ {% endcomment %}
+                        {% assign link_path = "/news/" %} 
+                    {% endif %}
+                    
+                    <a class="page-link" href="{{ link_path | relative_url }}">
+                        {{ page }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+        {% if paginator.next_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
+                    <span class="d-none d-sm-inline me-1">Next</span>
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link" aria-label="Next">
+                    <span class="d-none d-sm-inline me-1">Next</span>
+                    <span aria-hidden="true">&raquo;</span>
+                </span>
+            </li>
+        {% endif %}
+        
+    </ul>
+</nav>
+
+<div class="text-center text-secondary small mt-2">
+    Page {{ paginator.page }} of {{ paginator.total_pages }}
+</div>
+{% endif %}

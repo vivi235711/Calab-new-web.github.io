@@ -8,15 +8,5 @@ _site/
 .bundle/
 Gemfile.lock
 
-# Node modules (if any tooling exists)
-node_modules/
-
 # macOS
 .DS_Store
-
-# Logs
-*.log
-
-# Backup files
-*.backup
-*~

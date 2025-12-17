@@ -11,7 +11,7 @@
     
     <div class="member-intro text-center">
         <p>
-            {{ member.content }}
+            {{ member.bio }}
         </p>
         
         <ul class="list-inline social-buttons member-list text-center">
@@ -22,7 +22,6 @@
             {% if member.github %}
             <li class="list-inline-item"><a href="https://github.com/{{ member.github }}" target="_blank" class="text-primary"><i class="fa-brands fa-github"></i></a></li>
             {% endif %}
-            
-            </ul>
+        </ul>
     </div>
 </div>
