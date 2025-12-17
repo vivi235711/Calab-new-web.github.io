@@ -12,3 +12,32 @@
   sort_order: 2
   image: "/assets/img/member/hsinhao.webp"
   bio: "test and super long meaning less text. He hid under the covers..."
+
+- name: "Joe Doe"
+  role: "postdoc"
+  position: "postdoc"
+  sort_order: 3
+  image: "/assets/img/member/undecided.webp"
+  website: "https://example.com"
+  bio: "test and super long meaning less text. He hid under the covers..."
+- name: "Jane Smith"
+  role: "postdoc"
+  position: "postdoc"
+  sort_order: 4
+  image: "/assets/img/member/undecided.webp"
+  website: "https://example.com"
+  bio: "test and super long meaning less text. He hid under the covers..."
+- name: "Alice Johnson"
+  role: "research-associate"
+  position: "Research Associate"
+  sort_order: 5
+  image: "/assets/img/member/undecided.webp"
+  website: "https://example.com"
+  bio: "test and super long meaning less text. He hid under the covers..."
+- name: "Bob Brown"
+  role: "research-associate"
+  position: "Research Associate"
+  sort_order: 6
+  image: "/assets/img/member/undecided.webp"
+  website: "https://example.com"
+  bio: "test and super long meaning less text. He hid under the covers..."

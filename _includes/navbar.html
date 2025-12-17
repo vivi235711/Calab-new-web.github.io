@@ -17,8 +17,22 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ '/projects.html' | relative_url }}">Research</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/members.html' | relative_url }}">Members</a>
+            <li class="nav-item dropdown dropdown-hover">
+                <a class="nav-link dropdown-toggle" href="{{ '/members.html' | relative_url }}" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Members</a>
+                <ul class="dropdown-menu shadow" aria-labelledby="membersDropdown">
+                    <li>
+                        <a class="dropdown-item fw-bold" href="{{ '/members.html' | relative_url }}">All Members</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    {% for role in site.data.member_roles.roles %}
+                    <li>
+                        <a class="dropdown-item" href="{{ '/members.html' | relative_url }}#{{ role.id }}-section">
+                            {{ role.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ '/publications.html' | relative_url }}">Publications</a>

@@ -141,3 +141,22 @@ main {
     // 讓圖片在卡片網格中看起來更專業
     border-radius: 5px; 
 }
+
+/* Enable Hover on Desktop (992px is Bootstrap's lg breakpoint) */
+@media (min-width: 992px) {
+    .dropdown-hover:hover .dropdown-menu {
+        display: block;
+        margin-top: 0; /* Prevents a gap that closes the menu when moving cursor */
+    }
+}
+
+/* Optional: Smooth transition for the dropdown */
+.dropdown-menu {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}Yeah 
+
+/* Style the 'All Members' link slightly differently if desired */
+.dropdown-item.fw-bold {
+    color: var(--bs-primary);
+}
