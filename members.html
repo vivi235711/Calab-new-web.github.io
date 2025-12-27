@@ -5,9 +5,9 @@ hero_title: Members
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
-<section id="members-list" class="py-5">
+<section id="members-list" class="">
     <div class="container">
-        {% assign all_members = site.data.members | sort: 'sort_order' %}
+        {% assign all_members = site.data.members %}
         {% assign member_roles = site.data.member_roles.roles %}
 
         {% for role in member_roles %}

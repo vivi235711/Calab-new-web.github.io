@@ -1,0 +1,41 @@
+name: Update Publications YAML
+
+on:
+  push:
+    paths:
+      - '_tools/export-bibtex.bib'
+      - '_data/members.yml'
+      - '_tools/bib_to_yml.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install bibtexparser pyyaml latexcodec
+
+      - name: Run conversion script
+        run: python _tools/bib_to_yml.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add _data/publications.yml
+          if git diff --cached --quiet; then
+            echo "No changes detected in publications.yml, skipping commit."
+          else
+            git commit -m "Auto-update publications.yml via Python script"
+            git push
+          fi

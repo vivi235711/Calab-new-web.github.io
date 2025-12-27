@@ -1,16 +1,15 @@
-# 每個項目都是一個 Map (id 和 title)
 roles:
   - id: faculty
     title: Faculty
   - id: postdoc
     title: Postdoctoral Research Fellows
-  - id: research-associate
-    title: Research Associates
   - id: doctoral
     title: Doctoral Students
   - id: master
     title: Master Students
   - id: undergraduate
     title: Undergraduate Students
+  - id: research-assistants
+    title: Research Assistants
   - id: previous
     title: Previous Members

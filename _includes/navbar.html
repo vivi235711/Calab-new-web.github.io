@@ -1,51 +1,52 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark py-2 navbar-transparent" id="nav-bar">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ '/index.html' | relative_url }}#page-top">
-            <img src="{{ '/assets/img/lab logo.webp' | relative_url }}" alt="CA Lab logo" class="img-fluid lab-navbar-logo" />
+            <img src="{{ '/assets/img/lab logo.webp' | relative_url }}" alt="CA Lab logo"
+                class="img-fluid lab-navbar-logo" />
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto text-shadow-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto text-shadow-dark">
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/news' | relative_url }}">News</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/projects.html' | relative_url }}">Research</a>
-            </li>
-            <li class="nav-item dropdown dropdown-hover">
-                <a class="nav-link dropdown-toggle" href="{{ '/members.html' | relative_url }}" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Members</a>
-                <ul class="dropdown-menu shadow" aria-labelledby="membersDropdown">
-                    <li>
-                        <a class="dropdown-item fw-bold" href="{{ '/members.html' | relative_url }}">All Members</a>
-                    </li>
-                    <li><hr class="dropdown-divider"></li>
-                    {% for role in site.data.member_roles.roles %}
-                    <li>
-                        <a class="dropdown-item" href="{{ '/members.html' | relative_url }}#{{ role.id }}-section">
-                            {{ role.title }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/publications.html' | relative_url }}">Publications</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"  href="{{ '/teaching.html' | relative_url }}">Teaching</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/useful.html' | relative_url }}">Useful</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/contact.html' | relative_url }}">Contact</a>
-            </li>
-        </ul>
-    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/news' | relative_url }}">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/projects.html' | relative_url }}">Research</a>
+                </li>
+                <li class="nav-item dropdown dropdown-hover d-flex flex-wrap align-items-center">
+                    <a class="nav-link pe-1" href="{{ '/members.html' | relative_url }}">Members</a>
+                    <a class="nav-link ps-1 dropdown-toggle dropdown-toggle-split" href="#" id="membersDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </a>
+                    <ul class="dropdown-menu shadow" aria-labelledby="membersDropdown">
+                        {% for role in site.data.member_roles.roles %}
+                        <li>
+                            <a class="dropdown-item" href="{{ '/members.html' | relative_url }}#{{ role.id }}-section">
+                                {{ role.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/publications.html' | relative_url }}">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/teaching.html' | relative_url }}">Teaching</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/useful.html' | relative_url }}">Useful</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/contact.html' | relative_url }}">Contact</a>
+                </li>
+            </ul>
+        </div>
 </nav>

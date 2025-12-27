@@ -7,11 +7,15 @@ baseurl: "/Calab-new-web.github.io"
 # Build settings
 markdown: kramdown
 exclude:
+  - .github/workflows/updates-pubs.yml
+  - .github/workflows/jekyll-gh-pages.yml
   - README.md
   - LICENSE
   - .gitignore
   - Gemfile
   - Gemfile.lock
+  - _tools/export-bibtex.bib
+  - _tools/bib_to_yml.py
 
 # Ensure assets are served from root
 relative_permalinks: false

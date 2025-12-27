@@ -1,5 +1,3 @@
-
-
 .lab-navbar-logo {
   height: 40px;
   width: auto;
@@ -11,20 +9,22 @@ $navbar-total-height: 66px;
 main {
   // 使用 SCSS 變數來設定精確的偏移量
   margin-top: $navbar-total-height;
-  
+
   // 由於我們使用 margin-top，您可以移除 HTML 上的 pt-5 Class
 }
 
 .homepage-masthead {
   // 減去 Navbar 的高度，讓標題區塊佔據剩下的視窗空間
   // $navbar-total-height 必須是您之前計算出的 Navbar 總高度
-  height: 100vh; 
-  
+  height: 100vh;
+
   // 設置文字遮罩，確保在背景圖上清晰
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 
   // 確保文字和圖標在暗色背景圖上是白色的
-  .intro-lead-in, .intro-heading, a {
+  .intro-lead-in,
+  .intro-heading,
+  a {
     color: #fff;
   }
 }
@@ -35,28 +35,29 @@ main {
 
 .body-home-bg {
   // 注意：背景圖的 URL 將由 Liquid 在 HTML 中動態設定
-  
+
   // 確保背景圖覆蓋整個視口
-  background-size: cover; 
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  
+
   // 設置背景圖固定不動，只讓內容滾動 (視差效果)
   background-attachment: fixed;
 }
+
 // -------------------------------------------------------------
 // 統一團隊成員頭像尺寸 (使用 object-fit 確保圖片不被拉伸)
 // -------------------------------------------------------------
 .img-team {
   // 設定統一的寬度和高度 (請根據您的設計調整數值)
-  width: 150px; 
-  height: 150px; 
-  
+  width: 150px;
+  height: 150px;
+
   // 確保圖片在容器內不會被拉伸或壓縮失真
-  object-fit: cover; 
-  
+  object-fit: cover;
+
   // 確保圖片垂直和水平居中 (如果容器是 flex 或 block 元素)
-  margin: 0 auto; 
+  margin: 0 auto;
   display: block; // 確保 margin: 0 auto; 在 block 元素上生效
 }
 
@@ -77,86 +78,140 @@ main {
 }
 
 .navbar-transparent {
-    transition: background-color 0.3s ease-in-out;
-    background-color: transparent !important;
-    // box-shadow: none !important; /* Remove shadow for a truly clean look */
+  transition: background-color 0.3s ease-in-out;
+  background-color: transparent !important;
+  // box-shadow: none !important; /* Remove shadow for a truly clean look */
 }
 
 .navbar-scrolled {
-    transition: background-color 0.3s ease-in-out;
-    /* Use your desired solid color here, matching your fixed-top bg-dark */
-    background-color: #212529 !important;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Adds shadow when solid */
+  transition: background-color 0.3s ease-in-out;
+  /* Use your desired solid color here, matching your fixed-top bg-dark */
+  background-color: #212529 !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  /* Adds shadow when solid */
 }
 
 .hero-section {
-    // This is crucial for making the image cover the full container size
-    background-size: cover; 
-    background-position: center;
-    
-    // Optional: Add the text readability overlay here (as shown in a previous answer)
-    position: relative;
-    /* ... rest of overlay CSS ... */
+  // This is crucial for making the image cover the full container size
+  background-size: cover;
+  background-position: center;
+
+  // Optional: Add the text readability overlay here (as shown in a previous answer)
+  position: relative;
+  /* ... rest of overlay CSS ... */
 }
 
 
 // 專案卡片容器 (Portfolio Link)
 .portfolio-link {
-    // 確保圖片和懸停層在同一個堆疊上下文中
-    overflow: hidden; 
-    
-    // 讓不透明度、顏色等變化平滑過渡
-    .portfolio-hover {
-        transition: opacity 0.3s ease; // 懸停層過渡效果
-    }
+  // 確保圖片和懸停層在同一個堆疊上下文中
+  overflow: hidden;
+
+  // 讓不透明度、顏色等變化平滑過渡
+  .portfolio-hover {
+    transition: opacity 0.3s ease; // 懸停層過渡效果
+  }
 }
 
 // 當滑鼠懸停在 .portfolio-link 上時
 .portfolio-link:hover {
-    
-    // 讓懸停層顯示 (從 opacity-0 變為 opacity-100)
-    .portfolio-hover {
-        opacity: 1 !important; 
-    }
+
+  // 讓懸停層顯示 (從 opacity-0 變為 opacity-100)
+  .portfolio-hover {
+    opacity: 1 !important;
+  }
 }
 
 // --------------------------------------------------
 // 讓圖片在懸停時有微小的縮放效果 (可選，增強互動性)
 .img-project-thumb {
-    transition: transform 0.5s ease; // 圖片縮放過渡
+  transition: transform 0.5s ease; // 圖片縮放過渡
 }
 
 .portfolio-link:hover .img-project-modal {
-    transform: scale(1.05); // 懸停時放大 5%
+  transform: scale(1.05); // 懸停時放大 5%
 }
 
 .img-project-modal {
-    width: auto;
-    // 🌟 固定圖片高度 (您可以根據需要調整)
-    height: auto; 
-    
-    // 確保圖片填滿容器，如果比例不匹配則裁剪邊緣
-    object-fit: cover; 
-    
-    // 讓圖片在卡片網格中看起來更專業
-    border-radius: 5px; 
+  width: auto;
+  // 🌟 固定圖片高度 (您可以根據需要調整)
+  height: auto;
+
+  // 確保圖片填滿容器，如果比例不匹配則裁剪邊緣
+  object-fit: cover;
+
+  // 讓圖片在卡片網格中看起來更專業
+  border-radius: 5px;
 }
 
 /* Enable Hover on Desktop (992px is Bootstrap's lg breakpoint) */
 @media (min-width: 992px) {
-    .dropdown-hover:hover .dropdown-menu {
-        display: block;
-        margin-top: 0; /* Prevents a gap that closes the menu when moving cursor */
-    }
+  .dropdown-hover:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* Prevents a gap that closes the menu when moving cursor */
+  }
 }
 
 /* Optional: Smooth transition for the dropdown */
 .dropdown-menu {
-    transition: all 0.3s ease;
-    border-radius: 8px;
-}Yeah 
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
 
-/* Style the 'All Members' link slightly differently if desired */
-.dropdown-item.fw-bold {
-    color: var(--bs-primary);
+/* Custom Split Navbar Toggle Positioning */
+.dropdown-toggle-split {
+  padding-left: 5px !important;
+  padding-right: 10px !important;
+  padding-top: 17px !important;
+  display: flex;
+  align-items: center;
+  border-left: none !important;
+  /* Remove Bootstrap default split border */
+}
+
+.dropdown-toggle-split::after {
+  margin-left: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .nav-item.dropdown.d-flex {
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    /* Prevents vertical centering of absolute children */
+  }
+
+  .nav-item.dropdown .dropdown-menu {
+    top: 100% !important;
+    /* Ensures it starts at the bottom of the navbar */
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .nav-item.dropdown.d-flex {
+    justify-content: flex-start;
+  }
+
+  .nav-item.dropdown .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100% !important;
+    flex-basis: 100%;
+    /* Force wrap to next line on mobile */
+    border: none;
+    box-shadow: none !important;
+    background: transparent;
+    padding-left: 1rem;
+    transform: none !important;
+    display: none;
+  }
+
+  .nav-item.dropdown .dropdown-menu.show {
+    display: block !important;
+  }
+
+  .dropdown-toggle-split {
+    padding: 0.5rem 0.5rem !important;
+  }
 }
