@@ -5,6 +5,17 @@ import yaml
 import os
 import re
 
+# 獲取目前腳本所在的資料夾路徑 (_tools)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 使用 os.path.join 來確保路徑在任何環境都正確
+# 假設你的 bib 檔跟腳本放在同一個資料夾 (_tools)
+BIB_FILE = os.path.join(BASE_DIR, 'export-bibtex.bib')
+
+# 成員檔和產出檔在 _data 資料夾 (相對於 _tools 來說是在上一層的 _data)
+MEMBERS_FILE = os.path.join(BASE_DIR, '..', '_data', 'members.yml')
+OUTPUT_YAML_FILE = os.path.join(BASE_DIR, '..', '_data', 'publications.yml')
+
 # NASA ADS Journal Macros 對照表
 # 您可以根據 https://ui.adsabs.harvard.edu/help/actions/journal-macros 繼續增加
 ADS_JOURNAL_MACROS = {
