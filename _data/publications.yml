@@ -1,16 +1,4 @@
 - year: '2025'
-  month: December
-  title: 'libyt: an In Situ Interface Connecting Simulations with yt, Python, and
-    Jupyter Workflows'
-  authors: <strong>Shin-Rong Tsai</strong>, <strong>Hsi-Yu Schive</strong>, and Matthew
-    J. Turk
-  journal: arXiv e-prints
-  volume: ''
-  number: ''
-  pages: arXiv:2512.11142
-  link_value: https://doi.org/10.48550/arXiv.2512.11142
-  tags: []
-- year: '2025'
   month: November
   title: 'The tidal evolution of anisotropic subhaloes: a new pathway to creating
     isotropic and cored satellites'

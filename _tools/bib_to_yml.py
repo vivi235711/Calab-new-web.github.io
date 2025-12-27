@@ -68,10 +68,7 @@ ADS_JOURNAL_MACROS = {
     r'\zap': 'Z. Astrophys.',
 }
 
-# 配置
-BIB_FILE = 'export-bibtex.bib'
-MEMBERS_FILE = '../_data/members.yml'
-OUTPUT_YAML_FILE = '../_data/publications.yml'
+
 
 def load_members():
     """載入成員及其別名"""
