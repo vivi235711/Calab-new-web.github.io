@@ -7,21 +7,21 @@
 $navbar-total-height: 66px;
 
 main {
-  // 使用 SCSS 變數來設定精確的偏移量
+  // Use SCSS variable to set precise offset
   margin-top: $navbar-total-height;
 
-  // 由於我們使用 margin-top，您可以移除 HTML 上的 pt-5 Class
+  // Since we use margin-top, the pt-5 class on HTML can be removed
 }
 
 .homepage-masthead {
-  // 減去 Navbar 的高度，讓標題區塊佔據剩下的視窗空間
-  // $navbar-total-height 必須是您之前計算出的 Navbar 總高度
+  // Subtract Navbar height to allow header to occupy remaining viewport space
+  // $navbar-total-height must match the previously calculated Navbar total height
   height: 100vh;
 
-  // 設置文字遮罩，確保在背景圖上清晰
+  // Set text shadow to ensure legibility on background image
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 
-  // 確保文字和圖標在暗色背景圖上是白色的
+  // Ensure text and icons are white on dark background image
   .intro-lead-in,
   .intro-heading,
   a {
@@ -34,31 +34,30 @@ main {
 }
 
 .body-home-bg {
-  // 注意：背景圖的 URL 將由 Liquid 在 HTML 中動態設定
+  // Note: Background image URL is dynamically set by Liquid in HTML
 
-  // 確保背景圖覆蓋整個視口
+  // Ensure background image covers the entire viewport
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 
-  // 設置背景圖固定不動，只讓內容滾動 (視差效果)
+  // Set background to fixed for scrolling parallax effect
   background-attachment: fixed;
 }
 
-// -------------------------------------------------------------
-// 統一團隊成員頭像尺寸 (使用 object-fit 確保圖片不被拉伸)
+// Standardize team member avatar dimensions (using object-fit to prevent stretching)
 // -------------------------------------------------------------
 .img-team {
-  // 設定統一的寬度和高度 (請根據您的設計調整數值)
+  // Set consistent width and height (adjust values as needed)
   width: 150px;
   height: 150px;
 
-  // 確保圖片在容器內不會被拉伸或壓縮失真
+  // Ensure image is not stretched or compressed within the container
   object-fit: cover;
 
-  // 確保圖片垂直和水平居中 (如果容器是 flex 或 block 元素)
+  // Ensure image is centered vertically and horizontally (if container is flex or block)
   margin: 0 auto;
-  display: block; // 確保 margin: 0 auto; 在 block 元素上生效
+  display: block; // Ensure margin: 0 auto; works on block elements
 }
 
 .img-hero {
@@ -102,45 +101,44 @@ main {
 }
 
 
-// 專案卡片容器 (Portfolio Link)
+// Project card container (Portfolio Link)
 .portfolio-link {
-  // 確保圖片和懸停層在同一個堆疊上下文中
+  // Ensure image and hover overlay are in the same stacking context
   overflow: hidden;
 
-  // 讓不透明度、顏色等變化平滑過渡
+  // Enable smooth transitions for opacity, color, etc.
   .portfolio-hover {
-    transition: opacity 0.3s ease; // 懸停層過渡效果
+    transition: opacity 0.3s ease; // Hover overlay transition effect
   }
 }
 
-// 當滑鼠懸停在 .portfolio-link 上時
+// When mouse hovers over .portfolio-link
 .portfolio-link:hover {
 
-  // 讓懸停層顯示 (從 opacity-0 變為 opacity-100)
+  // Display hover overlay (change from opacity-0 to opacity-1)
   .portfolio-hover {
     opacity: 1 !important;
   }
 }
 
-// --------------------------------------------------
-// 讓圖片在懸停時有微小的縮放效果 (可選，增強互動性)
+// Optional: Subtle scale effect on hover for enhanced interactivity
 .img-project-thumb {
-  transition: transform 0.5s ease; // 圖片縮放過渡
+  transition: transform 0.5s ease; // Image scale transition
 }
 
 .portfolio-link:hover .img-project-modal {
-  transform: scale(1.05); // 懸停時放大 5%
+  transform: scale(1.05); // Scale up by 5% on hover
 }
 
 .img-project-modal {
   width: auto;
-  // 🌟 固定圖片高度 (您可以根據需要調整)
+  // 🌟 Fixed image height (adjust as needed)
   height: auto;
 
-  // 確保圖片填滿容器，如果比例不匹配則裁剪邊緣
+  // Ensure image fills container, cropping edges if aspect ratios mismatch
   object-fit: cover;
 
-  // 讓圖片在卡片網格中看起來更專業
+  // Give project cards a professional look in the grid
   border-radius: 5px;
 }
 
@@ -159,20 +157,8 @@ main {
   border-radius: 8px;
 }
 
-/* Custom Split Navbar Toggle Positioning */
-.dropdown-toggle-split {
-  padding-left: 5px !important;
-  padding-right: 10px !important;
-  padding-top: 17px !important;
-  display: flex;
-  align-items: center;
-  border-left: none !important;
-  /* Remove Bootstrap default split border */
-}
-
-.dropdown-toggle-split::after {
-  margin-left: 0 !important;
-}
+// Custom Dropdown Positioning
+// -------------------------------------------------------------
 
 @media (min-width: 992px) {
   .nav-item.dropdown.d-flex {
@@ -189,7 +175,7 @@ main {
 }
 
 @media (max-width: 991.98px) {
-  .nav-item.dropdown.d-flex {
+  .nav-item.dropdown {
     justify-content: flex-start;
   }
 
@@ -211,7 +197,16 @@ main {
     display: block !important;
   }
 
-  .dropdown-toggle-split {
+  .dropdown-toggle {
     padding: 0.5rem 0.5rem !important;
+  }
+}
+
+// Global Section Padding Refinements
+// -------------------------------------------------------------
+section {
+  @media (max-width: 767.98px) {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

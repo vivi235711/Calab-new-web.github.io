@@ -43,7 +43,7 @@
 </head>
 
 
-{% comment %} 根據判斷結果，設置 body 的 Class {% endcomment %}
+{% comment %} Set body class based on page properties {% endcomment %}
 {% if page.bg_image %}
     {% assign body_class = 'body-home-bg' %}
     {% assign bg_image_url = page.bg_image | relative_url %}
@@ -60,7 +60,7 @@
     <!-- <button onclick="scrollToTop()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up" style="font-size:20px;"></i></button> -->
 
 
-    {% comment %} 判斷是否應該顯示 Page Header {% endcomment %}
+    {% comment %} Check if Page Header should be displayed {% endcomment %}
     {% if page.hero_title %}
         {% include hero.html %} 
     {% endif %}

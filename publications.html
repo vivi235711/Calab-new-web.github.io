@@ -52,8 +52,8 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                     {% for pub in sorted_pubs %}
 
                     {% comment %}
-                    tags: 結合年份、月份和自定義標籤
-                    注意: data-tags 的內容現在會是 "YYYY TAG1 TAG2"
+                    tags: Combine year, month, and custom tags
+                    Note: data-tags content format: "YYYY TAG1 TAG2"
                     {% endcomment %}
                     {% assign year_tag = pub.year | append: '' %}
                     {% assign slugified_tags = pub.tags | map: 'slugify' | join: ' ' %}
@@ -61,10 +61,10 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                     <!-- {% assign all_tags = year_tag | append: ' ' | append: slugified_tags %} -->
                     {% assign all_tags_list = pub.year | append: '' %}
                     {% for tag in pub.tags %}
-                    {% comment %} 步驟 1: 處理單個標籤，並將其 slugify {% endcomment %}
+                    {% comment %} Step 1: Process single tag and slugify {% endcomment %}
                     {% assign slugified_tag = tag | slugify %}
 
-                    {% comment %} 步驟 2: 將空格和處理後的標籤追加到主字串 {% endcomment %}
+                    {% comment %} Step 2: Append space and processed tag to main string {% endcomment %}
                     {% assign all_tags_list = all_tags_list | append: ' ' | append: slugified_tag %}
                     {% endfor %}
 

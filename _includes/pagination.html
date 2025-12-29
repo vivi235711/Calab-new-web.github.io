@@ -1,7 +1,7 @@
 {% comment %}
     Bootstrap 5 Pagination Template
-    用於渲染新聞列表底部的分頁控制項。
-    需要啟用 jekyll-paginate 插件。
+    Used to render pagination controls at the bottom of news lists.
+    Requires jekyll-paginate plugin.
 {% endcomment %}
 
 {% if paginator.total_pages > 1 %}
@@ -29,11 +29,10 @@
                 {% if page == paginator.page %}
                     <span class="page-link">{{ page }}</span>
                 {% else %}
-                    {% comment %} 🌟 關鍵修正：判斷是否為 Page 1 {% endcomment %}
                     {% assign link_path = site.paginate_path | replace: ':num', page %}
                     
                     {% if page == 1 %}
-                        {% comment %} 如果是 Page 1，連結到新聞主頁 /news/ {% endcomment %}
+                        {% comment %} If Page 1, link to news home /news/ {% endcomment %}
                         {% assign link_path = "/news/" %} 
                     {% endif %}
                     

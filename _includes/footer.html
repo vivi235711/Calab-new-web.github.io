@@ -3,23 +3,23 @@
 
         <div class="row align-items-center">
             <div class="col-md-4 text-center text-md-start">
-                <span class="copyright">Copyright &copy; CA Lab 2023</span>
+                <span class="copyright">Copyright &copy; CA Lab {{ "now" | date: "%Y" }}</span>
             </div>
             <div class="col-md-4 my-3 my-md-0">
                 <ul class="list-unstyled d-flex justify-content-center mb-0">
-                    <li class="me-3"><a href="https://github.com/gamer-project" class="text-white"><i class="fa-brands fa-github fa-lg"></i></a>
+                    <li class="me-3"><a href="https://github.com/gamer-project" target="_blank" class="text-white"><i class="fa-brands fa-github fa-lg"></i></a>
                     </li>
-                    <li class="me-3"><a href="#" class="text-white"><i class="fa-brands fa-slack fa-lg"></i></a>
+                    <li class="me-3"><a href="https:/calab-ntu.slack.com" target="_blank" class="text-white"><i class="fa-brands fa-slack fa-lg"></i></a>
                     </li>
-                    <li><a href="#" class="text-white"><i class="fa-brands fa-google fa-lg"></i></a>
+                    <li><a href="https://groups.google.com/g/calab-ntu" target="_blank" class="text-white"><i class="fa-brands fa-google fa-lg"></i></a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-4 text-center text-md-end">
                 <ul class="list-unstyled d-flex justify-content-center justify-content-md-end mb-0 quicklinks">
-                        <li class="ms-3"><a href="#">Privacy Policy</a>
+                        <li class="ms-3"><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
                         </li>
-                        <li class="ms-3"><a href="#">Terms of Use</a>
+                        <li class="ms-3"><a href="{{ '/terms/' | relative_url }}">Terms of Use</a>
                         </li>
                 </ul>
             </div>

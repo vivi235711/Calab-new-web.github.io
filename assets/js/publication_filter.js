@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterCheckboxes = document.querySelectorAll('.pub-filter-checkbox');
     const publicationItems = document.querySelectorAll('.publication-ol li.publication');
     
-    // ------------------------------------------------------
-    // 1. 核心篩選函式 (修改為 AND/OR 邏輯)
-    // ------------------------------------------------------
+    /**
+     * Core filtering function (Modified for AND/OR logic)
+     */
     function filterPublications() {
         
-        // 1. 收集並按組別分組選中的篩選條件
+        // 1. Collect and group selected filters by group (e.g., 'year', 'tag')
         const activeFiltersByGroup = {};
         filterCheckboxes.forEach(checkbox => {
             if (checkbox.checked) {
-                const group = checkbox.getAttribute('data-group'); // 'year' 或 'tag'
+                const group = checkbox.getAttribute('data-group'); // 'year' or 'tag'
                 const filter = checkbox.getAttribute('data-filter');
                 
                 if (!activeFiltersByGroup[group]) {
@@ -21,54 +21,54 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // 獲取所有篩選組的名稱 (e.g., ['year', 'tag'])
+        // Get names of all active filter groups (e.g., ['year', 'tag'])
         const filterGroups = Object.keys(activeFiltersByGroup);
 
-        // 如果沒有選中任何篩選條件，則顯示所有項目
+        // If no filters are selected, show all items
         if (filterGroups.length === 0) {
             publicationItems.forEach(item => item.style.display = '');
             return;
         }
 
-        // 2. 遍歷所有出版物項目，進行 AND/OR 檢查
+        // 2. Iterate through all publication items for AND/OR check
         publicationItems.forEach(item => {
             const itemTags = item.getAttribute('data-tags')
                                  .split(' ')
                                  .filter(tag => tag.length > 0);
             
-            // 預設假設該項目通過篩選
+            // Default assumption is the item passes the filter
             let passesAllGroups = true;
             
-            // 遍歷所有選中的篩選組 (例如 Year Group, Tag Group)
+            // Iterate through each active filter group (e.g., Year Group, Tag Group)
             for (const group of filterGroups) {
                 const activeFilters = activeFiltersByGroup[group];
                 
-                // 檢查該組別的條件是否被滿足 (組內使用 OR 邏輯)
-                // 只要文章的標籤中包含該組別的任一篩選條件，即通過該組別
+                // Check if the group condition is met (OR logic within the group)
+                // Pass if any tag in the article matches any filter in the group
                 const passesGroup = activeFilters.some(filter => itemTags.includes(filter));
                 
-                // 如果文章不通過該組別的篩選，則不通過總篩選 (組間使用 AND 邏輯)
+                // Fail general filter if group check fails (AND logic between groups)
                 if (!passesGroup) {
                     passesAllGroups = false;
                     break; 
                 }
             }
 
-            // 3. 根據最終結果顯示或隱藏項目
+            // 3. Show or hide item based on filtering results
             if (passesAllGroups) {
-                item.style.display = ''; // 顯示
+                item.style.display = ''; // Show
             } else {
-                item.style.display = 'none'; // 隱藏
+                item.style.display = 'none'; // Hide
             }
         });
     }
 
-    // 2. 事件監聽：當任何 checkbox 改變時觸發篩選
+    // 2. Event Listener: Trigger filtering when any checkbox changes
     filterCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', filterPublications);
     });
     
-    // ... (保留原有的展開/收合邏輯) ...
+    // ... (Retain existing expand/collapse logic) ...
     const yearCollapseButton = document.getElementById('filter-year');
     const yearList = document.getElementById('filter-year-list');
 
@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
         yearCollapseButton.addEventListener('click', function() {
             const isCollapsed = yearList.style.display === 'none';
             yearList.style.display = isCollapsed ? 'block' : 'none';
-            // 更改箭頭方向
+            // Toggle arrow direction
             const icon = yearCollapseButton.querySelector('i');
             icon.classList.toggle('fa-chevron-right', !isCollapsed);
             icon.classList.toggle('fa-chevron-down', isCollapsed);
         });
         
-        // 預設收合
+        // Collapse by default
         yearList.style.display = 'none';
     }
 });

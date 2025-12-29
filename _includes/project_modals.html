@@ -1,6 +1,6 @@
 {% comment %} 
 _includes/project_modals.html
-用於渲染所有研究專案的模態框 (Modal) 內容。
+Used to render modal content for all research projects.
 {% endcomment %}
 
 {% assign all_projects = site.projects | sort: 'sort_order' %}
@@ -34,7 +34,7 @@ _includes/project_modals.html
                                 {{ project.content }}
                                 
                                 {% comment %} 
-                                如果您需要在 Front Matter 中添加額外資料 (如日期、客戶、分類)，可以在這裡渲染 
+                                Render extra metadata (e.g., date, client, category) from Front Matter if present 
                                 {% endcomment %}
                                 {% if project.date or project.client or project.category %}
                                 <ul class="list-unstyled mt-3 text-secondary small">

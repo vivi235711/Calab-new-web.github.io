@@ -28,6 +28,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install bibtexparser pyyaml latexcodec
+      - name: Run conversion script
+        run: python _tools/bib_to_yml.py
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add _data/publications.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            # 使用 [skip ci] 避免觸發重複的部署工作流
+            git commit -m "chore: auto-update publications.yml [skip ci]"
+            git push
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll

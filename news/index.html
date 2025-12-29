@@ -14,7 +14,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
     
     <div class="row mb-5 g-4">
         {% for featured_item in featured limit: 3 %}
-            {% comment %} 尋找 matching URL 的文章 {% endcomment %}
+            {% comment %} Find posts with matching URL {% endcomment %}
             {% assign target_url = featured_item.url %}
             {% assign post = site.posts | where: "url", target_url | first %}
             

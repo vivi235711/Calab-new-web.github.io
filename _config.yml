@@ -7,7 +7,6 @@ baseurl: "/Calab-new-web.github.io"
 # Build settings
 markdown: kramdown
 exclude:
-  - .github/workflows/updates-pubs.yml
   - .github/workflows/jekyll-gh-pages.yml
   - README.md
   - LICENSE
@@ -29,16 +28,16 @@ paginate_path: "/news/page:num/"
 
 collections:
   members:
-    output: false # 設定為 false，表示不生成獨立的成員頁面 (我們只需要列表)
+    output: false # Set to false to prevent generating individual member pages (list only)
     permalink: /members/:path/
   useful:
     output: false
     permalink: /useful/:path/
   courses:
-    output: false # 課程通常不需要獨立頁面
+    output: false # Courses usually don't need individual pages
     permalink: /courses/:path/
   projects:
-    output: false # 專案細節將透過 Modal 呈現，不需要獨立頁面
+    output: false # Project details shown via Modals, no separate pages needed
     permalink: /projects/:path/
 
 sass:
