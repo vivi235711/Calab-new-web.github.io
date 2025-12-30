@@ -84,7 +84,7 @@
   image: "/assets/img/member/pinyu.webp"
   email: "vivi235711@gmail.com"
   github: "vivi235711"
-  bio: "test and super long meaning less text. He hid under the covers..."
+  bio: "Investigating the Soliton-Halo relation in Fuzzy Dark Matter simulations."
 
 - name: "Hsin Fan"
   role: "doctoral"
@@ -273,6 +273,7 @@
 - name: "Barry T. Chiang"
   role: "previous"
   position: "Previous Research Assistant"
-  image: "/assets/img/member/undecided.webp"
+  image: "/assets/img/member/barry.webp"
   email: "barrytchiang@gmail.com"
   github: "BarryTC"
+  bio: "Fuzzy dark matter, subhalo tidal evolution, and numerical simulations"

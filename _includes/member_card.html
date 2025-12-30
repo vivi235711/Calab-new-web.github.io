@@ -15,19 +15,16 @@
         </p>
         
         <ul class="list-inline social-buttons member-list text-center">
-            {%comment%} Only show the below link if it not previous member. {%endcomment%}
-            {% if member.role != 'previous' %}
-                {% if member.website %}
-                <li class="list-inline-item"><a href="{{ member.website }}" target="_blank" class="text-primary"><i class="fa-solid fa-landmark"></i></a></li>
-                {% endif %}
+            {% if member.website %}
+            <li class="list-inline-item"><a href="{{ member.website }}" target="_blank" class="text-primary"><i class="fa-solid fa-landmark"></i></a></li>
+            {% endif %}
 
-                {% if member.email %}
-                <li class="list-inline-item"><a href="mailto:{{ member.email }}" target="_blank" class="text-primary"><i class="fa-solid fa-envelope"></i></a></li>
-                {% endif %}
+            {% if member.email %}
+            <li class="list-inline-item"><a href="mailto:{{ member.email }}" target="_blank" class="text-primary"><i class="fa-solid fa-envelope"></i></a></li>
+            {% endif %}
 
-                {% if member.github %}
-                <li class="list-inline-item"><a href="https://github.com/{{ member.github }}" target="_blank" class="text-primary"><i class="fa-brands fa-github"></i></a></li>
-                {% endif %}
+            {% if member.github %}
+            <li class="list-inline-item"><a href="https://github.com/{{ member.github }}" target="_blank" class="text-primary"><i class="fa-brands fa-github"></i></a></li>
             {% endif %}
         </ul>
     </div>
