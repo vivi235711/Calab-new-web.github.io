@@ -20,15 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // 1. Check Scroll Position
         if (currentScrollY === 0) {
             // At the very top: Make transparent
-            mainNav.classList.remove('bg-dark', 'navbar-solid');
+            mainNav.classList.remove('bg-dark', 'navbar-scrolled');
             mainNav.classList.add('navbar-transparent');
         } else if (currentScrollY > SCROLL_DISTANCE) {
             // Scrolled down: Make solid (bg-dark)
             mainNav.classList.remove('navbar-transparent');
-            mainNav.classList.add('bg-dark', 'navbar-solid');
+            mainNav.classList.add('bg-dark', 'navbar-scrolled');
         } else {
              // Between 0 and SCROLL_DISTANCE: Maintain transparency
-             mainNav.classList.remove('bg-dark', 'navbar-solid');
+             mainNav.classList.remove('bg-dark', 'navbar-scrolled');
              mainNav.classList.add('navbar-transparent');
         }
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navToggler.addEventListener('click', function() {
             // Force solid background when the toggler is clicked (i.e., menu opens on mobile)
             if (mainNav.classList.contains('navbar-transparent')) {
-                mainNav.classList.add('bg-dark', 'navbar-solid');
+                mainNav.classList.add('bg-dark', 'navbar-scrolled');
                 mainNav.classList.remove('navbar-transparent');
             }
         });

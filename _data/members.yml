@@ -14,6 +14,8 @@
   email: "hyschive@ntu.edu.tw"
   github: "hyschive"
   bio: "test and super long meaning less text. He hid under the covers..."
+  aliases:
+    - "H.-Y. Schive"
 
 - name: "Tak-Pong Woo"
   role: "faculty"
@@ -123,6 +125,8 @@
   position: "Previous Master/Doctoral Student"
   image: "/assets/img/member/undecided.webp"
   email: "r03222072@ntu.edu.tw"
+  aliases:
+    - "Ka-Hou Leong"
 
 - name: "Po-Hsun Tseng"
   role: "previous"

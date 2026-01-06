@@ -1,7 +1,18 @@
 .lab-navbar-logo {
-  height: 40px;
+  height: 50px;
   width: auto;
   max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 
+              0 0 15px rgba(0, 255, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.lab-navbar-logo:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 
+              0 0 25px rgba(0, 255, 0, 0.3);
+
+  filter: brightness(1.1);
 }
 
 $navbar-total-height: 66px;
@@ -79,15 +90,27 @@ main {
 .navbar-transparent {
   transition: background-color 0.3s ease-in-out;
   background-color: transparent !important;
+  letter-spacing: 1px;
   // box-shadow: none !important; /* Remove shadow for a truly clean look */
 }
 
 .navbar-scrolled {
   transition: background-color 0.3s ease-in-out;
   /* Use your desired solid color here, matching your fixed-top bg-dark */
-  background-color: #212529 !important;
+  background-color: rgba(0, 0, 0, 0.5)!important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  /* Adds shadow when solid */
+  backdrop-filter: blur(10px);
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bg {
+  background-color: #1a1d21;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3rem 0;
+  color: #adb5bd;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
 .hero-section {
@@ -209,4 +232,16 @@ section {
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+.course-link-card .icon-bg {
+    color: $primary;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.course-link-card:hover .icon-bg {
+    opacity: 1;
+    /* 增加發光效果 */
+    filter: drop-shadow(0 0 5px rgba(254, 209, 54, 0.2));
 }

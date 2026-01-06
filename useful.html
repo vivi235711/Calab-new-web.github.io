@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Useful - CA Lab
+permalink: /useful/
 
 hero_title: All Useful Links
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
@@ -8,7 +9,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
 {% assign all_links = site.useful | sort: 'sort_order' %}
 
-<section id="useful-links-main" class="py-5 bg-body-tertiary border border-subtle-dark">
+<section id="useful-links-main" class="py-5 bg-body-tertiary border">
     <div class="container">
         
         <div class="row text-center g-4 pb-5 justify-content-center">
@@ -34,7 +35,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
     {% assign link_id = link_item.title | slugify %}
     
     <section id="{{ link_id }}" class="py-5">
-        <div class="container bg-body-tertiary border border-subtle-dark p-4 anchor-offset-fix">
+        <div class="container bg-body-tertiary border  p-4 anchor-offset-fix">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading mb-4">{{ link_item.title }}</h2>

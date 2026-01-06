@@ -43,3 +43,4 @@ collections:
 sass:
   # The style option controls the output format of the compiled CSS.
   style: compressed
+  sourcemap: always

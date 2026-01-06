@@ -53,7 +53,7 @@
   number: ''
   pages: arXiv:2509.23231
   link_value: https://doi.org/10.48550/arXiv.2509.23231
-  tags: []
+  tags: ['FDM']
 - year: '2025'
   month: August
   title: Deciphering the Soliton-Halo Relation in Fuzzy Dark Matter
@@ -65,11 +65,11 @@
   number: '6'
   pages: '061002'
   link_value: https://doi.org/10.1103/9dqj-q6mt
-  tags: []
+  tags: ['FDM']
 - year: '2025'
   month: August
   title: A Hybrid Scheme for Fuzzy Dark Matter Simulations Combining the Schrödinger
-    and Hamilton–Jacobi–Madelung Equations
+    and Hamilton-Jacobi-Madelung Equations
   authors: <strong>Alexander Kunkel</strong>, Hei Yin Jowett Chan, <strong>Hsi-Yu
     Schive</strong>, <strong>Hsinhao Huang</strong>, and <strong>Pin-Yu Liao</strong>
   journal: Astrophys. J. Suppl. Ser.
@@ -77,7 +77,7 @@
   number: '2'
   pages: '39'
   link_value: https://doi.org/10.3847/1538-4365/addc59
-  tags: []
+  tags: ['FDM']
 - year: '2025'
   month: July
   title: 'Cosmological zoom-in simulation of fuzzy dark matter down to z = 0: tidal
@@ -90,7 +90,7 @@
   number: '3'
   pages: 2653-2666
   link_value: https://doi.org/10.1093/mnras/staf828
-  tags: []
+  tags: ['FDM']
 - year: '2025'
   month: February
   title: Boosting Supermassive Black Hole Growth in the Early Universe by Fuzzy Dark
@@ -102,7 +102,7 @@
   number: '5'
   pages: '051402'
   link_value: https://doi.org/10.1103/PhysRevLett.134.051402
-  tags: []
+  tags: ['FDM']
 - year: '2024'
   month: December
   title: Cool-Core Destruction in Merging Clusters with AGN Feedback and Radiative
@@ -151,7 +151,7 @@
   number: '1'
   pages: 129-148
   link_value: https://doi.org/10.1093/mnras/stae793
-  tags: []
+  tags: ['FDM']
 - year: '2023'
   month: June
   title: Einstein rings modulated by wavelike dark matter from anomalies in gravitationally
@@ -164,7 +164,7 @@
   number: ''
   pages: 736-747
   link_value: https://doi.org/10.1038/s41550-023-01943-9
-  tags: []
+  tags: ['FDM']
 - year: '2023'
   month: June
   title: Cosmological simulations of two-component wave dark matter
@@ -175,7 +175,7 @@
   number: '1'
   pages: 515-534
   link_value: https://doi.org/10.1093/mnras/stad998
-  tags: []
+  tags: ['FDM']
 - year: '2023'
   month: June
   title: On the Dynamical Heating of Dwarf Galaxies in a Fuzzy Dark Matter Halo
@@ -186,7 +186,7 @@
   number: '2'
   pages: '68'
   link_value: https://doi.org/10.3847/1538-4357/acc73d
-  tags: []
+  tags: ['FDM']
 - year: '2023'
   month: March
   title: 'Hydrodynamic Simulations of a Relativistic Jet Interacting with the Intracluster
@@ -210,7 +210,7 @@
   number: '3'
   pages: 4045-4063
   link_value: https://doi.org/10.1093/mnras/stac3358
-  tags: []
+  tags: ['FDM']
 - year: '2021'
   month: July
   title: An adaptive mesh, GPU-accelerated, and error minimized special relativistic
@@ -222,7 +222,7 @@
   number: '3'
   pages: 3298-3315
   link_value: https://doi.org/10.1093/mnras/stab1006
-  tags: []
+  tags: ['gamer_dev']
 - year: '2021'
   month: July
   title: On the Random Motion of Nuclear Objects in a Fuzzy Dark Matter Halo
@@ -234,7 +234,7 @@
   number: '1'
   pages: '27'
   link_value: https://doi.org/10.3847/1538-4357/ac043f
-  tags: []
+  tags: ['FDM']
 - year: '2021'
   month: May
   title: Soliton oscillations and revised constraints from Eridanus II of fuzzy dark
@@ -246,7 +246,7 @@
   number: '10'
   pages: '103019'
   link_value: https://doi.org/10.1103/PhysRevD.103.103019
-  tags: []
+  tags: ['FDM']
 - year: '2021'
   month: March
   title: 'Large-scale Dynamo in a Primordial Accretion Flow: An Interpretation from
@@ -268,7 +268,7 @@
   number: '11'
   pages: '111102'
   link_value: https://doi.org/10.1103/PhysRevLett.125.111102
-  tags: []
+  tags: ['FDM']
 - year: '2020'
   month: May
   title: Soliton Random Walk and the Cluster-Stripping Problem in Ultralight Dark
@@ -280,7 +280,7 @@
   number: '20'
   pages: '201301'
   link_value: https://doi.org/10.1103/PhysRevLett.124.201301
-  tags: []
+  tags: ['FDM']
 - year: '2020'
   month: May
   title: Dynamical evidence of a dark solitonic core of 10$^9$M$_\ensuremathødot$
@@ -292,7 +292,7 @@
   number: ''
   pages: '100503'
   link_value: https://doi.org/10.1016/j.dark.2020.100503
-  tags: []
+  tags: ['FDM']
 - year: '2020'
   month: February
   title: Testing the Prediction of Fuzzy Dark Matter Theory in the Milky Way Center
@@ -302,7 +302,7 @@
   number: '2'
   pages: '88'
   link_value: https://doi.org/10.3847/1538-4357/ab6598
-  tags: []
+  tags: ['FDM']
 - year: '2019'
   month: April
   title: Testing extreme-axion wave-like dark matter using the BOSS Lyman-alpha forest
@@ -314,7 +314,7 @@
   number: '3'
   pages: 4273-4286
   link_value: https://doi.org/10.1093/mnras/stz271
-  tags: []
+  tags: ['FDM']
 - year: '2019'
   month: January
   title: Time-symmetry, symplecticity and stability of Euler-Maclaurin and Lanczos-Dyche
@@ -350,7 +350,7 @@
   number: '2'
   pages: 2686-2699
   link_value: https://doi.org/10.1093/mnras/sty900
-  tags: []
+  tags: ['FDM']
 - year: '2018'
   month: August
   title: 'Magnification Bias of Distant Galaxies in the Hubble Frontier Fields: Testing
@@ -362,7 +362,7 @@
   number: '2'
   pages: '156'
   link_value: https://doi.org/10.3847/1538-4357/aacdad
-  tags: []
+  tags: ['FDM']
 - year: '2018'
   month: June
   title: Magnetohydrodynamics with GAMER
@@ -384,7 +384,7 @@
   number: '10'
   pages: '103523'
   link_value: https://doi.org/10.1103/PhysRevD.97.103523
-  tags: []
+  tags: ['FDM']
 - year: '2018'
   month: January
   title: Halo abundance and assembly history with extreme-axion wave dark matter at
@@ -395,7 +395,7 @@
   number: '1'
   pages: L36-L40
   link_value: https://doi.org/10.1093/mnrasl/slx159
-  tags: []
+  tags: ['FDM']
 - year: '2018'
   month: January
   title: 'Ultra Light Axionic Dark Matter: Galactic Halos and Implications for Observations
@@ -407,7 +407,7 @@
   number: '1'
   pages: '10'
   link_value: https://doi.org/10.3390/galaxies6010010
-  tags: []
+  tags: ['FDM']
 - year: '2017'
   month: November
   title: Recognising Axionic Dark Matter by Compton and de-Broglie Scale Modulation
@@ -419,7 +419,7 @@
   number: ''
   pages: '221103'
   link_value: https://doi.org/10.1103/PhysRevLett.119.221103
-  tags: []
+  tags: ['FDM']
 - year: '2017'
   month: June
   title: Jeans analysis for dwarf spheroidal galaxies in wave dark matter
@@ -430,7 +430,7 @@
   number: '2'
   pages: 1338-1348
   link_value: https://doi.org/10.1093/mnras/stx449
-  tags: []
+  tags: ['FDM']
 - year: '2017'
   month: April
   title: 'GRACKLE: a chemistry and cooling library for astrophysics'
@@ -455,7 +455,7 @@
   number: '2'
   pages: 024038
   link_value: https://doi.org/10.1103/PhysRevD.95.024038
-  tags: []
+  tags: ['FDM']
 - year: '2017'
   month: January
   title: 'Hydrodynamical Simulations of Colliding Jets: Modeling 3C 75'
@@ -478,7 +478,7 @@
   number: '1'
   pages: '89'
   link_value: https://doi.org/10.3847/0004-637X/818/1/89
-  tags: []
+  tags: ['FDM']
 - year: '2015'
   month: May
   title: Sound-triggered collapse of stably oscillating low-mass cores in a two-phase
@@ -502,7 +502,7 @@
   number: '26'
   pages: '261302'
   link_value: https://doi.org/10.1103/PhysRevLett.113.261302
-  tags: []
+  tags: ['FDM']
 - year: '2014'
   month: July
   title: Cosmic structure as the quantum interference of a coherent dark wave
@@ -513,7 +513,7 @@
   number: '7'
   pages: 496-499
   link_value: https://doi.org/10.1038/nphys2996
-  tags: []
+  tags: ['FDM']
 - year: '2011'
   month: June
   title: Vortex turbulence in linear Schrödinger wave mechanics
@@ -535,7 +535,7 @@
   number: ''
   pages: arXiv:1103.3373
   link_value: https://doi.org/10.48550/arXiv.1103.3373
-  tags: []
+  tags: ['gamer_dev']
 - year: '2010'
   month: February
   title: 'GAMER: A Graphic Processing Unit Accelerated Adaptive-Mesh-Refinement Code

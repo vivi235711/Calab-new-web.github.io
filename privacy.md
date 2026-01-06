@@ -4,7 +4,7 @@ title: Privacy Policy - CA Lab
 permalink: /privacy/
 ---
 
-<section class="py-5 bg-body-tertiary border border-subtle-dark">
+<section class="py-5 bg-body-tertiary border">
     <div class="container col-10 justify-content-center">
         <h1 class="mb-4">Privacy Policy</h1>
         

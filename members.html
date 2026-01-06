@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Members - CA Lab
+permalink: /members/
+
 hero_title: Members
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
@@ -16,7 +18,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
             {% assign members_list = all_members | where: 'role', role_id %}
 
-            <div id="{{ role_id }}-section" class="pt-5 bg-body-tertiary border border-subtle-dark {% unless forloop.first %}mt-5{% endunless %}">
+            <div id="{{ role_id }}-section" class="pt-5 bg-body-tertiary border {% unless forloop.first %}mt-5{% endunless %}">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading mb-3">{{ role_title }}</h2>
