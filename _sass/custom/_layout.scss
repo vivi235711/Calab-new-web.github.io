@@ -258,3 +258,9 @@ main {
 .text-shadow-dark {
   text-shadow: $text-shadow-dark;
 }
+// Glassmorphism background utility
+.bg-glass {
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid $glass-border-color;
+}
