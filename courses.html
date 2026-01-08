@@ -9,26 +9,23 @@ hero_bg_image: /assets/img/volume_rendering_thin.webp
 
 {% assign all_courses = site.courses | sort: 'sort_order' %}
 
-<section id="courses-main" class="py-5 bg-body-tertiary border">
-    <div class="container">
-
-        <div class="row text-center g-4 pb-5 justify-content-center">
-            {% for course in all_courses %}
-            {% assign course_id = course.title | slugify %}
-            <div class="col-md-4 col-sm-6">
-                <a href="#{{ course_id }}" class="text-decoration-none text-body course-link-card">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x icon-bg"></i>
-                        <i class="fa-solid fa-{{ course.icon_name }} fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading mt-3">{{ course.title }}</h4>
-                </a>
-                <p class="text-secondary">{{ course.subtitle }}</p>
-            </div>
-            {% endfor %}
+<section id="courses-main" class="py-5 bg-body-tertiary border container">
+    <div class="row text-center g-4 pb-5 justify-content-center">
+        {% for course in all_courses %}
+        {% assign course_id = course.title | slugify %}
+        <div class="col-md-4 col-sm-6">
+            <a href="#{{ course_id }}" class="text-decoration-none text-body course-link-card">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x icon-bg"></i>
+                    <i class="fa-solid fa-{{ course.icon_name }} fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading mt-3">{{ course.title }}</h4>
+            </a>
+            <p class="text-secondary">{{ course.subtitle }}</p>
         </div>
-        
+        {% endfor %}
     </div>
+
 </section>
 
 
@@ -36,7 +33,7 @@ hero_bg_image: /assets/img/volume_rendering_thin.webp
     {% assign course_id = course.title | slugify %}
     
     <section id="{{ course_id }}" class="py-5">
-        <div class="container bg-body-tertiary border p-4 anchor-offset-fix">
+        <div class="container bg-body-tertiary border p-4">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">{{ course.title }}</h2>
@@ -63,7 +60,7 @@ hero_bg_image: /assets/img/volume_rendering_thin.webp
                         {% for link in course.links %}
                         <li class="fs-6 mb-1">
                             <a class="text-info" href="{{ link.url }}" target="_blank">
-                                {{ link.name }} 
+                                {{ link.name }}
                                 <i class="fa-solid fa-arrow-up-right-from-square fa-xs ms-2"></i>
                             </a>
                         </li>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Projects - CA Lab
-permalink: /Research/
+permalink: /research/
 
 hero_title: Research
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
@@ -9,31 +9,29 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
 {% assign all_projects = site.projects | sort: 'sort_order' %}
 
-<section id="projects" class="py-5 bg-body-tertiary border">
-    <div class="container">
-        <div class="row g-4"> 
-            {% for project in all_projects %}
-            <div class="col-md-4 col-sm-6">
-                <a href="#portfolioModal-{{ project.modal_id }}" class="portfolio-link d-block position-relative" 
-                   data-bs-toggle="modal" 
-                   data-bs-target="#portfolioModal-{{ project.modal_id }}">
-                    
-                    <div class="portfolio-hover position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center opacity-0 bg-primary bg-opacity-50 text-white transition-opacity">
-                        <div class="portfolio-hover-content text-center">
-                            <i class="fa-solid fa-magnifying-glass-plus fa-3x"></i> 
-                        </div>
-                    </div>
-                    <img src="{{ project.image | relative_url }}" class="img-fluid img-project-thumb" alt="{{ project.title }} thumbnail">
-                </a>
+<section id="projects" class="py-5 bg-body-tertiary border container">
+    <div class="row g-4"> 
+        {% for project in all_projects %}
+        <div class="col-md-4 col-sm-6">
+            <a href="#portfolioModal-{{ project.modal_id }}" class="portfolio-link d-block position-relative" 
+                data-bs-toggle="modal" 
+                data-bs-target="#portfolioModal-{{ project.modal_id }}">
                 
-                <div class="portfolio-caption p-2 text-center">
-                    <h4 class="h5 mb-1">{{ project.title }}</h4>
-                    <p class="text-secondary mb-0">{{ project.subtitle }}</p>
+                <div class="portfolio-hover position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center opacity-0 bg-primary bg-opacity-50 text-white transition-opacity">
+                    <div class="portfolio-hover-content text-center">
+                        <i class="fa-solid fa-magnifying-glass-plus fa-3x"></i> 
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
+                <img src="{{ project.image | relative_url }}" class="img-fluid img-project-thumb" alt="{{ project.title }} thumbnail">
+            </a>
             
+            <div class="portfolio-caption p-2 text-center">
+                <h4 class="h5 mb-1">{{ project.title }}</h4>
+                <p class="text-secondary mb-0">{{ project.subtitle }}</p>
+            </div>
         </div>
+        {% endfor %}
+        
     </div>
 </section>
 

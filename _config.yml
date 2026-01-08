@@ -1,6 +1,7 @@
 # Jekyll configuration for GitHub Pages
 title: Computational Astrophysics Lab
 description: NTU Computational Astrophysics Lab
+author: CA Lab
 url: "https://vivi235711.github.io"
 baseurl: "/Calab-new-web.github.io"
 

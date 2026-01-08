@@ -7,88 +7,84 @@ hero_title: Publications
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
-<section id="publications" class="py-5 bg-body-tertiary border">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-2 publication-filter">
-                <div>
-                    <h4 style="margin:0px;">Filters</h4>
-                </div>
-
-                {% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
-                <div class="publication-filter-collpase">
-                    <button id="filter-year" value="true"><i class="fa fa-chevron-right "></i></button> Year
-                    <ul id="filter-year-list" class="filter-list"
-                        style="padding-left:10px; list-style-type: none; margin:0px;">
-                        {% for year in years %}
-                        <li>
-                            <input type="checkbox" id="tag-{{ year }}" data-group="year" data-filter="{{ year }}"
-                                class="pub-filter-checkbox" />
-                            <label for="tag-{{ year }}">{{ year }}</label>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-
-                <hr>
-
-                {% assign all_tags = site.data.publications | map: "tags" | flatten | uniq | sort %}
-                <div>
-                    <h4>Tags</h4>
-                    <ul class="filter-list" style="padding-left:10px; list-style-type: none; margin:0px;">
-                        {% for tag in all_tags %}
-                        <li>
-                            <input type="checkbox" id="tag-{{ tag | slugify }}" data-group="tag"
-                                data-filter="{{ tag | slugify }}" class="pub-filter-checkbox" />
-                            <label for="tag-{{ tag | slugify }}">{{ tag }}</label>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+<section id="publications" class="py-5 bg-body-tertiary border container">
+    <div class="row">
+        <div class="col-md-2 publication-filter">
+            <div>
+                <h4 style="margin:0px;">Filters</h4>
             </div>
-            <div class="col-md-10">
-                <ol class="publication-ol">
-                    {% assign sorted_pubs = site.data.publications %}
-                    {% for pub in sorted_pubs %}
 
-                    {% comment %}
-                    tags: Combine year, month, and custom tags
-                    Note: data-tags content format: "YYYY TAG1 TAG2"
-                    {% endcomment %}
-                    {% assign year_tag = pub.year | append: '' %}
-                    {% assign slugified_tags = pub.tags | map: 'slugify' | join: ' ' %}
-
-                    <!-- {% assign all_tags = year_tag | append: ' ' | append: slugified_tags %} -->
-                    {% assign all_tags_list = pub.year | append: '' %}
-                    {% for tag in pub.tags %}
-                    {% comment %} Step 1: Process single tag and slugify {% endcomment %}
-                    {% assign slugified_tag = tag | slugify %}
-
-                    {% comment %} Step 2: Append space and processed tag to main string {% endcomment %}
-                    {% assign all_tags_list = all_tags_list | append: ' ' | append: slugified_tag %}
-                    {% endfor %}
-
-                    <li class="text-muted publication" data-tags="{{ all_tags_list | strip }}"
-                        data-year="{{ pub.year }}">
-                        <div class="publication-title">
-                            <a href="{{ pub.link_value }}" target="_blank">
-                                {{ pub.title }}
-                            </a>
-                        </div>
-                        <div class="publication-author">
-                            {{ pub.authors }}
-                            <span style="font-style: italic;">{{ pub.journal }}</span>
-
-                            {% if pub.volume %} <strong>{{ pub.volume }}</strong>,{% endif %}
-                            {% if pub.pages %} {{ pub.pages }}{% endif %}
-                            ({{ pub.year }}).
-                        </div>
+            {% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
+            <div class="publication-filter-collpase">
+                <button id="filter-year" value="true"><i class="fa fa-chevron-right "></i></button> Year
+                <ul id="filter-year-list" class="filter-list"
+                    style="padding-left:10px; list-style-type: none; margin:0px;">
+                    {% for year in years %}
+                    <li>
+                        <input type="checkbox" id="tag-{{ year }}" data-group="year" data-filter="{{ year }}"
+                            class="pub-filter-checkbox" />
+                        <label for="tag-{{ year }}">{{ year }}</label>
                     </li>
                     {% endfor %}
-                </ol>
+                </ul>
             </div>
+
+            <hr>
+
+            {% assign all_tags = site.data.publications | map: "tags" | flatten | uniq | sort %}
+            <div>
+                <h4>Tags</h4>
+                <ul class="filter-list" style="padding-left:10px; list-style-type: none; margin:0px;">
+                    {% for tag in all_tags %}
+                    <li>
+                        <input type="checkbox" id="tag-{{ tag | slugify }}" data-group="tag"
+                            data-filter="{{ tag | slugify }}" class="pub-filter-checkbox" />
+                        <label for="tag-{{ tag | slugify }}">{{ tag }}</label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <ol class="publication-ol">
+                {% assign sorted_pubs = site.data.publications %}
+                {% for pub in sorted_pubs %}
+
+                {% comment %}
+                tags: Combine year, month, and custom tags
+                Note: data-tags content format: "YYYY TAG1 TAG2"
+                {% endcomment %}
+                {% assign year_tag = pub.year | append: '' %}
+                {% assign slugified_tags = pub.tags | map: 'slugify' | join: ' ' %}
+
+                <!-- {% assign all_tags = year_tag | append: ' ' | append: slugified_tags %} -->
+                {% assign all_tags_list = pub.year | append: '' %}
+                {% for tag in pub.tags %}
+                {% comment %} Step 1: Process single tag and slugify {% endcomment %}
+                {% assign slugified_tag = tag | slugify %}
+
+                {% comment %} Step 2: Append space and processed tag to main string {% endcomment %}
+                {% assign all_tags_list = all_tags_list | append: ' ' | append: slugified_tag %}
+                {% endfor %}
+
+                <li class="text-muted publication" data-tags="{{ all_tags_list | strip }}"
+                    data-year="{{ pub.year }}">
+                    <div class="publication-title">
+                        <a href="{{ pub.link_value }}" target="_blank">
+                            {{ pub.title }}
+                        </a>
+                    </div>
+                    <div class="publication-author">
+                        {{ pub.authors }}
+                        <span style="font-style: italic;">{{ pub.journal }}</span>
+
+                        {% if pub.volume %} <strong>{{ pub.volume }}</strong>,{% endif %}
+                        {% if pub.pages %} {{ pub.pages }}{% endif %}
+                        ({{ pub.year }}).
+                    </div>
+                </li>
+                {% endfor %}
+            </ol>
         </div>
     </div>
 </section>

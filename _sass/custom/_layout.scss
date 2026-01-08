@@ -1,223 +1,122 @@
+/* ==========================================================================
+   Custom Layout Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES & CONFIGURATION
+   ========================================================================== */
+
+// Navbar dimensions - used for precise layout calculations
+$navbar-total-height: 70px;
+
+// Text shadow values for consistent dark overlays
+$text-shadow-dark: 2px 2px 5px rgba(0, 0, 0, 0.8);
+
+// Border colors for consistent glass morphism effects
+$glass-border-color: rgba(255, 255, 255, 0.05);
+
+// Primary color with alpha for drop shadows
+$primary-glow: rgba(254, 209, 54, 0.2);
+
+/* ==========================================================================
+   2. GLOBAL & BASE STYLES
+   ========================================================================== */
+
+// Main content area - offset by navbar height
+main {
+  margin-top: $navbar-total-height;
+}
+
+/* ==========================================================================
+   3. SHARED LAYOUT COMPONENTS
+   ========================================================================== */
+
+/* --- Navigation & Header --- */
+
+// Navbar base styles
+#nav-bar {
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+  font-size: 1.05rem;
+  min-height: $navbar-total-height;
+
+  &.navbar-transparent {
+    background-color: transparent !important;
+  }
+
+  // Navbar in scrolled state with glass morphism effect
+  &.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid $glass-border-color;
+  }
+}
+// Lab logo with neon glow effect
 .lab-navbar-logo {
-  height: 50px;
+  height: 45px;
   width: auto;
   max-width: 100%;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 
-              0 0 15px rgba(0, 255, 0, 0.2);
+              0 0 10px rgba(0, 255, 0, 0.2);
   transition: all 0.2s ease-in-out;
-}
 
-.lab-navbar-logo:hover {
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 
-              0 0 25px rgba(0, 255, 0, 0.3);
-
-  filter: brightness(1.1);
-}
-
-$navbar-total-height: 66px;
-
-main {
-  // Use SCSS variable to set precise offset
-  margin-top: $navbar-total-height;
-
-  // Since we use margin-top, the pt-5 class on HTML can be removed
-}
-
-.homepage-masthead {
-  // Subtract Navbar height to allow header to occupy remaining viewport space
-  // $navbar-total-height must match the previously calculated Navbar total height
-  height: 100vh;
-
-  // Set text shadow to ensure legibility on background image
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-
-  // Ensure text and icons are white on dark background image
-  .intro-lead-in,
-  .intro-heading,
-  a {
-    color: #fff;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 
+                0 0 15px rgba(0, 255, 0, 0.2);
+    filter: brightness(1.1);
   }
 }
 
-.text-shadow-dark {
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+// Dropdown menu enhancements
+.dropdown-menu {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: rgb(65, 65, 65) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.body-home-bg {
-  // Note: Background image URL is dynamically set by Liquid in HTML
-
-  // Ensure background image covers the entire viewport
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  // Set background to fixed for scrolling parallax effect
-  background-attachment: fixed;
-}
-
-// Standardize team member avatar dimensions (using object-fit to prevent stretching)
-// -------------------------------------------------------------
-.img-team {
-  // Set consistent width and height (adjust values as needed)
-  width: 150px;
-  height: 150px;
-
-  // Ensure image is not stretched or compressed within the container
-  object-fit: cover;
-
-  // Ensure image is centered vertically and horizontally (if container is flex or block)
-  margin: 0 auto;
-  display: block; // Ensure margin: 0 auto; works on block elements
-}
-
-.img-hero {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 0.5rem;
-}
-
-.img-project {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 0.5rem;
-  width: 400px;
-  height: 289px;
-}
-
-.navbar-transparent {
-  transition: background-color 0.3s ease-in-out;
-  background-color: transparent !important;
-  letter-spacing: 1px;
-  // box-shadow: none !important; /* Remove shadow for a truly clean look */
-}
-
-.navbar-scrolled {
-  transition: background-color 0.3s ease-in-out;
-  /* Use your desired solid color here, matching your fixed-top bg-dark */
-  background-color: rgba(0, 0, 0, 0.5)!important;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);
-  letter-spacing: 1px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.footer-bg {
-  background-color: #1a1d21;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 3rem 0;
-  color: #adb5bd;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-.hero-section {
-  // This is crucial for making the image cover the full container size
-  background-size: cover;
-  background-position: center;
-
-  // Optional: Add the text readability overlay here (as shown in a previous answer)
-  position: relative;
-  /* ... rest of overlay CSS ... */
-}
-
-
-// Project card container (Portfolio Link)
-.portfolio-link {
-  // Ensure image and hover overlay are in the same stacking context
-  overflow: hidden;
-
-  // Enable smooth transitions for opacity, color, etc.
-  .portfolio-hover {
-    transition: opacity 0.3s ease; // Hover overlay transition effect
-  }
-}
-
-// When mouse hovers over .portfolio-link
-.portfolio-link:hover {
-
-  // Display hover overlay (change from opacity-0 to opacity-1)
-  .portfolio-hover {
-    opacity: 1 !important;
-  }
-}
-
-// Optional: Subtle scale effect on hover for enhanced interactivity
-.img-project-thumb {
-  transition: transform 0.5s ease; // Image scale transition
-}
-
-.portfolio-link:hover .img-project-modal {
-  transform: scale(1.05); // Scale up by 5% on hover
-}
-
-.img-project-modal {
-  width: auto;
-  // 🌟 Fixed image height (adjust as needed)
-  height: auto;
-
-  // Ensure image fills container, cropping edges if aspect ratios mismatch
-  object-fit: cover;
-
-  // Give project cards a professional look in the grid
-  border-radius: 5px;
-}
-
-/* Enable Hover on Desktop (992px is Bootstrap's lg breakpoint) */
-@media (min-width: 992px) {
+// Desktop dropdown behavior (hover to open)
+@include media-breakpoint-up(lg) {
   .dropdown-hover:hover .dropdown-menu {
     display: block;
     margin-top: 0;
-    /* Prevents a gap that closes the menu when moving cursor */
   }
-}
 
-/* Optional: Smooth transition for the dropdown */
-.dropdown-menu {
-  transition: all 0.3s ease;
-  border-radius: 8px;
-}
-
-// Custom Dropdown Positioning
-// -------------------------------------------------------------
-
-@media (min-width: 992px) {
   .nav-item.dropdown.d-flex {
     flex-wrap: nowrap !important;
     align-items: flex-start !important;
-    /* Prevents vertical centering of absolute children */
   }
 
   .nav-item.dropdown .dropdown-menu {
     top: 100% !important;
-    /* Ensures it starts at the bottom of the navbar */
     margin-top: 0;
   }
 }
 
-@media (max-width: 991.98px) {
+// Mobile dropdown behavior
+@include media-breakpoint-down(lg) {
   .nav-item.dropdown {
     justify-content: flex-start;
-  }
 
-  .nav-item.dropdown .dropdown-menu {
-    position: static !important;
-    float: none;
-    width: 100% !important;
-    flex-basis: 100%;
-    /* Force wrap to next line on mobile */
-    border: none;
-    box-shadow: none !important;
-    background: transparent;
-    padding-left: 1rem;
-    transform: none !important;
-    display: none;
-  }
+    .dropdown-menu {
+      position: static !important;
+      float: none;
+      width: 100% !important;
+      flex-basis: 100%;
+      border: none;
+      box-shadow: none !important;
+      background: transparent;
+      padding-left: 1rem;
+      transform: none !important;
+      display: none;
 
-  .nav-item.dropdown .dropdown-menu.show {
-    display: block !important;
+      &.show {
+        display: block !important;
+      }
+    }
   }
 
   .dropdown-toggle {
@@ -225,23 +124,137 @@ main {
   }
 }
 
-// Global Section Padding Refinements
-// -------------------------------------------------------------
-section {
-  @media (max-width: 767.98px) {
-    padding-left: 15px;
-    padding-right: 15px;
+/* --- Footer --- */
+
+.footer-bg {
+  background-color: #1a1d21;
+  border-top: 1px solid $glass-border-color;
+  padding: 3rem 0;
+  color: #adb5bd;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   4. PAGE SECTIONS (SEQUENTIAL ORDER)
+   ========================================================================== */
+
+/* --- Masthead / Hero Section --- */
+
+// Homepage masthead with full viewport height
+.homepage-masthead {
+  height: 100vh;
+  text-shadow: $text-shadow-dark;
+
+  // Ensure text and links are visible on dark background
+  .intro-lead-in,
+  .intro-heading,
+  a {
+    color: #fff;
   }
 }
 
-.course-link-card .icon-bg {
+// Background image setup for home page
+.body-home-bg {
+  // Note: Background image URL is dynamically set by Liquid in HTML
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; // Parallax scrolling effect
+}
+
+// Generic hero section with background image
+.hero-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- Research / Projects Section --- */
+
+// Project card container with hover effects
+.portfolio-link {
+  overflow: hidden;
+
+  .portfolio-hover {
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    .portfolio-hover {
+      opacity: 1 !important;
+    }
+
+    .img-project-modal {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* ==========================================================================
+   5. CUSTOM UI COMPONENTS
+   ========================================================================== */
+
+/* --- Image Components --- */
+
+// Team member avatars - standardized dimensions
+.img-team {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+// Hero section images
+.img-hero {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+// Project thumbnail images
+.img-project {
+  width: 400px;
+  height: 289px;
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+// Project modal images with scale transition
+.img-project-thumb {
+  transition: transform 0.5s ease;
+}
+
+// Project modal full images
+.img-project-modal {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* --- Course Link Cards --- */
+
+.course-link-card {
+  .icon-bg {
     color: $primary;
     opacity: 0.8;
     transition: all 0.3s ease;
+  }
+
+  &:hover .icon-bg {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px $primary-glow);
+  }
 }
 
-.course-link-card:hover .icon-bg {
-    opacity: 1;
-    /* 增加發光效果 */
-    filter: drop-shadow(0 0 5px rgba(254, 209, 54, 0.2));
+/* ==========================================================================
+   6. UTILITIES & HELPER CLASSES
+   ========================================================================== */
+
+// Dark text shadow utility for readability on light backgrounds
+.text-shadow-dark {
+  text-shadow: $text-shadow-dark;
 }

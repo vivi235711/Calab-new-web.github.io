@@ -9,9 +9,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
 {% assign all_links = site.useful | sort: 'sort_order' %}
 
-<section id="useful-links-main" class="py-5 bg-body-tertiary border">
-    <div class="container">
-        
+<section id="useful-links-main" class="container bg-body-tertiary border py-5">
         <div class="row text-center g-4 pb-5 justify-content-center">
             {% for link_item in all_links %}
             {% assign link_id = link_item.title | slugify %}
@@ -26,8 +24,6 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
             </div>
             {% endfor %}
         </div>
-        
-    </div>
 </section>
 
 
@@ -35,7 +31,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
     {% assign link_id = link_item.title | slugify %}
     
     <section id="{{ link_id }}" class="py-5">
-        <div class="container bg-body-tertiary border  p-4 anchor-offset-fix">
+        <div class="container bg-body-tertiary border  p-4">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading mb-4">{{ link_item.title }}</h2>
