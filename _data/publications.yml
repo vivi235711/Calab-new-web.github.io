@@ -222,7 +222,7 @@
   number: '3'
   pages: 3298-3315
   link_value: https://doi.org/10.1093/mnras/stab1006
-  tags: ['gamer_dev']
+  tags: ['GAMER Development']
 - year: '2021'
   month: July
   title: On the Random Motion of Nuclear Objects in a Fuzzy Dark Matter Halo
@@ -339,7 +339,7 @@
   pages: 4815-4840
   link_value: https://doi.org/10.1093/mnras/sty2586
   tags:
-  - gamer_dev
+  - GAMER Development
 - year: '2018'
   month: August
   title: How do stars affect \ensuremathψDM haloes?
@@ -373,7 +373,7 @@
   pages: '50'
   link_value: https://doi.org/10.3847/1538-4365/aac49e
   tags:
-  - gamer_dev
+  - GAMER Development
 - year: '2018'
   month: May
   title: Self-consistent construction of virialized wave dark matter halos
@@ -535,7 +535,7 @@
   number: ''
   pages: arXiv:1103.3373
   link_value: https://doi.org/10.48550/arXiv.1103.3373
-  tags: ['gamer_dev']
+  tags: ['GAMER Development']
 - year: '2010'
   month: February
   title: 'GAMER: A Graphic Processing Unit Accelerated Adaptive-Mesh-Refinement Code
@@ -547,7 +547,7 @@
   pages: 457-484
   link_value: https://doi.org/10.1088/0067-0049/186/2/457
   tags:
-  - gamer_dev
+  - GAMER Development
 - year: '2008'
   month: August
   title: Graphic-card cluster for astrophysics (GraCCA) - Performance tests

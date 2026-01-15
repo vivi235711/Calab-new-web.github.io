@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Privacy Policy - CA Lab
+title: Privacy Policy - CALab
 permalink: /privacy/
 ---
 
-<section class="py-5 bg-body-tertiary border">
-    <div class="container col-10 justify-content-center">
+<section class="py-5">
+    <div class="col-10 justify-content-center container bg-body-tertiary border">
         <h1 class="mb-4">Privacy Policy</h1>
         
-        <p class="lead">Your privacy is important to us. This Privacy Policy explains how the Computational Astrophysics Lab (CA Lab) handles information on our website.</p>
+        <p class="lead">Your privacy is important to us. This Privacy Policy explains how the Computational Astrophysics Lab (CALab) handles information on our website.</p>
 
         <h2 class="h4 mt-4">1. Information Collection</h2>
         <p>We do not collect any personally identifiable information (PII) from visitors to our website unless you voluntarily provide it to us (e.g., via email or contact forms). Our website is hosted on GitHub Pages, which may collect standard log information for technical and security purposes.</p>

@@ -191,6 +191,10 @@ main {
   }
 }
 
+[id$="-section"] {
+  scroll-margin-top: 100px;
+}
+
 /* ==========================================================================
    5. CUSTOM UI COMPONENTS
    ========================================================================== */
@@ -250,6 +254,18 @@ main {
   }
 }
 
+.map-container {
+    /* 圓角與陰影 */
+    border-radius: 20px; // 與你左側卡片的圓角保持一致
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); // 增加深度感
+    
+    /* 讓內部的 iframe 乖乖待在圓角內 */
+    overflow: hidden; 
+    
+    /* 可選：給地圖加一個細微的邊框，增加科技感 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* ==========================================================================
    6. UTILITIES & HELPER CLASSES
    ========================================================================== */
@@ -260,7 +276,7 @@ main {
 }
 // Glassmorphism background utility
 .bg-glass {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   border: 1px solid $glass-border-color;
 }

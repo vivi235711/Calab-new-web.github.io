@@ -1,23 +1,23 @@
 ---
 layout: default
-title: Terms of Use - CA Lab
+title: Terms of Use - CALab
 permalink: /terms/
 ---
 
-<section class="py-5 bg-body-tertiary border border-subtle-dark">
-    <div class="container col-10 justify-content-center">
+<section class="py-5">
+    <div class="col-10 justify-content-center container bg-body-tertiary border">
         <h1 class="mb-4">Terms of Use</h1>
         
-        <p class="lead">Welcome to the Computational Astrophysics Lab (CA Lab) website. By accessing this site, you agree to the following terms.</p>
+        <p class="lead">Welcome to the Computational Astrophysics Lab (CALab) website. By accessing this site, you agree to the following terms.</p>
 
         <h2 class="h4 mt-4">1. Acceptance of Terms</h2>
         <p>By using this website, you agree to comply with and be bound by these Terms of Use. If you do not agree, please do not use the site.</p>
 
         <h2 class="h4 mt-4">2. Intellectual Property</h2>
-        <p>All research results, data, visualizations, and publications shared on this site are the property of CA Lab and their respective authors unless otherwise noted. You may use this content for academic and non-commercial purposes, provided that proper attribution is given.</p>
+        <p>All research results, data, visualizations, and publications shared on this site are the property of CALab and their respective authors unless otherwise noted. You may use this content for academic and non-commercial purposes, provided that proper attribution is given.</p>
 
         <h2 class="h4 mt-4">3. Disclaimer</h2>
-        <p>The information on this website is for general informational and educational purposes. While we strive for accuracy, CA Lab makes no warranties about the completeness or reliability of the content.</p>
+        <p>The information on this website is for general informational and educational purposes. While we strive for accuracy, CALab makes no warranties about the completeness or reliability of the content.</p>
 
         <h2 class="h4 mt-4">4. External Links</h2>
         <p>Our website links to external sites (such as GitHub, Slack, and academic journals). We do not control these sites and are not responsible for their content or availability.</p>

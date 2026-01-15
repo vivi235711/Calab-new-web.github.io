@@ -11,7 +11,9 @@
     
     <div class="member-intro text-center">
         <p>
-            {{ member.bio }}
+            {% for item in member.bio %}
+                <ul>{{ item }}</ul>
+            {% endfor %}
         </p>
         
         <ul class="list-inline social-buttons member-list text-center">
