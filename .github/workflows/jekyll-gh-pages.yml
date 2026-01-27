@@ -60,8 +60,8 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Build with Jekyll
-        # uses: actions/jekyll-build-pages@v1
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        # We rely on the baseurl in _config.yml to avoid issues with manual overrides
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
         # with:
