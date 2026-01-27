@@ -1,0 +1,9 @@
+---
+title: "Deciphering the Soliton-Halo Relation in Fuzzy Dark Matter"
+tags: ["FDM"]
+image: "/assets/img/liao2025.webp"
+date: 2024-05-20  # <--- Add this in YYYY-MM-DD format
+link: "https://journals.aps.org/prl/abstract/10.1103/9dqj-q6mt"
+link_text: "Liao et al., Phys. Rev. Lett. 135, 061002 (2025)"
+---
+Using high-resolution fuzzy dark matter (FDM) cosmological simulations spanning wide particle mass and redshift ranges, we show that the degree of non-isothermality in FDM halos is tightly correlated with halo concentration. We further identify energy equipartition in the inner halo and thermal equilibrium between solitons and their surroundings. These results establish a predictive, physically grounded soliton–halo relation that resolves long-standing discrepancies among previous models and enables direct observational constraints on FDM.

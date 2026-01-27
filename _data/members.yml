@@ -1,11 +1,3 @@
-- name: "Tzihong Chiueh"
-  role: "faculty"
-  position: "Team Leader"
-  image: "/assets/img/member/tzihong.webp"
-  website: "https://www.phys.ntu.edu.tw/enphysics/chiuehth.html"
-  email: "chiuehth@phys.nut.edu.tw"
-  bio: "test and super long meaning less text. He hid under the covers..."
-
 - name: "Hsi-Yu Schive"
   role: "faculty"
   position: "Team Leader"
@@ -13,9 +5,17 @@
   website: "https://www.phys.ntu.edu.tw/enphysics/hyschive.html"
   email: "hyschive@ntu.edu.tw"
   github: "hyschive"
-  bio: "test and super long meaning less text. He hid under the covers..."
+  bio: "GAMER development/applications, fuzzy dark matter simulations, hybrid CPU/GPU computing"
   aliases:
     - "H.-Y. Schive"
+  
+- name: "Tzihong Chiueh"
+  role: "faculty"
+  position: "Team Leader"
+  image: "/assets/img/member/tzihong.webp"
+  website: "https://www.phys.ntu.edu.tw/enphysics/chiuehth.html"
+  email: "chiuehth@phys.nut.edu.tw"
+  bio: "Theoretical astrophysics"
 
 - name: "Tak-Pong Woo"
   role: "faculty"
@@ -24,6 +24,26 @@
   website: "https://www.phys.ntu.edu.tw/enphysics/bonwood.html"
   email: "bonwood@phys.ntu.edu.tw"
   bio: "test and super long meaning less text. He hid under the covers..."
+
+- name: Ui-Han Zhang
+  role: "postdoc"
+  position: "Postdoctoral Research Fellow"
+  image: "/assets/img/member/undecided.webp"
+
+- name: Jr-Hua Stephen Lien
+  role: "doctoral"
+  position: "doctoral"
+  image: "/assets/img/member/undecided.webp"
+
+- name: "Bin-Chian Wu"
+  role: "doctoral"
+  position: "doctoral"
+  image: "/assets/img/member/undecided.webp"
+
+- name: "Wei-Chun Lin"
+  role: "research-assistants"
+  position: "Adminstrative Assistant"
+  image: "/assets/img/member/undecided.webp"
 
 - name: Hsinhao Huang
   role: "research-assistants"
@@ -38,7 +58,7 @@
       - "Kicking the code's ass"
 
 - name: "Chun-Yen Chen"
-  role: "research-assistants"
+  role: "previous"
   position: "Research Associate"
   image: "/assets/img/member/chunyen.webp"
   email: "chunyenchen2019@gmail.com"
@@ -117,7 +137,7 @@
   bio: "test and super long meaning less text. He hid under the covers..."
   
 - name: "Yen I-Fan"
-  role: "undergraduate"
+  role: "previous"
   position: "Undergraduate Student"
   image: "/assets/img/member/undecided.webp"
   email: "eva2benson@gmail.com"

@@ -23,7 +23,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                     <li>
                         <input type="checkbox" id="tag-{{ year }}" data-group="year" data-filter="{{ year }}"
                             class="pub-filter-checkbox" />
-                        <label for="tag-{{ year }}">{{ year }}</label>
+                        <label for="tag-{{ year }}" class="monospaced">{{ year }}</label>
                     </li>
                     {% endfor %}
                 </ul>
@@ -45,6 +45,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                 </ul>
             </div>
         </div>
+
         <div class="col-md-9">
             <ol class="publication-ol">
                 {% assign sorted_pubs = site.data.publications %}
@@ -78,7 +79,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                         {{ pub.authors }}
                         <span style="font-style: italic;">{{ pub.journal }}</span>
 
-                        {% if pub.volume %} <strong>{{ pub.volume }}</strong>,{% endif %}
+                        {% if pub.volume %} {{ pub.volume }},{% endif %}
                         {% if pub.pages %} {{ pub.pages }}{% endif %}
                         ({{ pub.year }}).
                     </div>

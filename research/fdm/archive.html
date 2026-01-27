@@ -1,0 +1,30 @@
+---
+layout: default
+title: FDM Archive - CALab
+permalink: /research/fdm/archive/
+
+pagination:
+  enabled: true
+  collection: projects
+  per_page: 5
+  tag: "FDM"
+  permalink: /:num/
+  trail:
+    before: 2
+    after: 2
+
+hero_title: FDM Archive
+hero_bg_image: /assets/img/colliding_waveDM_halo.webp
+---
+
+<section id="FDM-archive" class="py-5 bg-body-tertiary border container">
+
+{% for project in paginator.posts %}
+  {% include project_card.html project=project index=forloop.index %}
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+    {% include pagination.html %}
+{% endif %}
+
+</section>

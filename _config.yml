@@ -20,17 +20,7 @@ exclude:
 # Ensure assets are served from root
 relative_permalinks: false
 
-plugins:
-  - jekyll-paginate
-
-permalink: /:year/:month/:day/:title.html
-paginate: 5
-paginate_path: "/news/page:num/"
-
 collections:
-  members:
-    output: false # Set to false to prevent generating individual member pages (list only)
-    permalink: /members/:path/
   useful:
     output: false
     permalink: /useful/:path/
@@ -38,8 +28,26 @@ collections:
     output: false # Courses usually don't need individual pages
     permalink: /courses/:path/
   projects:
-    output: false # Project details shown via Modals, no separate pages needed
-    permalink: /projects/:path/
+    output: false
+    permalink: /projects/:name/ # Standardizing the URL structure
+
+plugins:
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  collection: projects
+  permalink: '/page/:num/'
+  per_page: 5
+  debug: true             # TURN THIS ON: It forces Jekyll to print errors to your terminal
+  sort_field: title        # Ensure this is set
+  # sort_reverse: true
+  trail:
+    before: 2 # How many pages to show before current
+    after: 2
+  strict: false
+
+
 
 sass:
   # The style option controls the output format of the compiled CSS.

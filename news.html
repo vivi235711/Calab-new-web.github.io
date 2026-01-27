@@ -1,0 +1,32 @@
+---
+layout: default
+title: News - CALab
+permalink: /news/
+
+hero_title: News
+hero_bg_image: /assets/img/colliding_waveDM_halo.webp
+---
+
+<section id="research-list" class="container py-5">
+
+    <h2 class="section-heading mb-4 border-bottom pb-2"></i>Research Highlights</h2>
+
+    {% for project_id in site.data.research_section.research_highlights %}
+        {% assign project = site.projects | where: "slug", project_id | first %}
+        {% if project %}
+            {% include project_card.html project=project index=forloop.index %}
+        {% endif %}
+    {% endfor %}
+
+</section>
+<div class="container py-5">
+    <h2 class="section-heading mt-5 mb-4 border-bottom pb-2">Recent Publications</h2>
+
+    {% for project_id in site.data.research_section.recent_publications %}
+        {% assign project = site.projects | where: "slug", project_id | first %}
+        {% if project %}
+            {% include project_card.html project=project index=forloop.index %}
+        {% endif %}
+    {% endfor %}
+
+</div>

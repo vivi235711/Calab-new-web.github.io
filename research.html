@@ -7,7 +7,7 @@ hero_title: Research
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
-{% assign all_projects = site.projects | sort: 'sort_order' %}
+{% assign all_projects = site.projects | where: "tags", "main" | sort: 'sort_order' %}
 
 <section id="projects" class="py-5 bg-body-tertiary border container">
     <div class="row g-4"> 
@@ -17,17 +17,16 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                 data-bs-toggle="modal" 
                 data-bs-target="#portfolioModal-{{ project.modal_id }}">
                 
-                <div class="portfolio-hover position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center opacity-0 bg-primary bg-opacity-50 text-white transition-opacity">
-                    <div class="portfolio-hover-content text-center">
+                <!-- <div class="portfolio-hover position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center opacity-0 bg-primary bg-opacity-50 text-white">
+                    <div class="text-center">
                         <i class="fa-solid fa-magnifying-glass-plus fa-3x"></i> 
                     </div>
-                </div>
-                <img src="{{ project.image | relative_url }}" class="img-fluid img-project-thumb" alt="{{ project.title }} thumbnail">
+                </div> -->
+                <img src="{{ project.image | relative_url }}" class="img-project-thumb" alt="{{ project.title }} thumbnail">
             </a>
             
             <div class="portfolio-caption p-2 text-center">
                 <h4 class="h5 mb-1">{{ project.title }}</h4>
-                <p class="text-secondary mb-0">{{ project.subtitle }}</p>
             </div>
         </div>
         {% endfor %}
@@ -36,3 +35,33 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 </section>
 
 {% include project_modals.html %}
+
+
+<section id="sponsorship" class="py-5">
+
+    <div class="container border bg-body-tertiary">
+
+        <div class="row pt-4">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading mb-5">Sponsors</h2>
+            </div>
+        </div>
+        <div class="row align-items-center pb-4">
+
+            <div class="col-md-4">
+                <a href="#">
+                        <img src="{{ 'assets/img/NTU.jpg' | relative_url }}" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#">
+                        <img src="{{ 'assets/img/NSTC.png' | relative_url }}" class="img-fluid bg-white" alt="">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#">
+                        <img src="{{ 'assets/img/NCTS.png' | relative_url }}" class="img-fluid bg-white" alt="">
+                </a>
+        </div>
+    </div>
+</section>

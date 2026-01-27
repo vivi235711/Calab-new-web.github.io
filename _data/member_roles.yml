@@ -10,6 +10,6 @@ roles:
   - id: undergraduate
     title: Undergraduate Students
   - id: research-assistants
-    title: Research Assistants
+    title: Research/Administrative Assistants
   - id: previous
     title: Previous Members

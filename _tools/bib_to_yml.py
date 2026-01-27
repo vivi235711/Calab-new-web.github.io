@@ -158,6 +158,22 @@ def process_journal_name(raw_journal):
     # Remove remaining backslashes (for macros not in the table)
     return clean_j.replace('\\', '')
 
+ENSUREMATH_RE = re.compile(r'{?\\ensuremath\s*(?:{([^{}]+)}|\\?([^\s{}]+))}?')
+
+def clean_title(raw_title: str) -> str:
+    if not raw_title:
+        return ""
+    title = raw_title.strip()
+
+    def _ensure(m):
+        content = m.group(1) or m.group(2) or ""
+        return f"${content.strip()}$"
+    title = ENSUREMATH_RE.sub(_ensure, title)
+
+    # Preserve braces elsewhere; only tidy whitespace
+    title = re.sub(r'\s+', ' ', title).strip()
+    return title
+
 # --- Used within convert() loop ---
 # journal = process_journal_name(entry.get('journal', ''))
 
@@ -167,21 +183,26 @@ def convert():
     
     with open(BIB_FILE, 'r', encoding='utf-8') as bibfile:
         parser = BibTexParser()
-        parser.customization = convert_to_unicode
+        # parser.customization = convert_to_unicode
         bib_database = bibtexparser.load(bibfile, parser=parser)
 
     output_pubs = []
     for entry in bib_database.entries:
         if entry.get('ENTRYTYPE').lower() != 'article':
             continue
-        title = entry.get('title', '').replace('{', '').replace('}', '')
+
+        author_raw = entry.get('author', '')
+        authors = convert_to_unicode({'author': author_raw}).get('author', author_raw)
+
+        title = entry.get('title', '')[1:-1]
+        title = clean_title(title)
         clean_title_key = re.sub(r'\W+', '', title.lower())
         
         pub = {
             'year': entry.get('year', ''),
             'month': entry.get('month', ''),
             'title': title,
-            'authors': process_author_name(entry.get('author', ''), member_db),
+            'authors': process_author_name(authors, member_db),
             'journal': process_journal_name(entry.get('journal', '')),
             'volume': entry.get('volume', ''),
             'number': entry.get('number', ''),

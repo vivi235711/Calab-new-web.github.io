@@ -24,21 +24,29 @@
             </li>
         {% endif %}
 
-        {% for page in (1..paginator.total_pages) %}
+        <!-- {% for page in (1..paginator.total_pages) %}
             <li class="page-item {% if page == paginator.page %}active{% endif %}">
                 {% if page == paginator.page %}
                     <span class="page-link">{{ page }}</span>
-                {% else %}
-                    {% assign link_path = site.paginate_path | replace: ':num', page %}
-                    
-                    {% if page == 1 %}
-                        {% comment %} If Page 1, link to news home /news/ {% endcomment %}
-                        {% assign link_path = "/news/" %} 
-                    {% endif %}
-                    
-                    <a class="page-link" href="{{ link_path | relative_url }}">
+                {% elsif page == 1 %}
+                    <a class="page-link" href="{{ site.paginate_path | relative_url | replace: 'page/:num', '' }}">
                         {{ page }}
                     </a>
+                {% else %}
+                    <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
+                        {{ page }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %} -->
+
+
+        {% for trail in paginator.page_trail %}
+            <li class="page-item">
+                {% if page.url == trail.path %}
+                    <span class="page-link">{{ trail.num }}</span>
+                {% else %}
+                    <a class="page-link" href="{{ trail.path | relative_url | replace: 'index.html', ''}}" title="{{trail.title}}">{{ trail.num }}</a>
                 {% endif %}
             </li>
         {% endfor %}

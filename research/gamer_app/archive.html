@@ -1,0 +1,29 @@
+---
+layout: default
+title: GAMER Application Archive - CALab
+permalink: /research/gamer_app/archive/
+
+pagination:
+  enabled: true
+  collection: projects
+  per_page: 5
+  tag: "GAMER_app"
+  permalink: /:num/
+  trail:
+    before: 2
+    after: 2
+
+hero_title: GAMER Application Archive
+hero_bg_image: /assets/img/colliding_waveDM_halo.webp
+---
+
+<section id="GAMER_app-archive" class="py-5 bg-body-tertiary border container">
+{% for project in paginator.posts %}
+  {% include project_card.html project=project index=forloop.index %}
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+    {% include pagination.html %}
+{% endif %}
+
+</section>
