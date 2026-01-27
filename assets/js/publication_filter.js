@@ -68,7 +68,45 @@ document.addEventListener('DOMContentLoaded', function() {
         checkbox.addEventListener('change', filterPublications);
     });
     
-    // ... (Retain existing expand/collapse logic) ...
+    // 3. Handle URL parameters for pre-filtering
+    function applyUrlFilters() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tagFilter = urlParams.get('tag');
+        const yearFilter = urlParams.get('year');
+
+        let shouldFilter = false;
+
+        if (tagFilter) {
+            const checkbox = document.querySelector(`.pub-filter-checkbox[data-group="tag"][data-filter="${tagFilter}"]`);
+            if (checkbox) {
+                checkbox.checked = true;
+                shouldFilter = true;
+            }
+        }
+
+        if (yearFilter) {
+            const checkbox = document.querySelector(`.pub-filter-checkbox[data-group="year"][data-filter="${yearFilter}"]`);
+            if (checkbox) {
+                checkbox.checked = true;
+                shouldFilter = true;
+                // Expand year list if a year filter is applied
+                if (yearList) {
+                    yearList.style.display = 'block';
+                    const icon = yearCollapseButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-right');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                }
+            }
+        }
+
+        if (shouldFilter) {
+            filterPublications();
+        }
+    }
+
+    // Expand/collapse logic
     const yearCollapseButton = document.getElementById('filter-year');
     const yearList = document.getElementById('filter-year-list');
 
@@ -85,4 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Collapse by default
         yearList.style.display = 'none';
     }
+
+    // Run URL filter check on load
+    applyUrlFilters();
 });
