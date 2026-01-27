@@ -2,10 +2,16 @@ source "https://rubygems.org"
 
 # Required for Ruby 3.0+ compatibility
 gem "webrick"
+gem "base64"
+gem "bigdecimal"
+gem "csv"
+gem "logger"
 
-# GitHub Pages gem (includes all dependencies)
-gem "github-pages", group: :jekyll_plugins
+# Use jekyll directly for custom builds to avoid conflicts with github-pages plugins
+gem "jekyll", "~> 3.9"
 
 group :jekyll_plugins do
-  gem "jekyll-paginate-v2"
+  gem "jekyll-paginate-v2", "~> 3.0"
+  gem "kramdown"
+  gem "kramdown-parser-gfm"
 end
