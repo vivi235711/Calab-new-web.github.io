@@ -1,25 +1,25 @@
 ---
 layout: default
-title: Members - CALab
-permalink: /members/
+title: Previous Members - CALab
+permalink: /members/previous/
 
-hero_title: Members
+hero_title: Previous Members
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
-<section id="members-list" class="">
+<section id="previous-members-list" class="">
     <div class="container">
         {% assign all_members = site.data.members %}
         {% assign member_roles = site.data.member_roles.roles %}
 
         {% for role in member_roles %}
-            {% if role.id == 'previous' %}{% continue %}{% endif %}
+            {% if role.id != 'previous' %}{% continue %}{% endif %}
             {% assign role_id = role.id %}
             {% assign role_title = role.title %}
 
             {% assign members_list = all_members | where: 'role', role_id %}
 
-            <div id="{{ role_id }}-section" class="pt-5 bg-body-tertiary border {% unless forloop.first %}mt-5{% endunless %}">
+            <div id="{{ role_id }}-section" class="pt-5 bg-body-tertiary border">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading mb-3">{{ role_title }}</h2>
@@ -38,8 +38,8 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
         <div class="row mt-5">
             <div class="col-lg-12 text-center">
-                <a href="{{ '/members/previous/' | relative_url }}" class="btn btn-outline-primary btn-lg">
-                    View Previous Members &rarr;
+                <a href="{{ '/members/' | relative_url }}" class="btn btn-outline-primary btn-lg">
+                    &larr; Back to Current Members
                 </a>
             </div>
         </div>

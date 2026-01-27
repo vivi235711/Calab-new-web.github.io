@@ -45,10 +45,19 @@ Used to render modal content for all research projects.
 
                             </div>
 
-                            <button class="btn btn-primary btn-lg text-uppercase mb-5" data-bs-dismiss="modal" type="button">
-                                <i class="fa-solid fa-xmark me-2"></i>
-                                Close Project
-                            </button>
+                            <div class="d-flex justify-content-center gap-3 mb-5">
+                                {% if project.research_url %}
+                                <a href="{{ project.research_url | relative_url }}" class="btn btn-primary btn-lg text-uppercase">
+                                    <i class="fa-solid fa-arrow-right me-2"></i>
+                                    See More
+                                </a>
+                                {% endif %}
+
+                                <button class="btn btn-outline-secondary btn-lg text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fa-solid fa-xmark me-2"></i>
+                                    Close Project
+                                </button>
+                            </div>
 
                         </div>
                     </div>

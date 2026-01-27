@@ -1,7 +1,7 @@
 ---
 layout: default
 title: FDM - CALab
-permalink: /research/gamer_app
+permalink: /research/gamer_app/
 
 hero_title: GAMER Application
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
@@ -15,7 +15,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
         {% assign project = site.projects | where: "slug", slug | first %}
         {% include project_card.html project=project index=forloop.index %}
         {% endfor %}
-        <a href="archive/">View Full Archive</a>
+        <a href="{{ '/research/gamer_app/archive/' | relative_url }}">View Full Archive</a>
         </div>
     </div>
 </section>

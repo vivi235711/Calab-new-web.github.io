@@ -1,5 +1,6 @@
 ---
 layout: default
+title: GAMER Development Archive - CALab
 permalink: /research/gamer_dev/archive/
 
 pagination:
@@ -16,7 +17,7 @@ hero_title: GAMER Development Archive
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
-<section id="GAMER-dev-archive" class="py-5 bg-body-tertiary border container">
+<section id="GAMER-dev-archive" class="py-5 container">
 {% for project in paginator.posts %}
   {% include project_card.html project=project index=forloop.index %}
 {% endfor %}

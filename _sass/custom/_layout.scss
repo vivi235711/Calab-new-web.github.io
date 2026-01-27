@@ -241,6 +241,14 @@ main {
   border-radius: 5px;
 }
 
+// Sponsor logos
+.img-sponsor {
+  max-height: 100px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .project-card {
   margin-bottom: 3rem;
   display: flex; // Ensures columns are of equal height
@@ -261,10 +269,6 @@ main {
         transition: transform 0.3s ease;
         align-items: center;
     }
-
-        &:hover {
-            transform: scale(1.02);
-        }
 
 
     // Text content container
