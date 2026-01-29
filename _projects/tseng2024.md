@@ -2,7 +2,7 @@
 title: "Can the Symmetric Fermi and eROSITA Bubbles Be Produced by Tilted Jets?"
 tags: ["GAMER_app"]
 image: "/assets/img/tseng2024.webp"
-date: 2024-05-20  # <--- Add this in YYYY-MM-DD format
+date: 2024-07-26
 link: "https://iopscience.iop.org/article/10.3847/1538-4357/ad50c5"
 link_text: "Tseng et al., Astrophys. J. 970, 146 (2024)"
 ---

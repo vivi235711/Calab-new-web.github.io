@@ -40,9 +40,8 @@ pagination:
   collection: projects
   permalink: '/page/:num/'
   per_page: 5
-  debug: true             # TURN THIS ON: It forces Jekyll to print errors to your terminal
-  sort_field: title        # Ensure this is set
-  # sort_reverse: true
+  sort_field: date
+  sort_reverse: true
   trail:
     before: 2 # How many pages to show before current
     after: 2

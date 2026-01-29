@@ -2,7 +2,6 @@
 title: Fuzzy Dark Matter
 tags: ["main"]
 image: /assets/img/fig_soliton_granule.webp
-date: 2024-05-20  # <--- Add this in YYYY-MM-DD format
 modal_id: FDM
 research_url: /research/fdm/
 sort_order: 1

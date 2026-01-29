@@ -226,11 +226,37 @@ main {
 //   border-radius: 0.5rem;
 // }
 
-// Project modal images with scale transition
+// Project thumbnail container with fixed height and visual enhancements
+.project-thumb-container {
+  height: 250px;
+  // background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+
+  // Ensure responsiveness on mobile
+  @include media-breakpoint-down(sm) {
+    height: 200px;
+  }
+}
+
+// Project thumbnail images
 .img-project-thumb {
-  width: 400px;
-  height: 400px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   transition: transform 0.5s ease;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
 }
 
 // Project modal full images
@@ -309,6 +335,35 @@ main {
                 margin-right: 0.5rem;
             }
         }
+
+    &.card-highlight {
+        border-left: 5px solid #3498db;
+        background-color: rgba(52, 152, 219, 0.03);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        position: relative;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+.badge-highlight {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 /* --- Course Link Cards --- */
@@ -355,5 +410,4 @@ main {
 
 .monospaced {
   font-family: var(--bs-font-monospace); 
-  font-size: 0.9rem;
 }

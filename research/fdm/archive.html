@@ -1,7 +1,7 @@
 ---
 layout: default
-title: FDM Archive - CALab
-permalink: /research/fdm/archive/
+title: FDM - CALab
+permalink: /research/fdm/
 
 pagination:
   enabled: true
@@ -13,14 +13,18 @@ pagination:
     before: 2
     after: 2
 
-hero_title: FDM Archive
+hero_title: FDM
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
 <section id="FDM-archive" class="py-5 container">
 
 {% for project in paginator.posts %}
-  {% include project_card.html project=project index=forloop.index %}
+  {% assign is_featured = false %}
+  {% if site.data.research_section.fdm_highlights contains project.slug %}
+    {% assign is_featured = true %}
+  {% endif %}
+  {% include project_card.html project=project index=forloop.index featured=is_featured %}
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
@@ -28,6 +32,9 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 {% endif %}
 
 <div class="text-center mt-5">
+    <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary shadow-sm">
+        <i class="fa-solid fa-arrow-left me-2"></i>Back to Research
+    </a>
     <a href="{{ '/publications/' | relative_url }}?tag=fdm" class="btn btn-outline-primary shadow-sm">
         <i class="fa-solid fa-book me-2"></i>View Related Publications
     </a>

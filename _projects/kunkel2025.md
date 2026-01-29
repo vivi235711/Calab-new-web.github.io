@@ -2,7 +2,7 @@
 title: "A Hybrid Scheme for Fuzzy Dark Matter Simulations Combining the Schrödinger and Hamilton–Jacobi–Madelung Equations"
 tags: ["FDM"]
 image: "/assets/img/kunkel2025.webp"
-date: 2024-05-20  # <--- Add this in YYYY-MM-DD format
+date: 2025-07-22
 link: "https://iopscience.iop.org/article/10.3847/1538-4365/addc59"
 link_text: "Kunkel et al., Astrophys. J. Suppl. Ser. 279, 39 (2025)"
 ---

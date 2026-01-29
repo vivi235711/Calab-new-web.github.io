@@ -2,7 +2,6 @@
 title: GAMER Development
 tags: ["main"]
 image: /assets/img/fig_gamer_dev.webp
-date: 2024-05-20  # <--- Add this in YYYY-MM-DD format
 modal_id: GAMER_dev
 research_url: /research/gamer_dev/
 sort_order: 2

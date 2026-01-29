@@ -16,13 +16,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
             <a href="#portfolioModal-{{ project.modal_id }}" class="portfolio-link d-block position-relative" 
                 data-bs-toggle="modal" 
                 data-bs-target="#portfolioModal-{{ project.modal_id }}">
-                
-                <!-- <div class="portfolio-hover position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center opacity-0 bg-primary bg-opacity-50 text-white">
-                    <div class="text-center">
-                        <i class="fa-solid fa-magnifying-glass-plus fa-3x"></i> 
-                    </div>
-                </div> -->
-                <img src="{{ project.image | relative_url }}" class="img-project-thumb" alt="{{ project.title }} thumbnail">
+                <img src="{{ project.image | relative_url }}" class="img-project-thumb rounded" alt="{{ project.title }} thumbnail">
             </a>
             
             <div class="portfolio-caption p-2 text-center">

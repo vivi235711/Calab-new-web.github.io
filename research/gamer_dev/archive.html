@@ -1,7 +1,7 @@
 ---
 layout: default
-title: GAMER Development Archive - CALab
-permalink: /research/gamer_dev/archive/
+title: GAMER Development - CALab
+permalink: /research/gamer_dev/
 
 pagination:
   enabled: true
@@ -13,13 +13,17 @@ pagination:
     before: 2
     after: 2
 
-hero_title: GAMER Development Archive
+hero_title: GAMER Development
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
 <section id="GAMER-dev-archive" class="py-5 container">
 {% for project in paginator.posts %}
-  {% include project_card.html project=project index=forloop.index %}
+  {% assign is_featured = false %}
+  {% if site.data.research_section['gamer-dev_highlight'] contains project.slug %}
+    {% assign is_featured = true %}
+  {% endif %}
+  {% include project_card.html project=project index=forloop.index featured=is_featured %}
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
@@ -27,6 +31,9 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 {% endif %}
 
 <div class="text-center mt-5">
+    <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary shadow-sm">
+        <i class="fa-solid fa-arrow-left me-2"></i>Back to Research
+    </a>
     <a href="{{ '/publications/' | relative_url }}?tag=gamer-development" class="btn btn-outline-primary shadow-sm">
         <i class="fa-solid fa-book me-2"></i>View Related Publications
     </a>

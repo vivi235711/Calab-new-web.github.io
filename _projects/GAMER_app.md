@@ -2,7 +2,6 @@
 title: GAMER Applications
 tags: ["main"]
 image: /assets/img/fig_gamer_app.webp
-date: 2024-05-20  # <--- Add this in YYYY-MM-DD format
 modal_id: GAMER_APP
 research_url: /research/gamer_app/
 sort_order: 3

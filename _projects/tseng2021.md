@@ -2,7 +2,7 @@
 title: "An Adaptive Mesh, GPU-Accelerated, and Error Minimized Special Relativistic Hydrodynamics Code"
 tags: ["GAMER_dev"]
 image: "/assets/img/tseng2021.webp"
-date: 2024-05-20  # <--- Add this in YYYY-MM-DD format
+date: 2021-04-13
 link: "https://academic.oup.com/mnras/article/504/3/3298/6224873?login=false"
 link_text: "Tseng et al., Mon. Not. R. Astron. Soc. 504, 3298-3315 (2021)"
 ---

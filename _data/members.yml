@@ -99,10 +99,10 @@
 - name: "Che-Wei Hsiang"
   role: "master"
   position: "Master Student"
-  image: "/assets/img/member/undecided.webp"
+  image: "/assets/img/member/chewei.webp"
   email: "q39669784@gmail.com"
   github: "Xiang-Zhe-Wei"
-  bio: "test and super long meaning less text. He hid under the covers..."
+  bio: "Applying data science to astrophysics through research and numerical simulations, while actively seeking impactful research opportunities."
 
 - name: "Pin-Yu Liao"
   role: "research-assistants"
@@ -126,7 +126,7 @@
   image: "/assets/img/member/weihsuan.webp"
   email: "xuanweishan@gmail.com"
   github: "xuanweishan"
-  bio: "test and super long meaning less text. He hid under the covers..."
+  bio: "I start being a research assistant at NTU Calab since April 2020. Helping build, maintenance and manage the two GPU clusters in our lab."
 
 - name: "謝和峯"
   role: "postdoc"

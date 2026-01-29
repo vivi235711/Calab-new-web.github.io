@@ -44,9 +44,9 @@
         {% for trail in paginator.page_trail %}
             <li class="page-item">
                 {% if page.url == trail.path %}
-                    <span class="page-link">{{ trail.num }}</span>
+                    <span class="page-link monospaced">{{ trail.num }}</span>
                 {% else %}
-                    <a class="page-link" href="{{ trail.path | relative_url | replace: 'index.html', ''}}" title="{{trail.title}}">{{ trail.num }}</a>
+                    <a class="page-link monospaced" href="{{ trail.path | relative_url | replace: 'index.html', ''}}" title="{{trail.title}}">{{ trail.num }}</a>
                 {% endif %}
             </li>
         {% endfor %}
