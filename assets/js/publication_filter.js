@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const filterCheckboxes = document.querySelectorAll('.pub-filter-checkbox');
     const publicationItems = document.querySelectorAll('.publication-ol li.publication');
+    const clearAllBtn = document.getElementById('clear-all-filters');
     
     /**
      * Core filtering function (Modified for AND/OR logic)
      */
     function filterPublications() {
-        
         // 1. Collect and group selected filters by group (e.g., 'year', 'tag')
         const activeFiltersByGroup = {};
         filterCheckboxes.forEach(checkbox => {
@@ -26,7 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // If no filters are selected, show all items
         if (filterGroups.length === 0) {
-            publicationItems.forEach(item => item.style.display = '');
+            publicationItems.forEach(item => {
+                item.style.display = '';
+                item.classList.remove('fade-out');
+                item.classList.add('fade-in');
+            });
             return;
         }
 
@@ -44,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const activeFilters = activeFiltersByGroup[group];
                 
                 // Check if the group condition is met (OR logic within the group)
-                // Pass if any tag in the article matches any filter in the group
                 const passesGroup = activeFilters.some(filter => itemTags.includes(filter));
                 
                 // Fail general filter if group check fails (AND logic between groups)
@@ -56,9 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 3. Show or hide item based on filtering results
             if (passesAllGroups) {
-                item.style.display = ''; // Show
+                item.style.display = '';
+                item.classList.remove('fade-out');
+                item.classList.add('fade-in');
             } else {
-                item.style.display = 'none'; // Hide
+                item.style.display = 'none';
+                item.classList.remove('fade-in');
+                item.classList.add('fade-out');
             }
         });
     }
@@ -67,8 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
     filterCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', filterPublications);
     });
+
+    // 3. Clear All Filters
+    if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', function() {
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            filterPublications();
+        });
+    }
     
-    // 3. Handle URL parameters for pre-filtering
+    // 4. Handle URL parameters for pre-filtering
     function applyUrlFilters() {
         const urlParams = new URLSearchParams(window.location.search);
         const tagFilter = urlParams.get('tag');
@@ -89,14 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (checkbox) {
                 checkbox.checked = true;
                 shouldFilter = true;
-                // Expand year list if a year filter is applied
-                if (yearList) {
-                    yearList.style.display = 'block';
-                    const icon = yearCollapseButton.querySelector('i');
-                    if (icon) {
-                        icon.classList.remove('fa-chevron-right');
-                        icon.classList.add('fa-chevron-down');
-                    }
+                
+                // Ensure the year collapse is open if we're filtering by year
+                const yearCollapse = document.getElementById('year-collapse');
+                if (yearCollapse && !yearCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(yearCollapse, { show: true });
                 }
             }
         }
@@ -104,24 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (shouldFilter) {
             filterPublications();
         }
-    }
-
-    // Expand/collapse logic
-    const yearCollapseButton = document.getElementById('filter-year');
-    const yearList = document.getElementById('filter-year-list');
-
-    if (yearCollapseButton && yearList) {
-        yearCollapseButton.addEventListener('click', function() {
-            const isCollapsed = yearList.style.display === 'none';
-            yearList.style.display = isCollapsed ? 'block' : 'none';
-            // Toggle arrow direction
-            const icon = yearCollapseButton.querySelector('i');
-            icon.classList.toggle('fa-chevron-right', !isCollapsed);
-            icon.classList.toggle('fa-chevron-down', isCollapsed);
-        });
-        
-        // Collapse by default
-        yearList.style.display = 'none';
     }
 
     // Run URL filter check on load

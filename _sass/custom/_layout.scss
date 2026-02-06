@@ -411,3 +411,148 @@ main {
 .monospaced {
   font-family: var(--bs-font-monospace); 
 }
+/* --- Publication Archive Filters --- */
+.publication-sidebar {
+  background-color: transparent;
+  
+  .h5 {
+    color: #f8f9fa;
+    letter-spacing: 0.05rem;
+  }
+
+  .filter-list {
+    .form-check-input {
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      
+      &:checked {
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+      }
+    }
+    
+    .form-check-label {
+      cursor: pointer;
+      color: #adb5bd;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: #f8f9fa;
+      }
+    }
+  }
+}
+
+.btn-filter-toggle {
+  background: none;
+  border: none;
+  color: #f8f9fa;
+  box-shadow: none !important;
+  
+  span {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.transition-rotate {
+  transition: transform 0.3s ease-in-out;
+}
+
+[aria-expanded="false"] .transition-rotate {
+  transform: rotate(-90deg);
+}
+
+[aria-expanded="true"] .transition-rotate {
+  transform: rotate(0deg);
+}
+
+/* Animations for filter filtering */
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+/* Responsive adjustments */
+@include media-breakpoint-down(lg) {
+  .publication-sidebar {
+    border-end: none !important;
+    padding-right: 0 !important;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+}
+
+/* --- Publication List Styling --- */
+.publication-ol {
+  padding-left: 1.5rem;
+  counter-reset: pub-counter;
+  list-style: none;
+
+  li.publication {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1rem;
+    
+    &::before {
+      content: counter(pub-counter) ".";
+      counter-increment: pub-counter;
+      position: absolute;
+      left: -2.5rem;
+      width: 2rem;
+      text-align: right;
+      color: var(--bs-primary);
+      font-weight: 700;
+      font-family: var(--bs-font-monospace);
+    }
+    
+    .publication-title {
+      font-size: 1.1rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: #f8f9fa;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid transparent;
+        
+        &:hover {
+          color: var(--bs-primary);
+          border-bottom-color: var(--bs-primary);
+        }
+      }
+    }
+    
+    .publication-author {
+      font-size: 0.9rem;
+      color: #99a1a8;
+      
+      strong {
+        color: #dee2e6;
+        font-weight: 600;
+      }
+      
+      span {
+        color: #868e96;
+      }
+    }
+  }
+}

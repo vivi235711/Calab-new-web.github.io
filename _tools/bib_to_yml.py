@@ -172,6 +172,7 @@ def clean_title(raw_title: str) -> str:
 
     # Preserve braces elsewhere; only tidy whitespace
     title = re.sub(r'\s+', ' ', title).strip()
+    title = title.replace('{', '').replace('}', '')
     return title
 
 # --- Used within convert() loop ---
@@ -188,16 +189,14 @@ def convert():
 
     output_pubs = []
     for entry in bib_database.entries:
-        if entry.get('ENTRYTYPE').lower() != 'article':
-            continue
 
         author_raw = entry.get('author', '')
         authors = convert_to_unicode({'author': author_raw}).get('author', author_raw)
 
-        title = entry.get('title', '')[1:-1]
+        title = entry.get('title', '')
         title = clean_title(title)
         clean_title_key = re.sub(r'\W+', '', title.lower())
-        
+
         pub = {
             'year': entry.get('year', ''),
             'month': entry.get('month', ''),
@@ -208,6 +207,7 @@ def convert():
             'number': entry.get('number', ''),
             'pages': entry.get('pages', ''),
             'link_value': f"https://doi.org/{entry.get('doi', '')}" if 'doi' in entry else entry.get('adsurl', ''),
+            'type': entry.get('ENTRYTYPE', '').lower(),
             'tags': tag_map.get(clean_title_key, []) # Retrieve old tags
         }
         output_pubs.append(pub)

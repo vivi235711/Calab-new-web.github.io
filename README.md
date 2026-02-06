@@ -1,78 +1,136 @@
-## Website
-[CA Lab Website](https://chunyen-chen.github.io/Calab-new-web.github.io/)
+# Computational Astrophysics Lab (CALab) Website
 
+Welcome to the official repository for the **Computational Astrophysics Lab (CALab)** website. This site is built using [Jekyll](https://jekyllrb.com/) and is hosted on GitHub Pages. It serves as a hub for our research projects, publications, team members, and academic activities.
 
-## Reference
-1. [Original reference](https://github.com/learning-zone/website-templates)
-1. [Font Awesome](https://fontawesome.com/v6/download)
+---
 
+## 1. Quick Start Maintenance Guide (GitHub Web Interface)
 
-## Maintenance
-1. Rules of the home page
-   * less than 5 news (news in home should be happened in previous year or this year)
-   * less than 12 members
-   * less than 5 publications
-   * less than 6 courses
+You don't need to be a developer to update most of the website's content. You can make changes directly through the GitHub website using the "Edit" (pencil icon) button.
 
-1. Add a new publication
-   * Use the `script/bib2html.py`
+### 👥 Update Members
+Member information is stored in `_data/members.yml`.
+1. Navigate to `_data/members.yml`.
+2. Click the **pencil icon** to edit.
+3. **Add a member**: Copy an existing block and update the details (name, role, position, image path, etc.).
+4. **Remove a member**: Delete their corresponding block.
+5. **Change role**: Update the `role` field (e.g., `postdoc`, `master`, `previous`).
+6. Scroll down, write a brief commit message, and click **Commit changes**.
 
-1. Picture
-   * File format: `.webp` would be best.
-   * Sponser picture size: 200x50
-   * Project picture size: 400x289 / 600x450
-   * Member  picture size: 225x225 (best), or a square img (size can be random)
+### 🚀 Add Research Projects
+Projects are individual Markdown files in the `_projects/` directory.
+1. Navigate to `_projects/`.
+2. Click **Add file** > **Create new file**.
+3. Name it using a slug format (e.g., `new-project-2026.md`).
+4. **Required Front Matter**: Every project MUST start with a block like this:
+   ```yaml
+   ---
+   title: "Project Title"
+   tags: ["FDM"]             # Use "FDM", "GAMER_app", or "GAMER_dev"
+   image: "/assets/img/your-image.webp"
+   date: 2026-01-29
+   # For main research topics only (e.g., FDM.md):
+   # modal_id: FDM
+   # research_url: /research/fdm/
+   # sort_order: 1
+   ---
+   Project description goes here...
+   ```
+5. Click **Commit changes**.
 
-1. Video
-   * File format: `.webm` would be the best.
+### 📚 Update Publications
+Publications are managed in `_data/publications.yml`.
+- **Manual Update**: Edit the file directly in GitHub, following the existing YAML structure.
+- **Developer Update**: If you have a `.bib` file, you can use the script in `_tools/bib_to_yml.py` (requires local environment).
 
-1. Add a new member
-   * Image size
-   * links
-   * set the id and class
+### 🚀 Pushing Changes
+When you commit changes directly to the `main` branch on GitHub, a **GitHub Action** will automatically trigger, rebuilding the site and deploying it within 1-2 minutes.
 
-1. Minify the CSS
-   * use the `script/minifyCSS.py` (not tested yet)
+---
 
-1. Common html part
-   * the common html is placed under `script/common/`
-   * use the `script/replace_content.py` to replace the content
+## 2. Full Website Architecture
 
-## Known bugs
-1. `background-attachment: fixed;` does not work on any ios devices. See [here](https://caniuse.com/?search=background-attachment%3A).
-Current [solution](https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile).
+The site is built with **Jekyll**, a static site generator, and styled with **Bootstrap 5**.
 
-## Tips
-1. Add a special character in HTML.
-   * [Greek](https://www.thoughtco.com/html-codes-greek-characters-4062212)
-   * [German](https://websitebuilders.com/tools/html-codes/german/)
-   * [Math](https://www.toptal.com/designers/htmlarrows/math/)
-   * [Bar over character](https://stackoverflow.com/questions/12402831/print-a-with-bar-over-it-in-html)
-   * [Power of character](https://www.w3schools.com/tags/tag_sup.asp)
+### Directory Structure
 
-1. Check if the CSS parameter is available across all devices
-   * [Can I Use](https://caniuse.com/)
+| Folder | Purpose |
+| :--- | :--- |
+| `_data/` | Global data files (members, publications, navigation, etc.). |
+| `_projects/` | The core content collection. Driven by tags for categorization. |
+| `_includes/` | Reusable HTML snippets (headers, footers, cards, modals). |
+| `_layouts/` | Base page templates (e.g., `default.html`). |
+| `_sass/` | Custom SASS styles and Bootstrap overrides. |
+| `_tools/` | Auxiliary scripts (e.g., BibTeX to YAML converter). |
+| `assets/` | Static files: `img/` (images), `video/` (intro clips), `css/`, `js/`. |
+| `research/` | Specific landing pages and archives for research directions. |
 
-## TODO
-### Warning
-* clean the warning from the map
+### Data Logic
+- **`site.data.*`**: Jekyll automatically parses YAML files in `_data/`. For example, `site.data.members` accesses the list in `members.yml`.
+- **Collections**: `_projects` is a collection. We use `jekyll-paginate-v2` to create filtered archive pages for FDM, GAMER, etc., based on project tags.
 
-### Before to go
-* clean all the empty links
-* link all the members to their section in member page
-* Add the readme or instruction about the maintenance of website
-* fill the words which need to be filled
-* check the mobile version (include the css setting and different OS)
-* re-layout the footer
-* use the minimized .css and .js
+---
 
-### Optimizations
-* let the content change width to be a variable in css (complex!!!)
-* Try to let the background of contact to be fixed
-* check the figure of project and member => use github workflow?
-* the publication filters initialized as hide but still show at start
-* sort button of publucation?
-* a fold navbar e.g. (member => prof, RA, PHD...)
-* fill term of use and privacy policy at footer [This](https://www.termsofusegenerator.net) and [This](https://termify.io/privacy-policy-generator?gad_source=1&gclid=CjwKCAiAopuvBhBCEiwAm8jaMSbkpk0Mk7J4fZngmu3RuioKEHaxlYKaBKgx_55PW-REAaizBIze5BoC0NIQAvD_BwE)
-* optimize the load speed (https://pagespeed.web.dev/ or use the Edge insight)
-* share the footer and the header
+## 3. Developer Environment Setup
+
+To run the website locally for testing or major design changes:
+
+### Requirements
+- **Ruby** (v3.0+)
+- **Bundler** (`gem install bundler`)
+- **Jekyll**
+
+### Local Setup & Launch
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vivi235711/Calab-new-web.github.io.git
+   cd Calab-new-web.github.io
+   ```
+2. Install dependencies:
+   ```bash
+   bundle install
+   ```
+3. Run the development server:
+   ```bash
+   bundle exec jekyll serve --baseurl ""
+   ```
+4. Open your browser at: `http://127.0.0.1:4000/`
+
+### Troubleshooting
+- **Dependency Errors**: If `bundle install` fails, try running `bundle update` or deleting `Gemfile.lock` and reinstalling.
+- **Port Busy**: If 4000 is taken, use `bundle exec jekyll serve --port 4001`.
+- **Clean Cache**: If changes aren't showing up, run `bundle exec jekyll clean`.
+
+---
+
+## 4. Site Rules & Standards
+
+### 🖼️ Image Standards
+- **Location**: Always upload images to `assets/img/`. Subfolders like `assets/img/member/` are encouraged.
+- **Format**: **WebP** is the preferred format for the web (smaller, faster). JPG/PNG are acceptable but should be optimized.
+- **Consistency**: 
+    - **Member Photos**: Should ideally be square (e.g., 400x400px).
+    - **Project Thumbnails**: Use a consistent aspect ratio (e.g., 4:3 or 16:9).
+
+### 🏷️ Naming Conventions
+- **Collections/Files**: Use `kebab-case` (e.g., `fuzzy-dark-matter-study.md`).
+- **Styles**: Follow BEM or standard Bootstrap utility patterns.
+
+### 🎨 CSS & Styling
+- **Bootstrap 5**: Use Bootstrap's built-in utility classes (e.g., `mt-5`, `d-flex`, `text-center`) whenever possible.
+- **Custom SASS**: Add custom logic to `_sass/custom/`. Do not modify the core Bootstrap files directly.
+
+---
+
+## 5. Features Overview
+
+- **Featured Research**: Controlled via `_data/research_section.yml`. You can pin specific projects to the top of archives.
+- **Interactive Modals**: Projects on the Research landing page open detailed modals defined in `_projects/`.
+- **Publication Filtering**: The publications page includes a JS-based filter to sort by year or topic.
+- **Responsive Design**: Built with a mobile-first approach using Bootstrap 5's responsive grid.
+- **MathJax Support**: Enabled for rendering mathematical equations in project descriptions.
+
+---
+
+**Maintained by**: CA Lab Team
+**Last Overhaul**: January 2026

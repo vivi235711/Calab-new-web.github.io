@@ -9,6 +9,7 @@
   number: ''
   pages: arXiv:2512.11142
   link_value: https://doi.org/10.48550/arXiv.2512.11142
+  type: article
   tags:
   - GAMER Development
 - year: '2025'
@@ -22,6 +23,7 @@
   number: '1'
   pages: 36-52
   link_value: https://doi.org/10.1093/mnras/staf1639
+  type: article
   tags:
   - GAMER Applications
 - year: '2025'
@@ -34,7 +36,9 @@
   number: ''
   pages: A34
   link_value: https://doi.org/10.1051/0004-6361/202556196
-  tags: []
+  type: article
+  tags:
+  - FDM
 - year: '2025'
   month: October
   title: Universal numerical convergence criteria for subhalo tidal evolution
@@ -45,6 +49,7 @@
   number: ''
   pages: arXiv:2510.26901
   link_value: https://doi.org/10.48550/arXiv.2510.26901
+  type: article
   tags:
   - GAMER Applications
 - year: '2025'
@@ -56,6 +61,7 @@
   number: ''
   pages: arXiv:2509.23231
   link_value: https://doi.org/10.48550/arXiv.2509.23231
+  type: article
   tags:
   - FDM
 - year: '2025'
@@ -69,6 +75,7 @@
   number: '6'
   pages: '061002'
   link_value: https://doi.org/10.1103/9dqj-q6mt
+  type: article
   tags:
   - FDM
 - year: '2025'
@@ -82,7 +89,10 @@
   number: '2'
   pages: '39'
   link_value: https://doi.org/10.3847/1538-4365/addc59
-  tags: []
+  type: article
+  tags:
+  - GAMER Development
+  - FDM
 - year: '2025'
   month: July
   title: 'Cosmological zoom-in simulation of fuzzy dark matter down to z = 0: tidal
@@ -95,6 +105,7 @@
   number: '3'
   pages: 2653-2666
   link_value: https://doi.org/10.1093/mnras/staf828
+  type: article
   tags:
   - FDM
 - year: '2025'
@@ -108,6 +119,7 @@
   number: '5'
   pages: '051402'
   link_value: https://doi.org/10.1103/PhysRevLett.134.051402
+  type: article
   tags:
   - FDM
 - year: '2024'
@@ -121,6 +133,7 @@
   number: ''
   pages: arXiv:2412.13595
   link_value: https://doi.org/10.48550/arXiv.2412.13595
+  type: article
   tags:
   - GAMER Applications
 - year: '2024'
@@ -136,6 +149,7 @@
   number: '2'
   pages: '200'
   link_value: https://doi.org/10.3847/1538-4357/ad76ad
+  type: article
   tags:
   - Others
 - year: '2024'
@@ -148,6 +162,7 @@
   number: '2'
   pages: '146'
   link_value: https://doi.org/10.3847/1538-4357/ad50c5
+  type: article
   tags:
   - GAMER Applications
 - year: '2024'
@@ -161,6 +176,34 @@
   number: '1'
   pages: 129-148
   link_value: https://doi.org/10.1093/mnras/stae793
+  type: article
+  tags:
+  - FDM
+- year: '2024'
+  month: ''
+  title: 'Libyt: A Tool for Parallel In Situ Analysis with yt, Python, and Jupyter'
+  authors: <strong>Shin-Rong Tsai</strong>, <strong>Hsi-Yu Schive</strong>, and Matthew
+    Turk
+  journal: ''
+  volume: ''
+  number: ''
+  pages: ''
+  link_value: https://doi.org/10.1145/3659914.3659939
+  type: inproceedings
+  tags:
+  - GAMER Development
+- year: '2023'
+  month: July
+  title: Lighting up the Crinkly Spacetime of Dark Matter
+  authors: Alfred Amruth, Tom Broadhurst, Jeremy Lim, Masamune Oguri, George F. Smoot,
+    Jose M. Diego, Enoch Leung, Razieh Emami, Juno Li, <strong>Tzihong Chiueh</strong>,
+    <strong>Hsi-Yu Schive</strong>, Michael Yeung, and Sung Kei Li
+  journal: ''
+  volume: ''
+  number: ''
+  pages: '1887'
+  link_value: https://ui.adsabs.harvard.edu/abs/2023eas..conf.1887A
+  type: inproceedings
   tags:
   - FDM
 - year: '2023'
@@ -175,6 +218,7 @@
   number: ''
   pages: 736-747
   link_value: https://doi.org/10.1038/s41550-023-01943-9
+  type: article
   tags:
   - FDM
 - year: '2023'
@@ -187,6 +231,7 @@
   number: '1'
   pages: 515-534
   link_value: https://doi.org/10.1093/mnras/stad998
+  type: article
   tags:
   - FDM
 - year: '2023'
@@ -199,6 +244,7 @@
   number: '2'
   pages: '68'
   link_value: https://doi.org/10.3847/1538-4357/acc73d
+  type: article
   tags:
   - FDM
 - year: '2023'
@@ -212,6 +258,7 @@
   number: '2'
   pages: '51'
   link_value: https://doi.org/10.3390/galaxies11020051
+  type: article
   tags:
   - GAMER Applications
 - year: '2023'
@@ -225,8 +272,23 @@
   number: '3'
   pages: 4045-4063
   link_value: https://doi.org/10.1093/mnras/stac3358
+  type: article
   tags:
   - FDM
+- year: '2022'
+  month: April
+  title: 'Hitting A Brick Wall: Simulating the Interaction of a Relativistic Jet with
+    an ICM/Lobe Interface in Cygnus A'
+  authors: John ZuHone, Paul Nulsen, <strong>Po-Hsun Tseng</strong>, and <strong>Hsi-Yu
+    Schive</strong>
+  journal: ''
+  volume: '19'
+  number: ''
+  pages: '106.26'
+  link_value: https://ui.adsabs.harvard.edu/abs/2022HEAD...1910626Z
+  type: inproceedings
+  tags:
+  - GAMER Applications
 - year: '2021'
   month: July
   title: An adaptive mesh, GPU-accelerated, and error minimized special relativistic
@@ -238,6 +300,7 @@
   number: '3'
   pages: 3298-3315
   link_value: https://doi.org/10.1093/mnras/stab1006
+  type: article
   tags:
   - GAMER Development
 - year: '2021'
@@ -251,6 +314,7 @@
   number: '1'
   pages: '27'
   link_value: https://doi.org/10.3847/1538-4357/ac043f
+  type: article
   tags:
   - FDM
 - year: '2021'
@@ -264,6 +328,7 @@
   number: '10'
   pages: '103019'
   link_value: https://doi.org/10.1103/PhysRevD.103.103019
+  type: article
   tags:
   - FDM
 - year: '2021'
@@ -276,6 +341,7 @@
   number: '1'
   pages: '37'
   link_value: https://doi.org/10.3847/1538-4357/abd9b7
+  type: article
   tags:
   - GAMER Applications
 - year: '2020'
@@ -288,6 +354,7 @@
   number: '11'
   pages: '111102'
   link_value: https://doi.org/10.1103/PhysRevLett.125.111102
+  type: article
   tags:
   - FDM
 - year: '2020'
@@ -301,12 +368,13 @@
   number: '20'
   pages: '201301'
   link_value: https://doi.org/10.1103/PhysRevLett.124.201301
+  type: article
   tags:
   - FDM
 - year: '2020'
   month: May
-  title: Dynamical evidence of a dark solitonic core of 10$^{9}$M$_{{{\odot}}}$ in
-    the milky way
+  title: Dynamical evidence of a dark solitonic core of 10$^9$M$_\odot$ in the milky
+    way
   authors: Ivan De Martino, Tom Broadhurst, S.-H. Henry Tye, <strong>Tzihong Chiueh</strong>,
     and <strong>Hsi-Yu Schive</strong>
   journal: Physics of the Dark Universe
@@ -314,7 +382,9 @@
   number: ''
   pages: '100503'
   link_value: https://doi.org/10.1016/j.dark.2020.100503
-  tags: []
+  type: article
+  tags:
+  - FDM
 - year: '2020'
   month: February
   title: Testing the Prediction of Fuzzy Dark Matter Theory in the Milky Way Center
@@ -324,6 +394,7 @@
   number: '2'
   pages: '88'
   link_value: https://doi.org/10.3847/1538-4357/ab6598
+  type: article
   tags:
   - FDM
 - year: '2019'
@@ -337,6 +408,7 @@
   number: '3'
   pages: 4273-4286
   link_value: https://doi.org/10.1093/mnras/stz271
+  type: article
   tags:
   - FDM
 - year: '2019'
@@ -350,6 +422,7 @@
   number: ''
   pages: arXiv:1901.09967
   link_value: https://doi.org/10.48550/arXiv.1901.09967
+  type: article
   tags:
   - Others
 - year: '2018'
@@ -363,6 +436,7 @@
   number: '4'
   pages: 4815-4840
   link_value: https://doi.org/10.1093/mnras/sty2586
+  type: article
   tags:
   - GAMER Development
 - year: '2018'
@@ -375,7 +449,9 @@
   number: '2'
   pages: 2686-2699
   link_value: https://doi.org/10.1093/mnras/sty900
-  tags: []
+  type: article
+  tags:
+  - FDM
 - year: '2018'
   month: August
   title: 'Magnification Bias of Distant Galaxies in the Hubble Frontier Fields: Testing
@@ -387,6 +463,7 @@
   number: '2'
   pages: '156'
   link_value: https://doi.org/10.3847/1538-4357/aacdad
+  type: article
   tags:
   - FDM
 - year: '2018'
@@ -399,6 +476,7 @@
   number: '2'
   pages: '50'
   link_value: https://doi.org/10.3847/1538-4365/aac49e
+  type: article
   tags:
   - GAMER Development
 - year: '2018'
@@ -411,6 +489,7 @@
   number: '10'
   pages: '103523'
   link_value: https://doi.org/10.1103/PhysRevD.97.103523
+  type: article
   tags:
   - FDM
 - year: '2018'
@@ -423,7 +502,9 @@
   number: '1'
   pages: L36-L40
   link_value: https://doi.org/10.1093/mnrasl/slx159
-  tags: []
+  type: article
+  tags:
+  - FDM
 - year: '2018'
   month: January
   title: 'Ultra Light Axionic Dark Matter: Galactic Halos and Implications for Observations
@@ -435,6 +516,7 @@
   number: '1'
   pages: '10'
   link_value: https://doi.org/10.3390/galaxies6010010
+  type: article
   tags:
   - FDM
 - year: '2017'
@@ -448,6 +530,7 @@
   number: ''
   pages: '221103'
   link_value: https://doi.org/10.1103/PhysRevLett.119.221103
+  type: article
   tags:
   - FDM
 - year: '2017'
@@ -460,6 +543,7 @@
   number: '2'
   pages: 1338-1348
   link_value: https://doi.org/10.1093/mnras/stx449
+  type: article
   tags:
   - FDM
 - year: '2017'
@@ -474,6 +558,7 @@
   number: '2'
   pages: 2217-2234
   link_value: https://doi.org/10.1093/mnras/stw3291
+  type: article
   tags:
   - Others
 - year: '2017'
@@ -487,6 +572,7 @@
   number: '2'
   pages: 024038
   link_value: https://doi.org/10.1103/PhysRevD.95.024038
+  type: article
   tags:
   - Others
 - year: '2017'
@@ -499,8 +585,23 @@
   number: '1'
   pages: '57'
   link_value: https://doi.org/10.3847/1538-4357/835/1/57
+  type: article
   tags:
   - GAMER Applications
+- year: '2017'
+  month: January
+  title: A complete waveform model for compact binaries on eccentric orbits
+  authors: Daniel George, Eliu Huerta, Prayush Kumar, Bhanu Agarwal, <strong>Hsi-Yu
+    Schive</strong>, Harald Pfeiffer, Tony Chu, Michael Boyle, Daniel Hemberger, Lawrence
+    Kidder, Mark Scheel, and Bela Szilagyi
+  journal: ''
+  volume: '2017'
+  number: ''
+  pages: X2.004
+  link_value: https://ui.adsabs.harvard.edu/abs/2017APS..APR.X2004G
+  type: inproceedings
+  tags:
+  - FDM
 - year: '2016'
   month: February
   title: Contrasting Galaxy Formation from Quantum Wave Dark Matter, $\psi$DM, with
@@ -512,7 +613,9 @@
   number: '1'
   pages: '89'
   link_value: https://doi.org/10.3847/0004-637X/818/1/89
-  tags: []
+  type: article
+  tags:
+  - FDM
 - year: '2015'
   month: May
   title: Sound-triggered collapse of stably oscillating low-mass cores in a two-phase
@@ -524,6 +627,7 @@
   number: '3'
   pages: 3183-3190
   link_value: https://doi.org/10.1093/mnras/stv514
+  type: article
   tags:
   - GAMER Applications
 - year: '2014'
@@ -538,6 +642,7 @@
   number: '26'
   pages: '261302'
   link_value: https://doi.org/10.1103/PhysRevLett.113.261302
+  type: article
   tags:
   - FDM
 - year: '2014'
@@ -550,8 +655,22 @@
   number: '7'
   pages: 496-499
   link_value: https://doi.org/10.1038/nphys2996
+  type: article
   tags:
   - FDM
+- year: '2012'
+  month: ''
+  title: Numerical simulations of acoustic waves with the graphic acceleration GAMER
+    code
+  authors: K. Murawski, and <strong>H.-Y. Schive</strong>
+  journal: Bulletin of the Polish Academy of Sciences Technical Sciences
+  volume: '60'
+  number: No 4
+  pages: 787-792
+  link_value: https://doi.org/10.2478/v10175-012-0091-9
+  type: article
+  tags:
+  - GAMER Development
 - year: '2011'
   month: June
   title: Vortex turbulence in linear Schrödinger wave mechanics
@@ -562,7 +681,21 @@
   number: '11'
   pages: '115101'
   link_value: https://doi.org/10.1088/0953-4075/44/11/115101
-  tags: []
+  type: article
+  tags:
+  - FDM
+- year: '2011'
+  month: April
+  title: GAMER with out-of-core computation
+  authors: <strong>Hsi-Yu Schive</strong>, Yu-Chih Tsai, and <strong>Tzihong Chiueh</strong>
+  journal: ''
+  volume: '270'
+  number: ''
+  pages: 401-404
+  link_value: https://doi.org/10.1017/S1743921311000718
+  type: inproceedings
+  tags:
+  - GAMER Development
 - year: '2011'
   month: March
   title: Directionally Unsplit Hydrodynamic Schemes with Hybrid MPI/OpenMP/GPU Parallelization
@@ -574,6 +707,35 @@
   number: ''
   pages: arXiv:1103.3373
   link_value: https://doi.org/10.48550/arXiv.1103.3373
+  type: article
+  tags:
+  - GAMER Development
+- year: '2011'
+  month: ''
+  title: Multi-science applications with single codebase - GAMER - for massively parallel
+    architectures
+  authors: Hemant Shukla, <strong>Hsi-Yu Schive</strong>, <strong>Tak-Pong Woo</strong>,
+    and <strong>Tzihong Chiueh</strong>
+  journal: ''
+  volume: ''
+  number: ''
+  pages: ''
+  link_value: https://doi.org/10.1145/2063384.2063433
+  type: inproceedings
+  tags:
+  - GAMER Development
+- year: '2011'
+  month: ''
+  title: Accelerated Many-Core GPU Computing for Physics and Astrophysics on Three
+    Continents
+  authors: Rainer Spurzem, Peter Berczik, Ingo Berentzen, Wei Ge, Xiaowei Wang, <strong>Hsi-yu
+    Schive</strong>, Keigo Nitadori, Tsuyoshi Hamada, and José Fiestas
+  journal: ''
+  volume: ''
+  number: ''
+  pages: 35-58
+  link_value: https://doi.org/https://doi.org/10.1002/9781118130506.ch3
+  type: inbook
   tags:
   - GAMER Development
 - year: '2010'
@@ -586,6 +748,7 @@
   number: '2'
   pages: 457-484
   link_value: https://doi.org/10.1088/0067-0049/186/2/457
+  type: article
   tags:
   - GAMER Development
 - year: '2008'
@@ -598,5 +761,6 @@
   number: '6'
   pages: 418-435
   link_value: https://doi.org/10.1016/j.newast.2007.12.005
+  type: article
   tags:
   - Others

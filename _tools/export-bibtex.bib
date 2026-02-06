@@ -387,20 +387,6 @@ archivePrefix = {arXiv},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@INPROCEEDINGS{2021AAS...23812508D,
-       author = {{Dutta Chowdhury}, D. and {Van Den Bosch}, F. and {Robles}, V. and {Van Dokkum}, P. and {Schive}, H. and {Chiueh}, T. and {Broadhurst}, T.},
-        title = "{On The Random Motion Of Nuclear Objects In A Fuzzy Dark Matter Halo}",
-    booktitle = {American Astronomical Society Meeting Abstracts \#238},
-         year = 2021,
-       series = {American Astronomical Society Meeting Abstracts},
-       volume = {238},
-        month = jun,
-          eid = {125.08},
-        pages = {125.08},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2021AAS...23812508D},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}
-
 @ARTICLE{2021PhRvD.103j3019C,
        author = {{Chiang}, Barry T. and {Schive}, Hsi-Yu and {Chiueh}, Tzihong},
         title = "{Soliton oscillations and revised constraints from Eridanus II of fuzzy dark matter}",
@@ -436,20 +422,6 @@ archivePrefix = {arXiv},
        eprint = {1911.07898},
  primaryClass = {astro-ph.GA},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2021ApJ...909...37L},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}
-
-@INPROCEEDINGS{2021APS..MARB22010T,
-       author = {{Tseng}, Po-Hsun and {Schive}, Hsi-Yu and {Chiueh}, Tzihong},
-        title = "{An adaptive-mesh, GPU-accelerated, and optimally error-controlled special relativistic hydrodynamics code}",
-    booktitle = {APS March Meeting Abstracts},
-         year = 2021,
-       series = {APS Meeting Abstracts},
-       volume = {2021},
-        month = jan,
-          eid = {B22.010},
-        pages = {B22.010},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2021APS..MARB22010T},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
@@ -699,20 +671,6 @@ archivePrefix = {arXiv},
         pages = {10},
           doi = {10.3390/galaxies6010010},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2018Galax...6...10D},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}
-
-@INPROCEEDINGS{2018APS..APRL01069L,
-       author = {{Lin}, Shan-Chang and {Schive}, Hsi-Yu and {Wong}, Shing-Kwong and {Chiueh}, Tzihong},
-        title = "{Self-consistent construction of virialized wave dark matter halos}",
-    booktitle = {APS April Meeting Abstracts},
-         year = 2018,
-       series = {APS Meeting Abstracts},
-       volume = {2018},
-        month = jan,
-          eid = {L01.069},
-        pages = {L01.069},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2018APS..APRL01069L},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
@@ -1011,5 +969,71 @@ archivePrefix = {arXiv},
  primaryClass = {astro-ph},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2008NewA...13..418S},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@inproceedings{10.1145/3659914.3659939,
+author = {Tsai, Shin-Rong and Schive, Hsi-Yu and Turk, Matthew},
+title = {Libyt: A Tool for Parallel In Situ Analysis with yt, Python, and Jupyter},
+year = {2024},
+isbn = {9798400706394},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3659914.3659939},
+doi = {10.1145/3659914.3659939},
+abstract = {In the era of extreme-scale computing, large-scale data storage and analysis have become more critical and challenging. For postprocessing, the simulation first needs to dump snapshots on a hard disk before processing any data. This becomes a bottleneck for high spatial and temporal resolution simulation. In situ analysis provides a viable solution for analyzing extreme scale simulations by processing data in memory, which skips the step of storing data on disk. We present libyt, an open-source C library that allows researchers to analyze and visualize data using yt or other Python packages in parallel computing during simulation runtime. We describe the code method for connecting simulation runtime data to Python, handling data transition and redistribution between Python and simulation processes with minimal memory overhead, and supporting interactive Python prompt and Jupyter Notebook for users to probe the ongoing simulation data at the current time step. We demonstrate how it solves the problem of visualizing large-scale astrophysical simulations, improving disk usage efficiency, and monitoring simulations closely. We conclude it with discussions and compare libyt to post-processing.},
+booktitle = {Proceedings of the Platform for Advanced Scientific Computing Conference},
+articleno = {25},
+numpages = {10},
+keywords = {in situ analysis, simulation tool, data analysis tool, astronomy data analysis},
+location = {Zurich, Switzerland},
+series = {PASC '24}
+}
+
+@inproceedings{10.1145/2063384.2063433,
+author = {Shukla, Hemant and Schive, Hsi-Yu and Woo, Tak-Pong and Chiueh, Tzihong},
+title = {Multi-science applications with single codebase - GAMER - for massively parallel architectures},
+year = {2011},
+isbn = {9781450307710},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2063384.2063433},
+doi = {10.1145/2063384.2063433},
+abstract = {The growing need for power efficient extreme-scale highperformance computing (HPC) coupled with plateauing clock-speeds is driving the emergence of massively parallel compute architectures. Tens to many hundreds of cores are increasingly made available as compute units, either as the integral part of the main processor or as coprocessors designed for handling massively parallel workloads. In the case of many-core graphics processing units (GPUs) hundreds of SIMD cores primarily designed for image and video rendering are used for high-performance scientific computations. The new architectures typically offer ANSI standard programming models such as CUDA (NVIDIA) and OpenCL. However, the wide-ranging adoption of these parallel architectures is steeped in difficult learning curve and requires reengineering of existing applications that mostly leads to expensive and error prone code rewrites without prior guarantee and knowledge of any speedups.Broad range of complex scientific applications across many domains use common algorithms and techniques, such as adaptive mesh refinements (AMR), advanced hydrodynamics partial differential equation (PDE) solvers, Poisson-Gravity solvers etc, that have demonstrably performed highly efficiently on GPU based systems. Taking advantage of the commonalities, we use GPU-aware AMR code, GAMER [1], to examine the unique approach of solving multi-science problems in astrophysics, hydrodynamics and particle physics with single codebase. We demonstrate significant speedups in disparate class of scientific applications on 3 separate clusters, viz., Dirac, Laohu and Mole 8.5. By extensively reusing the extendable single codebase we mitigate the impediments of significant code rewrites. We also collect performance and energy consumption benchmark metrics on 50-nodes NVIDIA C2050 GPU and Intel 8-core Nehalem CPU on Dirac cluster at the National Energy Research Supercomputing Center (NERSC). In addition, we propose a strategy and framework for legacy and new applications to successfully leverage the evolving GAMER codebase on massively parallel architectures. The framework and the benchmarks are aimed to help quantify the adoption strategies for legacy and new scientific applications.},
+booktitle = {Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis},
+articleno = {37},
+numpages = {11},
+keywords = {simulations, hydrodynamics, benchmarks, Poisson-Gravity solvers, GPU, AMR},
+location = {Seattle, Washington},
+series = {SC '11}
+}
+
+
+@inbook{doi:https://doi.org/10.1002/9781118130506.ch3,
+author = {Spurzem, Rainer and Berczik, Peter and Berentzen, Ingo and Ge, Wei and Wang, Xiaowei and Schive, Hsi-yu and Nitadori, Keigo and Hamada, Tsuyoshi and Fiestas, José},
+publisher = {John Wiley & Sons, Ltd},
+isbn = {9781118130506},
+title = {Accelerated Many-Core GPU Computing for Physics and Astrophysics on Three Continents},
+booktitle = {Large-Scale Computing},
+chapter = {3},
+pages = {35-58},
+doi = {https://doi.org/10.1002/9781118130506.ch3},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118130506.ch3},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781118130506.ch3},
+year = {2011},
+keywords = {astrophysics, Beijing, Chinese Academy of Sciences (CAS), galactic nuclei, Germany, graphical processing units (GPUs), many-core parallelization, physics, star clusters, United States},
+abstract = {Summary Graphical processing units (GPUs) have become widely used to accelerate a broad range of applications, including computational physics and astrophysics, image/video processing, engineering simulations, and quantum chemistry. This chapter presents results obtained from GPU clusters with previous generations of GPU accelerators, which have no or very limited double-precision support. It provides an astrophysical N-body application for star clusters and galactic nuclei, which is currently the well-tested and heavily used application. The chapter explains exemplary implementations of parallel codes using many GPUs as accelerators, so combining message passing parallelization with many-core parallelization. It discusses their benchmarks using up to 512 Fermi Tesla GPUs in parallel on the Mole-8.5 hardware of the Institute of Process Engineering of the Chinese Academy of Sciences (IPE/CAS) in Beijing, and the Laohu Tesla C1070 cluster of the National Astronomical Observatories of CAS in Beijing and smaller clusters in Germany and in the United States. Controlled Vocabulary Terms galactic nuclei; graphics processing units; star clusters}
+}
+
+@ARTICLE{Murawski_K._Numerical_2012,
+ author={Murawski, K. and Schive, H.-Y.},
+ volume={60},
+ number={No 4},
+ journal={Bulletin of the Polish Academy of Sciences Technical Sciences},
+ pages={787-792},
+ howpublished={online},
+ year={2012},
+ title={Numerical simulations of acoustic waves with the graphic acceleration GAMER code},
+ URL={http://journals.pan.pl/Content/83658/PDF/paper_14.pdf},
+ doi={10.2478/v10175-012-0091-9},
 }
 

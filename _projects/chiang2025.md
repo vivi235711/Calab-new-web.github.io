@@ -1,6 +1,6 @@
 ---
 title: "The Tidal Evolution of Anisotropic Subhaloes: a New Pathway to Creating Isotropic and Cored Satellites"
-tags: ["FDM"]
+tags: ["gamer_app"]
 image: "/assets/img/chiang2025.webp"
 date: 2025-09-26
 link: "https://academic.oup.com/mnras/article/544/1/36/8266513?login=false"
