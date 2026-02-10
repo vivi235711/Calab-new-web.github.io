@@ -74,10 +74,10 @@ def load_members():
             data = yaml.safe_load(f)
             for m in data:
                 # Collect main name and all aliases
-                names = [m['name']]
+                names = [m['english_name']]
                 if 'aliases' in m and m['aliases']:
                     names.extend(m['aliases'])
-                member_data.append({"main_name": m['name'], "search_names": names})
+                member_data.append({"main_name": m['english_name'], "search_names": names})
     return member_data
 
 def get_existing_tags():
