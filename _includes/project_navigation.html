@@ -1,0 +1,20 @@
+<div class="project-navigation d-flex justify-content-center gap-4 align-items-center {{ include.extra_classes }}">
+    {% if include.back_modal_dismiss %}
+        <button class="btn btn-back {{ include.btn_size }} fw-bold text-uppercase" data-bs-dismiss="modal" type="button">
+            <i class="fa-solid {{ include.back_icon | default: 'fa-xmark' }}"></i>
+            <span>{{ include.back_text | default: 'Close Project' }}</span>
+        </button>
+    {% elsif include.back_url %}
+        <a href="{{ include.back_url }}" class="btn btn-back {{ include.btn_size }} fw-bold text-uppercase">
+            <i class="fa-solid {{ include.back_icon | default: 'fa-arrow-left' }}"></i>
+            <span>{{ include.back_text | default: 'Back' }}</span>
+        </a>
+    {% endif %}
+
+    {% if include.go_url %}
+        <a href="{{ include.go_url }}" class="btn btn-go {{ include.btn_size }} fw-bold text-uppercase">
+            <i class="fa-solid {{ include.go_icon | default: 'fa-arrow-right' }}"></i>
+            <span>{{ include.go_text | default: 'See More' }}</span>
+        </a>
+    {% endif %}
+</div>

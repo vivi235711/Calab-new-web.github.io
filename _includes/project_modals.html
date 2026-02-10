@@ -1,15 +1,10 @@
-{% comment %} 
-_includes/project_modals.html
-Used to render modal content for all research projects.
-{% endcomment %}
-
 {% assign all_projects = site.projects | sort: 'sort_order' %}
 
 {% for project in all_projects %}
 
 <div class="modal fade" id="portfolioModal-{{ project.modal_id }}" tabindex="-1" aria-labelledby="modalLabel-{{ project.modal_id }}" aria-hidden="true">
 
-    <div class="modal-dialog modal-dialog-centered modal-xl"> 
+    <div class="modal-dialog modal-dialog-centered modal-lg">
 
         <div class="modal-content bg-body-tertiary">
 
@@ -19,7 +14,7 @@ Used to render modal content for all research projects.
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
 
-                            <div class="text-center mb-4">
+                            <div class="text-center my-4">
                                 <h2 class="text-uppercase mb-1">{{ project.title }}</h2>
                             </div>
 
@@ -45,19 +40,20 @@ Used to render modal content for all research projects.
 
                             </div>
 
-                            <div class="d-flex justify-content-center gap-3 mb-5">
-                                {% if project.research_url %}
-                                <a href="{{ project.research_url | relative_url }}" class="btn btn-primary btn-lg text-uppercase">
-                                    <i class="fa-solid fa-arrow-right me-2"></i>
-                                    See More
-                                </a>
-                                {% endif %}
-
-                                <button class="btn btn-outline-secondary btn-lg text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fa-solid fa-xmark me-2"></i>
-                                    Close Project
-                                </button>
-                            </div>
+                            {% assign go_url = nil %}
+                            {% if project.research_url %}
+                                {% capture go_url %}{{ project.research_url | relative_url }}{% endcapture %}
+                            {% endif %}
+                            
+                            {% include project_navigation.html 
+                                back_modal_dismiss=true
+                                back_text="Close Project"
+                                back_icon="fa-xmark"
+                                go_url=go_url
+                                go_text="See More"
+                                go_icon="fa-arrow-right"
+                                btn_size="btn-lg"
+                            %}
 
                         </div>
                     </div>

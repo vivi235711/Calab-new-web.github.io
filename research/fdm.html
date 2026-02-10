@@ -31,13 +31,14 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
     {% include pagination.html %}
 {% endif %}
 
-<div class="text-center mt-5">
-    <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary shadow-sm">
-        <i class="fa-solid fa-arrow-left me-2"></i>Back to Research
-    </a>
-    <a href="{{ '/publications/' | relative_url }}?tag=fdm" class="btn btn-outline-primary shadow-sm">
-        <i class="fa-solid fa-book me-2"></i>View Related Publications
-    </a>
-</div>
+{% capture back_url %}{{ '/research/' | relative_url }}{% endcapture %}
+{% capture go_url %}{{ '/publications/' | relative_url }}?tag=fdm{% endcapture %}
+{% include project_navigation.html 
+    back_url=back_url
+    back_text="Back to Research" 
+    go_url=go_url
+    go_text="View Related Publications"
+    go_icon="fa-book"
+%}
 
 </section>

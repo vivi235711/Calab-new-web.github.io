@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterCheckboxes = document.querySelectorAll('.pub-filter-checkbox');
     const publicationItems = document.querySelectorAll('.publication-ol li.publication');
     const clearAllBtn = document.getElementById('clear-all-filters');
-    
+
     /**
      * Core filtering function (Modified for AND/OR logic)
      */
@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (checkbox.checked) {
                 const group = checkbox.getAttribute('data-group'); // 'year' or 'tag'
                 const filter = checkbox.getAttribute('data-filter');
-                
+
                 if (!activeFiltersByGroup[group]) {
                     activeFiltersByGroup[group] = [];
                 }
                 activeFiltersByGroup[group].push(filter);
             }
         });
-        
+
         // Get names of all active filter groups (e.g., ['year', 'tag'])
         const filterGroups = Object.keys(activeFiltersByGroup);
 
@@ -39,21 +39,27 @@ document.addEventListener('DOMContentLoaded', function() {
             const itemTags = item.getAttribute('data-tags')
                                  .split(' ')
                                  .filter(tag => tag.length > 0);
-            
+
             // Default assumption is the item passes the filter
             let passesAllGroups = true;
-            
+
             // Iterate through each active filter group (e.g., Year Group, Tag Group)
             for (const group of filterGroups) {
                 const activeFilters = activeFiltersByGroup[group];
-                
-                // Check if the group condition is met (OR logic within the group)
-                const passesGroup = activeFilters.some(filter => itemTags.includes(filter));
-                
+                let passesGroup;
+
+                if (group === 'tag') {
+                    // Tag group uses AND logic (must have ALL selected tags)
+                    passesGroup = activeFilters.every(filter => itemTags.includes(filter));
+                } else {
+                    // Other groups (like Year) use OR logic (must have at least one selected value)
+                    passesGroup = activeFilters.some(filter => itemTags.includes(filter));
+                }
+
                 // Fail general filter if group check fails (AND logic between groups)
                 if (!passesGroup) {
                     passesAllGroups = false;
-                    break; 
+                    break;
                 }
             }
 
@@ -84,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             filterPublications();
         });
     }
-    
+
     // 4. Handle URL parameters for pre-filtering
     function applyUrlFilters() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -106,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (checkbox) {
                 checkbox.checked = true;
                 shouldFilter = true;
-                
                 // Ensure the year collapse is open if we're filtering by year
                 const yearCollapse = document.getElementById('year-collapse');
                 if (yearCollapse && !yearCollapse.classList.contains('show')) {

@@ -18,22 +18,21 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
             {% assign role_title = role.title %}
 
             {% assign members_list = all_members | where: 'role', role_id %}
-
+            {% if members_list.size > 0 %}
             <div id="{{ role_id }}-section" class="pt-5 bg-body-tertiary border {% unless forloop.first %}mt-5{% endunless %}">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading mb-3">{{ role_title }}</h2>
+                        <h2 class="mb-3">{{ role_title }}</h2>
                     </div>
                 </div>
 
-                {% if members_list.size > 0 %}
                 <div class="row pb-4 justify-content-center">
                     {% for member in members_list %}
                         {% include member_card.html member=member %}
                     {% endfor %}
                 </div>
-                {% endif %}
             </div>
+            {% endif %}
         {% endfor %}
 
         <div class="row mt-5">

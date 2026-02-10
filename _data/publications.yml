@@ -122,6 +122,19 @@
   type: article
   tags:
   - FDM
+- year: '2025'
+  month: ''
+  title: 'Introducing yt 4.0: Analysis and Visualization of Volumetric Data'
+  authors: Turk M. J., Smith B. D., Oishi J. S., <strong>H.-Y. Schive</strong>, and
+    et.al
+  journal: ''
+  volume: ''
+  number: ''
+  pages: ''
+  link_value: https://yt-project.github.io/yt-4.0-paper/
+  type: article
+  tags:
+  - Others
 - year: '2024'
   month: December
   title: Cool-Core Destruction in Merging Clusters with AGN Feedback and Radiative

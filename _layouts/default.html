@@ -19,7 +19,6 @@
       {% endif %}
       data-bs-theme="dark"
 >
-    <!-- <button onclick="scrollToTop()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up" style="font-size:20px;"></i></button> -->
 
     <header>
         {% include navbar.html %}
@@ -28,7 +27,7 @@
         {% include hero.html %}
     {% endif %}
 
-   <main class="flex-shrink-0">
+   <main class="{% if page.hero_title %} py-5 px-4 {% else %} pt-navbar {% endif %}">
         {{ content }}
     </main>
 

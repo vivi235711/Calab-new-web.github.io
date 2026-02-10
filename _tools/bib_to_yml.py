@@ -8,11 +8,7 @@ import re
 # Get current script directory path (_tools)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Use os.path.join for cross-platform compatibility
-# Assumes .bib file is in same directory as script (_tools)
 BIB_FILE = os.path.join(BASE_DIR, 'export-bibtex.bib')
-
-# 成員檔和產出檔在 _data 資料夾 (相對於 _tools 來說是在上一層的 _data)
 MEMBERS_FILE = os.path.join(BASE_DIR, '..', '_data', 'members.yml')
 OUTPUT_YAML_FILE = os.path.join(BASE_DIR, '..', '_data', 'publications.yml')
 
@@ -71,7 +67,7 @@ ADS_JOURNAL_MACROS = {
 
 
 def load_members():
-    """Load members and their aliases"""
+    """Load members and their aliases for matching author names"""
     member_data = []
     if os.path.exists(MEMBERS_FILE):
         with open(MEMBERS_FILE, 'r', encoding='utf-8') as f:
@@ -145,6 +141,7 @@ def process_author_name(author_str, member_db):
     return final_authors[0] if final_authors else ""
 
 def process_journal_name(raw_journal):
+    """Process journal name by removing redundant braces and backslashes, and replacing macros with full names"""
     if not raw_journal:
         return ""
     
@@ -161,6 +158,7 @@ def process_journal_name(raw_journal):
 ENSUREMATH_RE = re.compile(r'{?\\ensuremath\s*(?:{([^{}]+)}|\\?([^\s{}]+))}?')
 
 def clean_title(raw_title: str) -> str:
+    """Clean title by removing redundant braces and ensuring math expressions are properly formatted"""
     if not raw_title:
         return ""
     title = raw_title.strip()
@@ -176,7 +174,6 @@ def clean_title(raw_title: str) -> str:
     return title
 
 # --- Used within convert() loop ---
-# journal = process_journal_name(entry.get('journal', ''))
 
 def convert():
     member_db = load_members()
@@ -206,7 +203,7 @@ def convert():
             'volume': entry.get('volume', ''),
             'number': entry.get('number', ''),
             'pages': entry.get('pages', ''),
-            'link_value': f"https://doi.org/{entry.get('doi', '')}" if 'doi' in entry else entry.get('adsurl', ''),
+            'link_value': f"https://doi.org/{entry.get('doi', '')}" if 'doi' in entry else entry.get('adsurl', '') or entry.get('url', '') or entry.get('URL', ''),
             'type': entry.get('ENTRYTYPE', '').lower(),
             'tags': tag_map.get(clean_title_key, []) # Retrieve old tags
         }

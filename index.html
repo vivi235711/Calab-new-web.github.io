@@ -6,54 +6,56 @@ permalink: /
 bg_image: /assets/img/volume_rendering.webp
 ---
 
-<section class="homepage-masthead text-white d-flex flex-column justify-content-center align-items-center">
+<section id="hero" class="masthead-full d-flex align-items-center">
+    <div class="container text-center text-white text-shadow-dark">
+        <!-- Main Title -->
+        <h1 class="display-4 fw-bolder mb-4">NTU Computational Astrophysics Lab</h1>
+        
+        <!-- Subtitle -->
+        <p class="display-6 fw-normal mb-5">High-Performance Simulations of the Universe</p>
 
-    <div class="intro-text text-center">
-        <div class="intro-lead-in display-4 fw-bolder mb-5">NTU Computational Astrophysics Lab</div>
-        <div class="intro-heading display-6 fw-normal mb-3">High-Performance Simulations of the Universe</div>
-
+        <!-- Dynamic Scroll Indicator -->
         <div class="mt-5">
             <a href="#about" class="text-white text-decoration-none">
-                <i class="fa-solid fa-circle-chevron-down" style="font-size:50px;"></i>
+                <i class="fa-solid fa-circle-chevron-down fa-3x"></i>
             </a>
         </div>
     </div>
-
 </section>
 
-<section id="about" class="py-5">
-    <div class="container py-4 border bg-glass">
-        <div class="row pt-4">
-            <div class="col-lg-12 text-center">
-                <h2 class="fw-bold mb-5">About Us</h2>
+<section id="about" class="py-2">
+    <div class="container py-3 border bg-glass">
+        <div class="row pb-2">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold">About Us</h2>
             </div>
         </div>
 
-        <div class="row align-items-center g-5">
-            <div class="col-md-7 pb-4 g-5">
+        <div class="row align-items-center g-5 px-3">
+            <div class="col-lg-7 pb-4 g-5">
                 <p class="lead">
-                    The Computational Astrophysics Lab (CALab)uses large-scale numerical simulations to explore the physics of the Universe.
+                    The Computational Astrophysics Lab (CALab) uses large-scale numerical simulations to explore the physics of the Universe.
                 </p>
 
-                <div class="research-focus-list mb-4">
-                    <h4 class="h6 text-uppercase fw-bold text-primary mb-3">Our research directions:</h4>
+                <div class="mb-4">
+                    <h4 class="h6 mb-3">Our research directions:</h4>
 
-                    <div class="mb-3">
-                        <span class="badge rounded-pill me-2">1</span>
-                        Investigating the distinctive <strong>wave nature of fuzzy dark matter</strong>
+                    <div class="mb-3 align-items-start d-flex">
+                        <span class="badge rounded-pill monospaced text-primary mx-2">1.</span>
+                        <span>Investigating the distinctive wave nature of fuzzy dark matter</span>
                     </div>
-                    <div class="mb-3">
-                        <span class="badge rounded-pill me-2">2</span>
-                        Developing <strong>GAMER</strong>, a multi-GPU-accelerated AMR code for HPC simulations
+                    <div class="mb-3 align-items-start d-flex">
+                        <span class="badge rounded-pill monospaced text-primary mx-2">2.</span>
+                        <span>Developing GAMER, a multi-GPU-accelerated AMR code for HPC simulations</span>
                     </div>
-                    <div class="mb-3">
-                        <span class="badge rounded-pill me-2">3</span>
-                        Conducting collaborative, <strong>GAMER-based projects</strong> spanning galaxy clusters to star formation
+                    <div class="mb-3 align-items-start d-flex">
+                        <span class="badge rounded-pill monospaced text-primary mx-2">3.</span>
+                        <span>Conducting collaborative, GAMER-based projects spanning galaxy clusters to star formation</span>
                     </div>
                 </div>
 
                 <p class="small text-muted mb-4">
-                    See <a href="{{ '/research' | relative_url }}" class="text-decoration-none border-bottom">Research</a> and 
+                    See <a href="{{ '/research' | relative_url }}" class="text-decoration-none border-bottom">Research</a> and
                     <a href="{{ '/publications' | relative_url }}" class="text-decoration-none border-bottom">Publications</a> for details.
                 </p>
 
@@ -62,7 +64,7 @@ bg_image: /assets/img/volume_rendering.webp
                 </a>
             </div>
 
-            <div class="col-md-5">
+            <div class="col-lg-5">
                 <div class="ratio ratio-1x1 shadow-lg rounded-3 overflow-hidden border border-secondary border-opacity-25"> 
                     <video src="{{ 'assets/video/halo_40s.webm' | relative_url }}"
                            poster="{{ 'assets/img/volume_rendering.webp' | relative_url }}"

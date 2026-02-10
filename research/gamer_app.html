@@ -17,7 +17,7 @@ hero_title: GAMER Application
 hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 ---
 
-<section id="GAMER_app-archive" class="py-5 border container">
+<section id="GAMER_app-archive" class="py-5 container">
 {% for project in paginator.posts %}
   {% assign is_featured = false %}
   {% if site.data.research_section['gamer-app_highlight'] contains project.slug %}
@@ -30,13 +30,14 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
     {% include pagination.html %}
 {% endif %}
 
-<div class="text-center mt-5">
-    <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary shadow-sm">
-        <i class="fa-solid fa-arrow-left me-2"></i>Back to Research
-    </a>
-    <a href="{{ '/publications/' | relative_url }}?tag=gamer-applications" class="btn btn-outline-primary shadow-sm">
-        <i class="fa-solid fa-book me-2"></i>View Related Publications
-    </a>
-</div>
+{% capture back_url %}{{ '/research/' | relative_url }}{% endcapture %}
+{% capture go_url %}{{ '/publications/' | relative_url }}?tag=gamer-applications{% endcapture %}
+{% include project_navigation.html 
+    back_url=back_url
+    back_text="Back to Research" 
+    go_url=go_url
+    go_text="View Related Publications"
+    go_icon="fa-book"
+%}
 
 </section>

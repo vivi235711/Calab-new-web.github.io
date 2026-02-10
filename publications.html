@@ -27,8 +27,8 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                 </div>
 
                 <!-- Year Filter -->
-                <div class="filter-group mb-4">
-                    <button class="btn btn-filter-toggle d-flex align-items-center justify-content-between w-100 p-0 mb-3" 
+                <div class="mb-4">
+                    <button class="btn d-flex align-items-center justify-content-between w-100 p-0 mb-3" 
                             type="button" data-bs-toggle="collapse" data-bs-target="#year-collapse" 
                             aria-expanded="false" aria-controls="year-collapse">
                         <span class="fw-bold">Year</span>
@@ -37,7 +37,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                     
                     <div class="collapse" id="year-collapse">
                         {% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
-                        <ul class="list-unstyled filter-list ps-5">
+                        <ul class="list-unstyled filter-list ps-3">
                             {% for year in years %}
                             <li class="mb-2">
                                 <div class="form-check">
@@ -54,10 +54,10 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                 <hr class="my-4 opacity-10">
 
                 <!-- Tags / Topics Filter -->
-                <div class="filter-group mb-4">
+                <div class="mb-4">
                     <h5 class="h6 fw-bold mb-3">Tags</h5>
                     {% assign all_tags = site.data.publications | map: "tags" | flatten | uniq | sort %}
-                    <ul class="list-unstyled filter-list ps-5">
+                    <ul class="list-unstyled filter-list ps-3">
                         {% for tag in all_tags %}
                         <li class="mb-2">
                             <div class="form-check">
@@ -74,7 +74,18 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
         <!-- Publication List -->
         <div class="col-lg-9">
-        <ol class="publication-ol">
+            <div class="mb-4 d-flex justify-content-end align-items-center flex-wrap gap-3">
+                <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Schive%2C%20Hsi-Yu%22&sort=date%2C%20bibcode%20desc&p_=0" 
+                   target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                    <i class="fa-solid fa-square-poll-vertical me-2"></i>NASA ADS
+                </a>
+                <a href="https://scholar.google.com/citations?user=9i298C0AAAAJ&hl=en" 
+                   target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                    <i class="fa-solid fa-graduation-cap me-2"></i>Google Scholar
+                </a>
+            </div>
+
+            <ol class="publication-ol">
             {% assign sorted_pubs = site.data.publications %}
             {% for pub in sorted_pubs %}
 
@@ -102,7 +113,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                         {{ pub.title }}
                     </a>
                 </div>
-                <div class="publication-author">
+                <div class="">
                     {{ pub.authors }}
                     <span style="font-style: italic;">{{ pub.journal }}</span>
 

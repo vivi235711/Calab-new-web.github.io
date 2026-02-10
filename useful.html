@@ -9,21 +9,23 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
 {% assign all_links = site.useful | sort: 'sort_order' %}
 
-<section id="useful-links-main" class="container bg-body-tertiary border py-5">
-        <div class="row text-center g-4 pb-5 justify-content-center">
+<section id="useful-links-main">
+    <div class="container bg-body-tertiary border py-5">
+        <div class="row text-center g-4 justify-content-center">
             {% for link_item in all_links %}
             {% assign link_id = link_item.title | slugify %}
             <div class="col-md-4 col-sm-6">
-                <a href="#{{ link_id }}" class="text-decoration-none text-body">
+                <a href="#{{ link_id }}" class="text-decoration-none text-body link-card">
                     <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary opacity-75"></i> 
+                        <i class="fa fa-circle fa-stack-2x icon-bg"></i> 
                         <i class="fa-{{ link_item.icon_class }} fa-{{ link_item.icon_solid }} fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading mt-3">{{ link_item.title }}</h4>
+                    <h4 class="mt-3">{{ link_item.title }}</h4>
                 </a>
             </div>
             {% endfor %}
         </div>
+    </div>
 </section>
 
 
@@ -34,7 +36,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
         <div class="container bg-body-tertiary border  p-4">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading mb-4">{{ link_item.title }}</h2>
+                    <h2 class="mb-4">{{ link_item.title }}</h2>
                 </div>
             </div>
             

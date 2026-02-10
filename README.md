@@ -1,136 +1,148 @@
 # Computational Astrophysics Lab (CALab) Website
 
-Welcome to the official repository for the **Computational Astrophysics Lab (CALab)** website. This site is built using [Jekyll](https://jekyllrb.com/) and is hosted on GitHub Pages. It serves as a hub for our research projects, publications, team members, and academic activities.
+Welcome to the official repository for the **Computational Astrophysics Lab (CALab)** website. This site is built with [Jekyll](https://jekyllrb.com/) and [Bootstrap 5](https://getbootstrap.com/), hosted on GitHub Pages.
 
 ---
 
-## 1. Quick Start Maintenance Guide (GitHub Web Interface)
+## 📑 Table of Contents
+1. [Quick Maintenance (GitHub Web Interface)](#1-quick-maintenance-github-web-interface)
+   - [Update Members](#-update-members)
+   - [Add/Update Research Projects](#-addupdate-research-projects)
+   - [Manage Highlights & News](#-manage-highlights--news)
+   - [Update Courses & Useful Links](#-update-courses--useful-links)
+2. [Publications Management (Automatic)](#2-publications-management-automatic)
+3. [Website Architecture](#3-website-architecture)
+4. [Developer Environment & Setup](#4-developer-environment--setup)
+5. [Site Standards & Guidelines](#5-site-standards--guidelines)
 
-You don't need to be a developer to update most of the website's content. You can make changes directly through the GitHub website using the "Edit" (pencil icon) button.
+---
+
+## 1. Quick Maintenance (GitHub Web Interface)
+
+You can maintain most of the website's content without any coding knowledge by using the GitHub "Edit" (pencil icon) button.
 
 ### 👥 Update Members
 Member information is stored in `_data/members.yml`.
 1. Navigate to `_data/members.yml`.
 2. Click the **pencil icon** to edit.
-3. **Add a member**: Copy an existing block and update the details (name, role, position, image path, etc.).
-4. **Remove a member**: Delete their corresponding block.
-5. **Change role**: Update the `role` field (e.g., `postdoc`, `master`, `previous`).
-6. Scroll down, write a brief commit message, and click **Commit changes**.
+3. **Add a member**: Copy below block and update the details (name, role, position, image path, etc.).
+   ```yaml
+   - english_name: "Firstname Lastname"
+     native_name: "姓名"
+     role: "postdoc"                  # Use roles from _data/member_roles.yml
+     image: "/assets/img/member/name.webp"
+     website: "https://..."
+     email: "user@example.com"
+     github: "username"
+      bio:
+       - "Research interest line 1"
+       - "Line 2"
+     aliases: ["Lastname, F.", "Firstname L."] # Used to bold name in Publications
+   ```
+4. **Alumni/Previous Members**: Simply change `role` to `previous`. They will automatically move to the "Previous Members" page.
+5. **Images**: Upload square (1:1) WebP images to `assets/img/member/`.
 
-### 🚀 Add Research Projects
-Projects are individual Markdown files in the `_projects/` directory.
-1. Navigate to `_projects/`.
-2. Click **Add file** > **Create new file**.
-3. Name it using a slug format (e.g., `new-project-2026.md`).
-4. **Required Front Matter**: Every project MUST start with a block like this:
+### 🚀 Add/Update Research Projects
+Projects are individual Markdown files in `_projects/`.
+1. **Types of Projects**:
+   - **Archive Projects**: Standard research updates. Use tags like `FDM`, `GAMER_app`, or `GAMER_dev`.
+   - **Main Topic Projects**: These appear on the "Research" landing page. They MUST have `tags: ["main"]` and a `modal_id`.
+2. **Add New**: Create a file like `_projects/2026-new-study.md`.
+3. **Template**:
    ```yaml
    ---
-   title: "Project Title"
-   tags: ["FDM"]             # Use "FDM", "GAMER_app", or "GAMER_dev"
-   image: "/assets/img/your-image.webp"
-   date: 2026-01-29
-   # For main research topics only (e.g., FDM.md):
-   # modal_id: FDM
-   # research_url: /research/fdm/
-   # sort_order: 1
+   title: "Study Title"
+   date: 2026-02-11
+   tags: ["FDM"]             # Categorizes the project
+   image: "/assets/img/..."  # Thumbnail image
+   link: "https://doi.org/." # External paper link
+   link_text: "Journal Ref"  # Text for the link button
    ---
-   Project description goes here...
+   Executive summary of the project...
    ```
-5. Click **Commit changes**.
 
-### 📚 Update Publications
-Publications are managed in `_data/publications.yml`.
-- **Manual Update**: Edit the file directly in GitHub, following the existing YAML structure.
-- **Developer Update**: If you have a `.bib` file, you can use the script in `_tools/bib_to_yml.py` (requires local environment).
+### 🏆 Manage Highlights & News
+The special "Highlights" on the News and Research Archive pages are controlled by `_data/research_section.yml`.
+- Add the **filename (slug)** of a project to the corresponding list:
+  ```yaml
+  research_highlights:
+    - project-slug-1
+    - project-slug-2
+  fdm_highlights:
+    - project-slug-3
+    - project-slug-4
+  ```
 
-### 🚀 Pushing Changes
-When you commit changes directly to the `main` branch on GitHub, a **GitHub Action** will automatically trigger, rebuilding the site and deploying it within 1-2 minutes.
+### 📚 Update Courses & Useful Links
+- **Courses**: Managed in `_courses/`. Edit the Markdown files to update syllabus or links.
+- **Useful Links**: Managed in `_useful/`. Add new links or categories by editing the files there.
 
 ---
 
-## 2. Full Website Architecture
+## 2. Publications Management (Automatic)
 
-The site is built with **Jekyll**, a static site generator, and styled with **Bootstrap 5**.
+We use an automated pipeline to handle publications. **Do not edit `_data/publications.yml` directly!**
 
-### Directory Structure
+1. **Step**: Edit `_tools/export-bibtex.bib` and add your BibTeX entries.
+2. **Automation**: A GitHub Action automatically runs `_tools/bib_to_yml.py` to:
+   - Convert BibTeX to YAML.
+   - Match authors against our member list (and bold them).
+   - Convert LaTeX journal macros (e.g., `\apj`) to full names.
+   - **Preserve Tags**: If you manually add `tags: ["FDM"]` to an entry in `_data/publications.yml`, the script will remember it even when the bib is updated (as long as the title stays the same).
 
-| Folder | Purpose |
+---
+
+## 3. Website Architecture
+
+| Folder/File | Purpose |
 | :--- | :--- |
-| `_data/` | Global data files (members, publications, navigation, etc.). |
-| `_projects/` | The core content collection. Driven by tags for categorization. |
-| `_includes/` | Reusable HTML snippets (headers, footers, cards, modals). |
-| `_layouts/` | Base page templates (e.g., `default.html`). |
-| `_sass/` | Custom SASS styles and Bootstrap overrides. |
-| `_tools/` | Auxiliary scripts (e.g., BibTeX to YAML converter). |
-| `assets/` | Static files: `img/` (images), `video/` (intro clips), `css/`, `js/`. |
-| `research/` | Specific landing pages and archives for research directions. |
+| `_data/` | YAML files for Members, Publications, and Navigation. |
+| `_projects/` | The core collection of research updates. |
+| `_courses/` | Course materials and syllabus. |
+| `_useful/` | Curated links for lab members. |
+| `_includes/` | Reusable components (Navbar, Cards, Modals). |
+| `_layouts/` | Page templates (Default). |
+| `_sass/` | Custom styling and Bootstrap overrides. |
+| `_tools/` | Tools for automatic updates. |
+| `assets/` | Static assets: `img/`, `video/`, `js/`, `css/`. |
+| `research/` | Page for research projects. (Entrance from research pages' modal) |
+| `_config.yml` | Configuration file for Jekyll. |
+| `Gemfile` | Gemfile for Jekyll. |
 
-### Data Logic
-- **`site.data.*`**: Jekyll automatically parses YAML files in `_data/`. For example, `site.data.members` accesses the list in `members.yml`.
-- **Collections**: `_projects` is a collection. We use `jekyll-paginate-v2` to create filtered archive pages for FDM, GAMER, etc., based on project tags.
 
 ---
 
-## 3. Developer Environment Setup
-
-To run the website locally for testing or major design changes:
+## 4. Developer Environment & Setup
 
 ### Requirements
-- **Ruby** (v3.0+)
-- **Bundler** (`gem install bundler`)
-- **Jekyll**
+- **Ruby 3.0+** & **Bundler**
+- **Python 3.9+** (for publication script)
 
-### Local Setup & Launch
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/vivi235711/Calab-new-web.github.io.git
-   cd Calab-new-web.github.io
-   ```
-2. Install dependencies:
-   ```bash
-   bundle install
-   ```
-3. Run the development server:
-   ```bash
-   bundle exec jekyll serve --baseurl ""
-   ```
-4. Open your browser at: `http://127.0.0.1:4000/`
+### Local Launch
+1. `bundle install`
+2. `bundle exec jekyll serve --baseurl ""`
+3. Open `http://127.0.0.1:4000/`
 
-### Troubleshooting
-- **Dependency Errors**: If `bundle install` fails, try running `bundle update` or deleting `Gemfile.lock` and reinstalling.
-- **Port Busy**: If 4000 is taken, use `bundle exec jekyll serve --port 4001`.
-- **Clean Cache**: If changes aren't showing up, run `bundle exec jekyll clean`.
+### Deployment
+Deployment is automatic! Any push to the `main` branch triggers:
+1. Publication script conversion.
+2. Jekyll build.
+3. GitHub Pages deployment.
 
 ---
 
-## 4. Site Rules & Standards
+## 5. Site Standards & Guidelines
 
-### 🖼️ Image Standards
-- **Location**: Always upload images to `assets/img/`. Subfolders like `assets/img/member/` are encouraged.
-- **Format**: **WebP** is the preferred format for the web (smaller, faster). JPG/PNG are acceptable but should be optimized.
-- **Consistency**: 
-    - **Member Photos**: Should ideally be square (e.g., 400x400px).
-    - **Project Thumbnails**: Use a consistent aspect ratio (e.g., 4:3 or 16:9).
+### 🖼️ Media
+- **Format**: Use **WebP** for images and **WebM** for videos whenever possible for better performance.
+- **Size**: Member photos should be **square** (e.g., 400x400px).
+- **Video**: Laboratory/Background videos should be muted and under 10MB.
 
-### 🏷️ Naming Conventions
-- **Collections/Files**: Use `kebab-case` (e.g., `fuzzy-dark-matter-study.md`).
-- **Styles**: Follow BEM or standard Bootstrap utility patterns.
-
-### 🎨 CSS & Styling
-- **Bootstrap 5**: Use Bootstrap's built-in utility classes (e.g., `mt-5`, `d-flex`, `text-center`) whenever possible.
-- **Custom SASS**: Add custom logic to `_sass/custom/`. Do not modify the core Bootstrap files directly.
+### 🏷️ Naming
+- **Files**: Use `kebab-case` (e.g., `my-new-paper.md`).
+- **Tags**: Stick to consistent tags: `FDM`, `GAMER_app`, `GAMER_dev`, `main`.
 
 ---
 
-## 5. Features Overview
-
-- **Featured Research**: Controlled via `_data/research_section.yml`. You can pin specific projects to the top of archives.
-- **Interactive Modals**: Projects on the Research landing page open detailed modals defined in `_projects/`.
-- **Publication Filtering**: The publications page includes a JS-based filter to sort by year or topic.
-- **Responsive Design**: Built with a mobile-first approach using Bootstrap 5's responsive grid.
-- **MathJax Support**: Enabled for rendering mathematical equations in project descriptions.
-
----
-
-**Maintained by**: CA Lab Team
-**Last Overhaul**: January 2026
+**Maintained by**: CALab Team
+**Last Updated**: February 2026

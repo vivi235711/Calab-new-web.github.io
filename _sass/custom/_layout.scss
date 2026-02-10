@@ -1,340 +1,238 @@
 /* ==========================================================================
-   Custom Layout Styles
+   Custom Layout Styles - CA Lab
    ========================================================================== */
 
-/* ==========================================================================
-   1. VARIABLES & CONFIGURATION
-   ========================================================================== */
+/* ============================================================
+   TABLE OF CONTENTS
+   ============================================================
+   01. VARIABLES & CONFIGURATION
+   02. BASE & GLOBAL STYLES
+   03. NAVIGATION BAR (Navbar & Logo)
+   04. HEADER & HERO SECTIONS
+   05. PROJECT CARDS & NAVIGATION
+   06. PUBLICATION STYLES
+   07. COURSE & COMPONENT STYLES
+   08. IMAGE & MEDIA UTILITIES
+   09. FOOTER
+   10. UTILITIES & ANIMATIONS
+   ============================================================ */
 
-// Navbar dimensions - used for precise layout calculations
-$navbar-total-height: 70px;
+/* ============================================================
+   01. VARIABLES & CONFIGURATION
+   ============================================================ */
 
-// Text shadow values for consistent dark overlays
+$navbar-total-height: 71px;
 $text-shadow-dark: 2px 2px 5px rgba(0, 0, 0, 0.8);
-
-// Border colors for consistent glass morphism effects
 $glass-border-color: rgba(255, 255, 255, 0.05);
-
-// Primary color with alpha for drop shadows
 $primary-glow: rgba(254, 209, 54, 0.2);
 
-/* ==========================================================================
-   2. GLOBAL & BASE STYLES
-   ========================================================================== */
+/* ============================================================
+   02. BASE & GLOBAL STYLES
+   ============================================================ */
 
-// Main content area - offset by navbar height
-main {
-  margin-top: $navbar-total-height;
+html {
+    scroll-padding-top: $navbar-total-height;
 }
 
-/* ==========================================================================
-   3. SHARED LAYOUT COMPONENTS
-   ========================================================================== */
-
-/* --- Navigation & Header --- */
-
-// Navbar base styles
-#nav-bar {
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
-  font-size: 1.05rem;
-  min-height: $navbar-total-height;
-
-  &.navbar-transparent {
-    background-color: transparent !important;
-  }
-
-  // Navbar in scrolled state with glass morphism effect
-  &.navbar-scrolled {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid $glass-border-color;
-  }
-}
-// Lab logo with neon glow effect
-.lab-navbar-logo {
-  height: 45px;
-  width: auto;
-  max-width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 
-              0 0 10px rgba(0, 255, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 
-                0 0 15px rgba(0, 255, 0, 0.2);
-    filter: brightness(1.1);
-  }
+// Utility to push content below the fixed navbar
+.pt-navbar {
+    margin-top: $navbar-total-height; 
 }
 
-// Dropdown menu enhancements
-.dropdown-menu {
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background-color: rgb(65, 65, 65) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-// Desktop dropdown behavior (hover to open)
-@include media-breakpoint-up(lg) {
-  .dropdown-hover:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-  }
-
-  .nav-item.dropdown.d-flex {
-    flex-wrap: nowrap !important;
-    align-items: flex-start !important;
-  }
-
-  .nav-item.dropdown .dropdown-menu {
-    top: 100% !important;
-    margin-top: 0;
-  }
-}
-
-// Mobile dropdown behavior
-@include media-breakpoint-down(lg) {
-  .nav-item.dropdown {
-    justify-content: flex-start;
-
-    .dropdown-menu {
-      position: static !important;
-      float: none;
-      width: 100% !important;
-      flex-basis: 100%;
-      border: none;
-      box-shadow: none !important;
-      background: transparent;
-      padding-left: 1rem;
-      transform: none !important;
-      display: none;
-
-      &.show {
-        display: block !important;
-      }
-    }
-  }
-
-  .dropdown-toggle {
-    padding: 0.5rem 0.5rem !important;
-  }
-}
-
-/* --- Footer --- */
-
-.footer-bg {
-  background-color: #1a1d21;
-  border-top: 1px solid $glass-border-color;
-  padding: 3rem 0;
-  color: #adb5bd;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-/* ==========================================================================
-   4. PAGE SECTIONS (SEQUENTIAL ORDER)
-   ========================================================================== */
-
-/* --- Masthead / Hero Section --- */
-
-// Homepage masthead with full viewport height
-.homepage-masthead {
-  height: 100vh;
-  text-shadow: $text-shadow-dark;
-
-  // Ensure text and links are visible on dark background
-  .intro-lead-in,
-  .intro-heading,
-  a {
-    color: #fff;
-  }
-}
-
-// Background image setup for home page
+// Background image setup for pages with body-level backgrounds (Home/Contact)
 .body-home-bg {
-  // Note: Background image URL is dynamically set by Liquid in HTML
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; // Parallax scrolling effect
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-// Generic hero section with background image
-.hero-section {
-  position: relative;
-  background-size: cover;
-  background-position: center;
+// Global text utility
+.monospaced {
+    font-family: var(--bs-font-monospace); 
 }
 
-/* --- Research / Projects Section --- */
+/* ============================================================
+   03. NAVIGATION BAR
+   ============================================================ */
 
-// Project card container with hover effects
-.portfolio-link {
-  overflow: hidden;
+#nav-bar {
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+    font-size: 1.05rem;
+    min-height: $navbar-total-height;
 
-  .portfolio-hover {
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover {
-    .portfolio-hover {
-      opacity: 1 !important;
+    &.navbar-transparent {
+        background-color: transparent !important;
     }
 
-    .img-project-modal {
-      transform: scale(1.05);
+    &.navbar-scrolled {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid $glass-border-color;
     }
-  }
 }
 
-[id$="-section"] {
-  scroll-margin-top: 100px;
+.lab-navbar-logo {
+    height: 45px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 
+                0 0 10px rgba(0, 255, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 
+                    0 0 15px rgba(0, 255, 0, 0.2);
+        filter: brightness(1.1);
+    }
 }
 
-/* ==========================================================================
-   5. CUSTOM UI COMPONENTS
-   ========================================================================== */
-
-/* --- Image Components --- */
-
-// Team member avatars - standardized dimensions
-.img-team {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin: 0 auto;
-  display: block;
+// Dropdown Enhancements
+.dropdown-menu {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgb(65, 65, 65) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-// Hero section images
-.img-hero {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 0.5rem;
+@include media-breakpoint-up(lg) {
+    .dropdown-hover:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+    .nav-item.dropdown .dropdown-menu {
+        top: 100% !important;
+        margin-top: 0;
+    }
 }
 
-// // Project thumbnail images
-// .img-project {
-//   width: 400px;
-//   height: 400px;
-//   max-width: 100%;
-//   border-radius: 0.5rem;
-// }
-
-// Project thumbnail container with fixed height and visual enhancements
-.project-thumb-container {
-  height: 250px;
-  // background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-
-
-  // Ensure responsiveness on mobile
-  @include media-breakpoint-down(sm) {
-    height: 200px;
-  }
+@include media-breakpoint-down(lg) {
+    .nav-item.dropdown {
+        .dropdown-menu {
+            position: static !important;
+            float: none;
+            width: 100% !important;
+            border: none;
+            box-shadow: none !important;
+            background: transparent;
+            padding-left: 1rem;
+            display: none;
+            &.show { display: block !important; }
+        }
+    }
+    .dropdown-toggle { padding: 0.5rem 0.5rem !important; }
 }
 
-// Project thumbnail images
-.img-project-thumb {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: transform 0.5s ease;
+/* ============================================================
+   04. HEADER & HERO SECTIONS
+   ============================================================ */
 
-  &:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    transform: translateY(-4px);
-  }
+/* Full Viewport Masthead (For Index and Contact) */
+.masthead-full {
+    min-height: calc(100vh - #{$navbar-total-height});
+    text-shadow: $text-shadow-dark;
 }
 
-// Project modal full images
-.img-project-modal {
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5px;
+/* Short Hero Section (For Research, publications, etc.) */
+.masthead-short {
+    padding-top: $navbar-total-height;
+    padding-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: $text-shadow-dark;
 }
 
-// Sponsor logos
-.img-sponsor {
-  max-height: 100px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
 
+/* ============================================================
+   05. PROJECT CARDS & NAVIGATION
+   ============================================================ */
+
+/* --- Project Cards --- */
 .project-card {
-  margin-bottom: 3rem;
-  display: flex; // Ensures columns are of equal height
-  align-items: stretch; // Forces image col to match text col height
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: stretch;
 
-  .img-column {
-        display: flex;
-        justify-content: center; // Centers the 90% width image horizontally
-        align-items: center;     // Centers image vertically if it's shorter than text
+    .img-column {
+        position: relative;
+        min-height: auto;
+        
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; // Mobile: No extra padding to allow full width
+            position: relative; // Mobile: natural flow
+
+            @include media-breakpoint-up(md) {
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                min-height: 250px;
+                padding: 1rem; // Desktop: Padding for better visual balance
+            }
+        }
     }
-// Image styling nested inside the row
+
     .img-project {
-        width: 90%;             /* 90% length of the col-6 */
-        height: auto;           /* Fills the height defined by text */
-        max-height: 400px;       /* Never exceeds the container */
-        object-fit: cover;
+        display: block;
+        max-width: 100%;
         background-color: $white;
         transition: transform 0.3s ease;
-        align-items: center;
+
+        // Mobile: Span full width of its container
+        width: 100%;
+        height: auto;
+
+        @include media-breakpoint-up(md) {
+            // Desktop: Scale based on column height
+            width: auto;
+            max-height: 100%;
+            object-fit: contain;
+        }
     }
 
-
-    // Text content container
     .project-content-box {
+        flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center; // Keeps text centered vertically
+        justify-content: center;
         height: 100%;
+    }
+
+    .project-title {
+        font-weight: 700;
+        line-height: 1.2;
+        color: #f8f9fa;
+    }
+
+    .project-description {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        text-align: justify;
+        color: #adb5bd;
+        p { margin-bottom: 1rem; } 
+    }
+
+    .link-academic {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.9rem;
+        color: var(--bs-primary);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-bottom: 1px solid var(--bs-primary);
         }
-        .project-title {
-            font-weight: 700;
-            line-height: 1.2;
-            color: #f8f9fa;
+
+        i {
+            margin-right: 0.5rem;
         }
-
-        .project-description {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            text-align: justify;
-            color: #adb5bd;
-
-            // Ensures LaTeX math blocks have proper spacing
-            p { margin-bottom: 1rem; } 
-        }
-
-        .link-academic {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            color: var(--bs-primary);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-
-            &:hover {
-                border-bottom: 1px solid var(--bs-primary);
-            }
-
-            i {
-                margin-right: 0.5rem;
-            }
-        }
+    }
 
     &.card-highlight {
         border-left: 5px solid #3498db;
@@ -347,212 +245,196 @@ main {
     }
 }
 
-.badge-highlight {
-    position: absolute;
-    top: -10px;
-    right: 20px;
-    background-color: #3498db;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
-    z-index: 5;
-    display: inline-flex;
+/* --- Project Thumbnails (Grid View) --- */
+.project-thumb-container {
+    height: 250px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 6px;
-}
-
-/* --- Course Link Cards --- */
-
-.course-link-card {
-  .icon-bg {
-    color: $primary;
-    opacity: 0.8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-  }
 
-  &:hover .icon-bg {
-    opacity: 1;
-    filter: drop-shadow(0 0 5px $primary-glow);
-  }
+    @include media-breakpoint-down(sm) { height: 200px; }
 }
 
-.map-container {
-    /* 圓角與陰影 */
-    border-radius: 20px; // 與你左側卡片的圓角保持一致
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); // 增加深度感
-    
-    /* 讓內部的 iframe 乖乖待在圓角內 */
-    overflow: hidden; 
-    
-    /* 可選：給地圖加一個細微的邊框，增加科技感 */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.img-project-thumb {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    &:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        transform: translateY(-4px);
+    }
 }
 
-/* ==========================================================================
-   6. UTILITIES & HELPER CLASSES
-   ========================================================================== */
+/* --- Archive & Project Navigation --- */
+.project-navigation {
 
-// Dark text shadow utility for readability on light backgrounds
-.text-shadow-dark {
-  text-shadow: $text-shadow-dark;
-}
-// Glassmorphism background utility
-.bg-glass {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  border: 1px solid $glass-border-color;
+    .btn {
+        padding: 0.8rem 1.8rem;
+        gap: 0.6rem;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.85rem;
+
+        &.btn-back {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #adb5bd;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+
+        &.btn-go {
+            background: transparent;
+            border: 1px solid rgba($primary, 0.5);
+            color: $primary;
+
+            &:hover {
+                background: $primary;
+                color: #000;
+                border-color: $primary;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        padding: 1.5rem;
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
 }
 
-.monospaced {
-  font-family: var(--bs-font-monospace); 
-}
-/* --- Publication Archive Filters --- */
+/* ============================================================
+   06. PUBLICATION STYLES
+   ============================================================ */
+
 .publication-sidebar {
-  background-color: transparent;
-  
-  .h5 {
-    color: #f8f9fa;
-    letter-spacing: 0.05rem;
-  }
-
-  .filter-list {
-    .form-check-input {
-      cursor: pointer;
-      background-color: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      
-      &:checked {
-        background-color: var(--bs-primary);
-        border-color: var(--bs-primary);
-      }
+    background-color: transparent;
+    .h5 { color: #f8f9fa; letter-spacing: 0.05rem; }
+    .filter-list {
+        .form-check-input {
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            &:checked { background-color: var(--bs-primary); border-color: var(--bs-primary); }
+        }
+        .form-check-label {
+            cursor: pointer;
+            color: #adb5bd;
+            transition: color 0.2s ease;
+            &:hover { color: #f8f9fa; }
+        }
     }
-    
-    .form-check-label {
-      cursor: pointer;
-      color: #adb5bd;
-      transition: color 0.2s ease;
-      
-      &:hover {
-        color: #f8f9fa;
-      }
-    }
-  }
 }
 
-.btn-filter-toggle {
-  background: none;
-  border: none;
-  color: #f8f9fa;
-  box-shadow: none !important;
-  
-  span {
-    font-size: 1rem;
+.publication-ol {
+    padding-left: 1.5rem;
+    counter-reset: pub-counter;
+    list-style: none;
+
+    li.publication {
+        position: relative;
+        margin-bottom: 2.5rem;
+        padding-left: 1rem;
+        &::before {
+            content: counter(pub-counter) ".";
+            counter-increment: pub-counter;
+            position: absolute;
+            left: -2.5rem;
+            width: 2rem;
+            text-align: right;
+            color: var(--bs-primary);
+            font-weight: 700;
+            font-family: var(--bs-font-monospace);
+        }
+        .publication-title a {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
+            &:hover { color: var(--bs-primary); border-bottom-color: var(--bs-primary); }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .publication-sidebar {
+        margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.02);
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+}
+
+/* ============================================================
+   07. COURSE & USEFUL LINKS STYLES
+   ============================================================ */
+
+.link-card {
+    .icon-bg { color: $primary; opacity: 0.8; transition: all 0.3s ease; }
+    &:hover .icon-bg { opacity: 1; filter: drop-shadow(0 0 5px $primary-glow); }
+}
+
+/* ============================================================
+   08. IMAGE & MEDIA UTILITIES
+   ============================================================ */
+
+.img-team { width: 150px; height: 150px; object-fit: cover; margin: 0 auto; display: block; }
+.img-sponsor { max-height: 50px; width: auto; object-fit: contain; }
+
+/* ============================================================
+   09. FOOTER
+   ============================================================ */
+
+.footer-bg {
+    background-color: #1a1d21;
+    border-top: 1px solid $glass-border-color;
+    padding: 3rem 0;
+    color: #adb5bd;
+    font-size: 0.9rem;
     letter-spacing: 0.5px;
-  }
 }
 
-.transition-rotate {
-  transition: transform 0.3s ease-in-out;
+/* ============================================================
+   10. UTILITIES & ANIMATIONS
+   ============================================================ */
+
+.bg-glass {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid $glass-border-color;
 }
 
-[aria-expanded="false"] .transition-rotate {
-  transform: rotate(-90deg);
-}
+.text-shadow-dark { text-shadow: $text-shadow-dark; }
 
-[aria-expanded="true"] .transition-rotate {
-  transform: rotate(0deg);
-}
+.transition-rotate { transition: transform 0.3s ease-in-out; }
+[aria-expanded="false"] .transition-rotate { transform: rotate(-90deg); }
+[aria-expanded="true"] .transition-rotate { transform: rotate(0deg); }
 
-/* Animations for filter filtering */
-.fade-in {
-  animation: fadeIn 0.4s ease forwards;
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease forwards;
-}
+// Fade Animations
+.fade-in { animation: fadeIn 0.4s ease forwards; }
+.fade-out { animation: fadeOut 0.4s ease forwards; }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(10px); }
-}
-
-/* Responsive adjustments */
-@include media-breakpoint-down(lg) {
-  .publication-sidebar {
-    border-end: none !important;
-    padding-right: 0 !important;
-    margin-bottom: 2rem;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 1.5rem;
-    border-radius: 12px;
-  }
-}
-
-/* --- Publication List Styling --- */
-.publication-ol {
-  padding-left: 1.5rem;
-  counter-reset: pub-counter;
-  list-style: none;
-
-  li.publication {
-    position: relative;
-    margin-bottom: 2.5rem;
-    padding-left: 1rem;
-    
-    &::before {
-      content: counter(pub-counter) ".";
-      counter-increment: pub-counter;
-      position: absolute;
-      left: -2.5rem;
-      width: 2rem;
-      text-align: right;
-      color: var(--bs-primary);
-      font-weight: 700;
-      font-family: var(--bs-font-monospace);
-    }
-    
-    .publication-title {
-      font-size: 1.1rem;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-      
-      a {
-        color: #f8f9fa;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.2s ease;
-        border-bottom: 1px solid transparent;
-        
-        &:hover {
-          color: var(--bs-primary);
-          border-bottom-color: var(--bs-primary);
-        }
-      }
-    }
-    
-    .publication-author {
-      font-size: 0.9rem;
-      color: #99a1a8;
-      
-      strong {
-        color: #dee2e6;
-        font-weight: 600;
-      }
-      
-      span {
-        color: #868e96;
-      }
-    }
-  }
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(10px); }
 }
