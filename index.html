@@ -65,10 +65,12 @@ bg_image: /assets/img/volume_rendering.webp
             </div>
 
             <div class="col-lg-5">
-                <div class="ratio ratio-1x1 shadow-lg rounded-3 overflow-hidden border border-secondary border-opacity-25"> 
-                    <video src="{{ 'assets/video/halo_40s.webm' | relative_url }}"
-                           poster="{{ 'assets/img/volume_rendering.webp' | relative_url }}"
-                           autoplay loop muted playsinline preload="auto">
+                <div class="ratio ratio-1x1 shadow-lg rounded-3 overflow-hidden border border-secondary border-opacity-25">
+                    <video poster="{{ 'assets/img/volume_rendering.webp' | relative_url }}"
+                                autoplay loop muted playsinline preload="auto">
+                    <source src="{{ 'assets/video/halo_40s.webm' | relative_url }}" type="video/webm">
+                    <source src="{{ 'assets/video/halo_standard.webm' | relative_url }}" type="video/webm">
+                    Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
